@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -21,7 +22,7 @@ const itemVariants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 100, damping: 10 },
+    transition: { type: "spring" as const, stiffness: 100, damping: 10 },
   },
 };
 
@@ -30,7 +31,7 @@ const slideInVariants = {
   visible: {
     x: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 80, damping: 15 },
+    transition: { type: "spring" as const, stiffness: 80, damping: 15 },
   },
 };
 
@@ -39,13 +40,13 @@ const scaleVariants = {
   visible: {
     scale: 1,
     opacity: 1,
-    transition: { type: "spring", stiffness: 120, damping: 12 },
+    transition: { type: "spring" as const, stiffness: 120, damping: 12 },
   },
 };
 
 const buttonHover = {
   scale: 1.05,
-  transition: { type: "spring", stiffness: 400, damping: 10 },
+  transition: { type: "spring" as const, stiffness: 400, damping: 10 },
 };
 
 const buttonTap = {
@@ -76,7 +77,16 @@ export default function Home() {
               </h1>
             </motion.div>
             <nav className="hidden md:flex space-x-8">
-              {["Rooms", "Dining", "Spa & Wellness", "Meetings", "Contact"].map((item, i) => (
+              <Link href="/rooms">
+                <motion.span
+                  className="text-gray-700 hover:text-blue-600 transition-colors cursor-pointer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Rooms
+                </motion.span>
+              </Link>
+              {["Dining", "Spa & Wellness", "Meetings", "Contact"].map((item, i) => (
                 <motion.a
                   key={i}
                   href={`#${item.toLowerCase()}`}

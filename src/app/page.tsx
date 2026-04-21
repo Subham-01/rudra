@@ -93,6 +93,14 @@ const homepageStructuredData = [
       },
       {
         "@type": "Question",
+        name: "Is Hotel Rudra Regency one of the best hotels in Motihari for family and business stays?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Hotel Rudra Regency is a preferred choice for guests looking for a premium hotel in Motihari with comfortable rooms, modern amenities, dining, and event spaces for both family visits and business travel.",
+        },
+      },
+      {
+        "@type": "Question",
         name: "Can I book rooms and event spaces directly?",
         acceptedAnswer: {
           "@type": "Answer",
@@ -101,10 +109,34 @@ const homepageStructuredData = [
       },
       {
         "@type": "Question",
+        name: "Do you offer room booking in Motihari for weddings, local functions, and outstation guests?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Guests visiting Motihari for weddings, family functions, business meetings, or short stays can book rooms directly with Hotel Rudra Regency for quick assistance and availability updates.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is the hotel suitable for weddings and corporate meetings?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. The property is designed for both social celebrations and professional events, with dedicated banquet and conference spaces.",
+        },
+      },
+      {
+        "@type": "Question",
         name: "Does Hotel Rudra Regency offer dining options?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Yes. The hotel offers an open terrace restaurant and in-house dining with a premium hospitality experience.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you have a banquet hall in Motihari for weddings, receptions, and events?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Hotel Rudra Regency offers banquet facilities in Motihari for weddings, receptions, engagement functions, birthday parties, and other social events, along with hospitality support.",
         },
       },
     ],

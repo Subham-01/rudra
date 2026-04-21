@@ -130,7 +130,7 @@ const structuredData = [
     sameAs: [
       "https://www.facebook.com/hotelrudraregency7",
       "https://www.instagram.com/hotel.rudra.regency?igsh=MTUzbmN6dnJ6bGJidA==",
-      "https://wa.me/+9186516000015",
+      "https://wa.me/918651600015",
     ],
     amenityFeature: [
       {

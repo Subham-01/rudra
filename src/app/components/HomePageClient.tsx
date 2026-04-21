@@ -3,7 +3,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {
+  BedDoubleIcon,
+  BriefcaseBusinessIcon,
+  PartyPopperIcon,
+  UtensilsCrossedIcon,
+} from "lucide-react";
 import { useEffect, useState } from "react";
+
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { buttonVariants } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
+import { createHotelInquiryLink } from "@/lib/whatsapp";
 
 const getFormattedDate = (offsetDays: number) => {
   const date = new Date();
@@ -136,21 +152,41 @@ const serviceBlocks = [
     title: "Luxury Stay",
     subtitle: "Premium Comfort",
     text: "Elegant rooms with modern amenities and a polished atmosphere for restful stays.",
+    href: "/rooms",
+    action: "Explore Rooms",
+    icon: BedDoubleIcon,
+    highlights: ["Premium room categories", "Comfort-focused in-room amenities"],
+    accent: "from-amber-300/20 via-amber-200/8 to-transparent",
   },
   {
     title: "Grand Events",
     subtitle: "Banquet Experience",
     text: "A celebration-ready space for weddings, receptions, and high-energy social occasions.",
+    href: "/banquet",
+    action: "View Banquet Hall",
+    icon: PartyPopperIcon,
+    highlights: ["Wedding and reception hosting", "Banquet support for social events"],
+    accent: "from-rose-300/18 via-amber-200/8 to-transparent",
   },
   {
     title: "Premium Dining",
     subtitle: "Restaurant Ambience",
     text: "Open terrace and in-house dining crafted for memorable meals and premium hospitality.",
+    href: "/dining",
+    action: "Discover Dining",
+    icon: UtensilsCrossedIcon,
+    highlights: ["Open terrace setting", "In-house dining experience"],
+    accent: "from-yellow-200/18 via-amber-200/8 to-transparent",
   },
   {
     title: "Business Hub",
     subtitle: "Conference Ready",
     text: "Meeting and conference spaces designed for professional flow and modern comfort.",
+    href: "/conference-room",
+    action: "View Conference Room",
+    icon: BriefcaseBusinessIcon,
+    highlights: ["Professional meeting setup", "Conference-ready hospitality"],
+    accent: "from-sky-200/16 via-neutral-200/8 to-transparent",
   },
 ];
 
@@ -167,9 +203,19 @@ const faqItems = [
       "Hotel Rudra Regency combines premium rooms, a banquet hall, open terrace dining, and conference facilities in one location, making it suitable for stays, events, and business visits.",
   },
   {
+    question: "Is Hotel Rudra Regency one of the best hotels in Motihari for family and business stays?",
+    answer:
+      "Hotel Rudra Regency is a preferred choice for guests looking for a premium hotel in Motihari with comfortable rooms, modern amenities, dining, and event spaces for both family visits and business travel.",
+  },
+  {
     question: "Can I book rooms and event spaces directly?",
     answer:
       "Yes. Guests can contact the hotel directly for room bookings, banquet hall reservations, dining inquiries, and conference room availability.",
+  },
+  {
+    question: "Do you offer room booking in Motihari for weddings, local functions, and outstation guests?",
+    answer:
+      "Yes. Guests visiting Motihari for weddings, family functions, business meetings, or short stays can book rooms directly with Hotel Rudra Regency for quick assistance and availability updates.",
   },
   {
     question: "Is the hotel suitable for weddings and corporate meetings?",
@@ -181,6 +227,11 @@ const faqItems = [
     answer:
       "Yes. The hotel offers an open terrace restaurant and in-house dining with a premium hospitality experience.",
   },
+  {
+    question: "Do you have a banquet hall in Motihari for weddings, receptions, and events?",
+    answer:
+      "Yes. Hotel Rudra Regency offers banquet facilities in Motihari for weddings, receptions, engagement functions, birthday parties, and other social events, along with hospitality support.",
+  },
 ];
 
 export default function HomePageClient() {
@@ -188,25 +239,12 @@ export default function HomePageClient() {
   const [checkIn, setCheckIn] = useState(getFormattedDate(0));
   const [checkOut, setCheckOut] = useState(getFormattedDate(1));
   const [guests, setGuests] = useState("2 Guests");
-
-  const bookingBaseUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "/contact";
-  const bookingParams = new URLSearchParams();
-
-  if (checkIn) {
-    bookingParams.set("checkIn", checkIn);
-  }
-
-  if (checkOut) {
-    bookingParams.set("checkOut", checkOut);
-  }
-
-  if (guests) {
-    bookingParams.set("guests", guests);
-  }
-
-  const bookingHref = bookingParams.toString()
-    ? `${bookingBaseUrl}${bookingBaseUrl.includes("?") ? "&" : "?"}${bookingParams.toString()}`
-    : bookingBaseUrl;
+  const directBookingHref = createHotelInquiryLink("a direct booking at Hotel Rudra Regency");
+  const bookingHref = createHotelInquiryLink("a stay at Hotel Rudra Regency", [
+    `Check-in: ${checkIn || "Flexible"}`,
+    `Check-out: ${checkOut || "Flexible"}`,
+    `Guests: ${guests || "Not specified"}`,
+  ]);
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -215,6 +253,16 @@ export default function HomePageClient() {
 
     return () => window.clearInterval(intervalId);
   }, []);
+
+  const primaryCtaClass = cn(
+    buttonVariants({ size: "lg" }),
+    "rounded-full border border-amber-300/20 bg-amber-300 px-6 text-sm font-semibold uppercase tracking-[0.14em] text-neutral-950 hover:bg-amber-200 sm:px-8 sm:tracking-[0.16em]"
+  );
+
+  const secondaryCtaClass = cn(
+    buttonVariants({ variant: "outline", size: "lg" }),
+    "rounded-full border-white/12 bg-white/[0.02] px-6 text-sm font-semibold uppercase tracking-[0.14em] text-white/88 hover:bg-white/[0.05] hover:text-white sm:px-8 sm:tracking-[0.16em]"
+  );
 
   return (
     <div className="min-h-screen overflow-hidden bg-neutral-950 text-white">
@@ -240,7 +288,7 @@ export default function HomePageClient() {
                 variants={fadeUp}
                 className="mb-4 text-[11px] font-medium uppercase tracking-[0.32em] text-amber-300 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:mb-5 sm:text-sm sm:tracking-[0.4em]"
               >
-                Luxury Hotel in Motihari, Bihar
+                Welcome to Hotel Rudra Regency
               </motion.p>
               <motion.h1
                 variants={fadeUp}
@@ -250,43 +298,18 @@ export default function HomePageClient() {
                   Stay, Dine, and Celebrate at Hotel Rudra Regency
                 </span>
               </motion.h1>
-              <motion.p
-                variants={fadeUp}
-                className="mx-auto mt-4 max-w-3xl px-1 text-base leading-7 text-neutral-200 [text-shadow:0_2px_14px_rgba(0,0,0,0.7)] sm:mt-5 sm:text-lg sm:leading-8"
-              >
-                Hotel Rudra Regency is a premium hotel in Motihari offering luxury rooms, banquet hall bookings, open terrace dining, and conference facilities for family stays, weddings, celebrations, and business travel.
-              </motion.p>
               <motion.div variants={fadeUp} className="mt-8 flex w-full flex-col justify-center gap-3 sm:mt-9 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
-                <Link href="/rooms" className="btn-primary inline-flex w-full items-center justify-center px-6 py-3 text-sm uppercase tracking-[0.16em] sm:w-auto sm:px-8 sm:tracking-[0.18em]">
+                <Link href="/rooms" className={cn(primaryCtaClass, "w-full sm:w-auto")}>
                   Explore Rooms
                 </Link>
-                <Link href="/contact" className="btn-secondary inline-flex w-full items-center justify-center px-6 py-3 text-sm uppercase tracking-[0.16em] sm:w-auto sm:px-8 sm:tracking-[0.18em]">
+                <Link href={directBookingHref} className={cn(secondaryCtaClass, "w-full sm:w-auto")}>
                   Book Directly
                 </Link>
               </motion.div>
 
-              <motion.div
-                variants={fadeUp}
-                className="mt-8 grid w-full max-w-5xl gap-3 sm:mt-10 sm:gap-4 md:grid-cols-3"
-              >
-                <div className="rounded-[24px] border border-white/10 bg-black/30 px-4 py-4 text-left backdrop-blur-md sm:rounded-[28px] sm:px-5">
-                  <p className="text-[11px] uppercase tracking-[0.24em] text-amber-300">Stay</p>
-                  <p className="mt-2 text-sm leading-7 text-neutral-200">Luxury rooms designed for premium comfort in Motihari.</p>
-                </div>
-                <div className="rounded-[24px] border border-white/10 bg-black/30 px-4 py-4 text-left backdrop-blur-md sm:rounded-[28px] sm:px-5">
-                  <p className="text-[11px] uppercase tracking-[0.24em] text-amber-300">Celebrate</p>
-                  <p className="mt-2 text-sm leading-7 text-neutral-200">Banquet spaces for weddings, receptions, and milestone events.</p>
-                </div>
-                <div className="rounded-[24px] border border-white/10 bg-black/30 px-4 py-4 text-left backdrop-blur-md sm:rounded-[28px] sm:px-5">
-                  <p className="text-[11px] uppercase tracking-[0.24em] text-amber-300">Meet</p>
-                  <p className="mt-2 text-sm leading-7 text-neutral-200">Conference-ready hospitality for business visitors and meetings.</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                variants={fadeUp}
-                className="mt-8 w-full max-w-5xl rounded-[28px] border border-white/10 bg-neutral-950/75 p-4 shadow-2xl shadow-amber-500/10 backdrop-blur-xl sm:mt-10 sm:rounded-[34px] md:p-5"
-              >
+              <motion.div variants={fadeUp} className="mt-8 w-full max-w-5xl sm:mt-10">
+                <Card className="rounded-[28px] border-white/10 bg-neutral-950/75 text-white shadow-none backdrop-blur-xl sm:rounded-[34px]">
+                  <CardContent className="p-4 md:p-5">
                 <div className="grid gap-3 md:grid-cols-[1fr_1fr_0.9fr_auto]">
                   <label className="block text-left">
                     <span className="mb-2 block text-[11px] font-medium uppercase tracking-[0.22em] text-neutral-400">
@@ -332,12 +355,14 @@ export default function HomePageClient() {
                   <div className="flex items-end">
                     <Link
                       href={bookingHref}
-                      className="inline-flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-amber-400 to-yellow-400 px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-black shadow-lg shadow-amber-500/20 transition hover:shadow-amber-500/35 md:min-h-[50px]"
+                      className={cn(primaryCtaClass, "w-full md:min-h-[50px]")}
                     >
                       Book Now
                     </Link>
                   </div>
                 </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             </div>
           </motion.div>
@@ -345,13 +370,13 @@ export default function HomePageClient() {
       </section>
 
       <section className="bg-neutral-950 py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-[1.08fr_0.92fr] md:items-stretch lg:gap-8 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
             variants={stagger}
-            className="overflow-hidden rounded-[36px] border border-white/10 bg-neutral-950 shadow-2xl shadow-amber-500/5"
+            className="overflow-hidden rounded-[36px] border border-white/10 bg-neutral-950 shadow-none"
           >
             <div className="relative min-h-[420px] sm:min-h-[500px] lg:min-h-[560px]">
               {sliderImages.map((slide, index) => (
@@ -370,11 +395,6 @@ export default function HomePageClient() {
                   />
                 </div>
               ))}
-
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent px-5 pb-24 pt-16 sm:px-8 sm:pt-20">
-                <h2 className="max-w-xl text-2xl font-semibold text-white sm:text-3xl">{sliderImages[activeSlide].title}</h2>
-                <p className="mt-3 max-w-2xl text-sm leading-7 text-neutral-200 md:text-base">{sliderImages[activeSlide].description}</p>
-              </div>
 
               <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-3 sm:bottom-8 sm:left-8 sm:right-8 sm:gap-4">
                 <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/15 px-3 py-2.5 sm:px-4 sm:py-3">
@@ -416,31 +436,25 @@ export default function HomePageClient() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
             variants={stagger}
-            className="rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 sm:rounded-[36px] sm:p-8"
+            className="flex h-full flex-col rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-none sm:rounded-[36px] sm:p-6"
           >
-            <motion.p variants={fadeUp} className="mb-4 text-sm font-medium uppercase tracking-[0.32em] text-amber-300">
+            <motion.p variants={fadeUp} className="mb-3 text-[0.78rem] font-medium uppercase tracking-[0.28em] text-amber-300">
               Why Guests Choose Us
             </motion.p>
-            <motion.h2 variants={fadeUp} className="text-2xl font-bold text-white md:text-3xl">
+            <motion.h2 variants={fadeUp} className="text-[1.7rem] font-bold leading-tight text-white md:text-[2rem]">
               A premium stay destination for Motihari visitors
             </motion.h2>
-            <motion.p variants={fadeUp} className="mt-4 text-sm leading-7 text-neutral-400 md:text-base">
+            <motion.p variants={fadeUp} className="mt-3 text-sm leading-6 text-neutral-400 md:text-[0.96rem]">
               Whether you are planning a weekend stay, hosting a wedding function, arranging a corporate meeting, or looking for a quality restaurant in Motihari, Hotel Rudra Regency brings all of it together under one hospitality experience.
             </motion.p>
-            <motion.div variants={stagger} className="mt-8 grid gap-4">
+            <motion.ul variants={stagger} className="mt-5 space-y-3.5">
               {highlights.map((item) => (
-                <motion.div
-                  key={item}
-                  variants={fadeUp}
-                  className="rounded-[24px] border border-white/10 bg-neutral-950 px-5 py-5 text-neutral-300"
-                >
-                  <div className="flex items-start gap-3">
-                    <span className="mt-0.5 text-amber-400">✦</span>
-                    <span className="leading-7">{item}</span>
-                  </div>
-                </motion.div>
+                <motion.li key={item} variants={fadeUp} className="flex items-start gap-3 text-neutral-300">
+                  <span className="mt-1 shrink-0 text-amber-300">✦</span>
+                  <span className="text-sm leading-6 md:text-[0.95rem]">{item}</span>
+                </motion.li>
               ))}
-            </motion.div>
+            </motion.ul>
           </motion.div>
         </div>
       </section>
@@ -477,7 +491,7 @@ export default function HomePageClient() {
                 key={facility.title}
                 variants={scaleIn}
                 whileHover={{ y: -6 }}
-                className="overflow-hidden rounded-[30px] border border-white/10 bg-neutral-900/80 shadow-xl shadow-amber-500/5"
+                className="overflow-hidden rounded-[30px] border border-white/10 bg-neutral-900/80 shadow-none"
               >
                 <div className="relative h-56 overflow-hidden">
                   <div
@@ -540,12 +554,8 @@ export default function HomePageClient() {
             className="grid gap-6 md:grid-cols-3"
           >
             {rooms.map((room) => (
-              <motion.article
-                key={room.title}
-                variants={scaleIn}
-                whileHover={{ y: -6 }}
-                className="overflow-hidden rounded-[30px] border border-white/10 bg-neutral-900/80 shadow-xl shadow-amber-500/5"
-              >
+              <motion.article key={room.title} variants={scaleIn} whileHover={{ y: -6 }}>
+                <Card className="overflow-hidden rounded-[30px] border-white/10 bg-neutral-900/80 text-white shadow-none">
                 <div
                   className="h-60 bg-cover"
                   style={{
@@ -553,14 +563,15 @@ export default function HomePageClient() {
                     backgroundPosition: room.position,
                   }}
                 />
-                <div className="p-6">
-                  <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-amber-300">Popular</p>
+                <CardContent className="p-6">
+                  <p className="mb-3 text-[11px] uppercase tracking-[0.22em] text-neutral-500">Popular</p>
                   <h3 className="mb-3 text-2xl font-semibold text-white">{room.title}</h3>
                   <p className="mb-6 text-sm leading-7 text-neutral-400">{room.description}</p>
-                  <Link href={room.href} className="btn-primary inline-flex items-center justify-center px-6 py-3 text-sm uppercase tracking-[0.16em]">
+                  <Link href={createHotelInquiryLink(`the ${room.title} at Hotel Rudra Regency`)} className={cn(secondaryCtaClass, "w-full sm:w-auto")}>
                     Book Now
                   </Link>
-                </div>
+                </CardContent>
+                </Card>
               </motion.article>
             ))}
           </motion.div>
@@ -592,14 +603,38 @@ export default function HomePageClient() {
             className="grid gap-6 md:grid-cols-2 xl:grid-cols-4"
           >
             {serviceBlocks.map((block) => (
-              <motion.div
-                key={block.title}
-                variants={fadeUp}
-                className="rounded-[30px] border border-white/10 bg-neutral-900/80 p-6 shadow-xl shadow-amber-500/5"
-              >
-                <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-amber-300">{block.subtitle}</p>
-                <h3 className="text-2xl font-bold text-white">{block.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-neutral-400">{block.text}</p>
+              <motion.div key={block.title} variants={fadeUp} className="h-full">
+                <Card className="group relative flex h-full overflow-hidden rounded-[30px] border-white/10 bg-[linear-gradient(180deg,rgba(26,26,26,0.96),rgba(10,10,10,0.98))] text-white shadow-none">
+                  <div className={cn("absolute inset-x-0 top-0 h-24 bg-gradient-to-b", block.accent)} />
+                  <CardContent className="relative flex h-full w-full flex-col p-6">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="min-h-[5.5rem]">
+                        <p className="text-[11px] uppercase tracking-[0.22em] text-neutral-500">{block.subtitle}</p>
+                        <h3 className="mt-3 text-2xl font-semibold text-white">{block.title}</h3>
+                      </div>
+                      <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-amber-200 backdrop-blur-sm">
+                        <block.icon className="size-5" />
+                      </div>
+                    </div>
+
+                    <p className="mt-4 min-h-[5.5rem] text-sm leading-7 text-neutral-400">{block.text}</p>
+
+                    <ul className="mt-6 grid min-h-[6.5rem] content-start gap-3">
+                      {block.highlights.map((item) => (
+                        <li key={item} className="flex items-start gap-3">
+                          <span className="mt-2 size-1.5 shrink-0 rounded-full bg-amber-200" />
+                          <span className="text-sm leading-6 text-neutral-300">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-auto border-t border-white/10 pt-5">
+                      <Link href={block.href} className="inline-flex items-center text-sm font-semibold uppercase tracking-[0.14em] text-amber-200 transition hover:text-amber-100">
+                        {block.action}
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </motion.div>
@@ -615,7 +650,7 @@ export default function HomePageClient() {
             variants={stagger}
             className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]"
           >
-            <div className="rounded-[28px] border border-white/10 bg-neutral-900/70 p-5 shadow-xl shadow-amber-500/5 sm:rounded-[34px] sm:p-8">
+            <div className="rounded-[28px] border border-white/10 bg-neutral-900/70 p-5 shadow-none sm:rounded-[34px] sm:p-8">
               <motion.p variants={fadeUp} className="text-sm font-medium uppercase tracking-[0.32em] text-amber-300">
                 Direct Booking Advantage
               </motion.p>
@@ -627,31 +662,35 @@ export default function HomePageClient() {
               </motion.p>
               <motion.div variants={stagger} className="mt-8 grid gap-4">
                 {directBookingBenefits.map((benefit) => (
-                  <motion.div key={benefit} variants={fadeUp} className="rounded-[24px] border border-white/10 bg-neutral-950 px-5 py-4 text-sm leading-7 text-neutral-300">
-                    {benefit}
+                  <motion.div key={benefit} variants={fadeUp}>
+                    <Card className="rounded-[24px] border-white/10 bg-neutral-950 text-neutral-300 shadow-none">
+                      <CardContent className="px-5 py-4 text-sm leading-7">
+                        {benefit}
+                      </CardContent>
+                    </Card>
                   </motion.div>
                 ))}
               </motion.div>
             </div>
 
-            <div className="rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(217,168,50,0.08),rgba(10,10,10,0.94))] p-5 shadow-xl shadow-amber-500/5 sm:rounded-[34px] sm:p-8">
+            <div className="rounded-[28px] border border-white/10 bg-neutral-900/70 p-5 shadow-none sm:rounded-[34px] sm:p-8">
               <motion.p variants={fadeUp} className="text-sm font-medium uppercase tracking-[0.32em] text-amber-300">
                 Frequently Asked Questions
               </motion.p>
-              <div className="mt-6 space-y-4">
-                {faqItems.map((item) => (
-                  <motion.details
-                    key={item.question}
-                    variants={fadeUp}
-                    className="group rounded-[24px] border border-white/10 bg-black/20 px-5 py-4"
-                  >
-                    <summary className="cursor-pointer list-none text-base font-semibold text-white">
-                      {item.question}
-                    </summary>
-                    <p className="mt-3 text-sm leading-7 text-neutral-300">{item.answer}</p>
-                  </motion.details>
-                ))}
-              </div>
+              <motion.div variants={fadeUp} className="mt-6 rounded-[24px] border border-white/10 bg-black/10 px-5 py-3">
+                <Accordion className="gap-1">
+                  {faqItems.map((item) => (
+                    <AccordionItem key={item.question} value={item.question} className="border-white/10">
+                      <AccordionTrigger className="py-4 text-base font-semibold text-white hover:no-underline">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-sm leading-7 text-neutral-300">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -664,7 +703,7 @@ export default function HomePageClient() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
             variants={stagger}
-            className="rounded-[30px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-5 py-10 text-center shadow-2xl shadow-amber-500/10 sm:rounded-[38px] sm:px-8 sm:py-12"
+            className="rounded-[30px] border border-white/10 bg-neutral-900 px-5 py-10 text-center shadow-none sm:rounded-[38px] sm:px-8 sm:py-12"
           >
             <motion.p variants={fadeUp} className="mb-4 text-sm font-medium uppercase tracking-[0.34em] text-amber-300">
               Reserve Your Experience
@@ -675,11 +714,12 @@ export default function HomePageClient() {
             <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg">
               Plan your stay, event, dining experience, or corporate gathering with a hotel designed to feel premium at every touchpoint.
             </motion.p>
+            <Separator className="mx-auto mt-8 max-w-xl bg-white/10" />
             <motion.div variants={fadeUp} className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="btn-primary inline-flex items-center justify-center px-8 py-3 text-sm uppercase tracking-[0.18em]">
+              <Link href={directBookingHref} className={primaryCtaClass}>
                 Contact Us
               </Link>
-              <Link href="/rooms" className="btn-secondary inline-flex items-center justify-center px-8 py-3 text-sm uppercase tracking-[0.18em]">
+              <Link href="/rooms" className={secondaryCtaClass}>
                 Explore Rooms
               </Link>
             </motion.div>

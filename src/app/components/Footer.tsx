@@ -1,5 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
+import { MailIcon, MapPinnedIcon, PhoneIcon } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
+import { createHotelInquiryLink } from "@/lib/whatsapp";
 
 const socialLinks = [
   {
@@ -37,19 +41,38 @@ const supportLinks = [
 ];
 
 export default function Footer() {
+  const planVisitHref = createHotelInquiryLink("a stay, event, or dining plan at Hotel Rudra Regency");
+
   return (
     <footer className="border-t border-amber-400/10 bg-[linear-gradient(180deg,rgba(18,18,18,0.98),rgba(8,8,8,1))] text-neutral-200">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="mb-8 flex flex-col gap-4 rounded-[24px] border border-white/10 bg-white/[0.02] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div>
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-neutral-500">
+              Hotel Rudra Regency
+            </p>
+            <p className="mt-2 max-w-2xl text-sm leading-7 text-neutral-400">
+              Book a refined stay, plan a banquet, reserve dining, or coordinate a conference experience with one hospitality team.
+            </p>
+          </div>
+
+          <div className="flex sm:flex-row">
+            <Link
+              href={planVisitHref}
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "rounded-full border border-amber-300/20 bg-amber-300 text-neutral-950 hover:bg-amber-200"
+              )}
+            >
+              Plan Your Visit
+            </Link>
+          </div>
+        </div>
+
         <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.25fr_0.8fr_0.8fr_1fr]">
-          <div className="space-y-5">
-            <Link href="/" className="inline-flex h-24 w-48 items-start overflow-hidden sm:h-28 sm:w-56 lg:h-32 lg:w-[15rem]">
-              <Image
-                src="/images/Logo-removebg-preview.png"
-                alt="Hotel Rudra Regency"
-                width={512}
-                height={512}
-                className="-ml-6 -mt-8 h-40 w-auto max-w-none object-contain sm:-ml-8 sm:-mt-10 sm:h-48 lg:-ml-8 lg:-mt-10 lg:h-52"
-              />
+          <div className="space-y-5 rounded-[24px] border border-white/10 bg-white/[0.02] px-5 py-5 sm:px-6">
+            <Link href="/" className="inline-flex whitespace-nowrap text-xl font-semibold tracking-[0.06em] text-amber-200 sm:text-[1.65rem]">
+              Hotel Rudra Regency
             </Link>
             <p className="max-w-sm text-sm leading-7 text-neutral-400">
               A premium hospitality destination in Motihari for luxury stays, banquets, dining, and business gatherings.
@@ -73,42 +96,62 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="mb-4 text-lg font-semibold text-amber-100">Quick Links</p>
-            <ul className="space-y-3 text-neutral-400">
+            <p className="mb-4 text-lg font-semibold text-white">Quick Links</p>
+            <p className="mb-4 text-sm text-neutral-500">Move through the main guest journeys.</p>
+              <ul className="space-y-3 text-neutral-400">
               {quickLinks.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="transition-colors hover:text-amber-200">
+                  <Link href={item.href} className="transition-colors hover:text-white">
                     {item.label}
                   </Link>
                 </li>
               ))}
-            </ul>
+              </ul>
           </div>
 
           <div>
-            <p className="mb-4 text-lg font-semibold text-amber-100">Reach Us</p>
-            <ul className="space-y-3 text-neutral-400">
+            <p className="mb-4 text-lg font-semibold text-white">Reach Us</p>
+            <p className="mb-4 text-sm text-neutral-500">Direct support for bookings and events.</p>
+              <ul className="space-y-3 text-neutral-400">
               {supportLinks.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="transition-colors hover:text-amber-200">
+                  <Link href={item.href} className="transition-colors hover:text-white">
                     {item.label}
                   </Link>
                 </li>
               ))}
-            </ul>
+              </ul>
           </div>
 
           <div>
-            <p className="mb-4 text-lg font-semibold text-amber-100">Address</p>
+            <p className="mb-4 text-lg font-semibold text-white">Address</p>
+            <p className="mb-4 text-sm text-neutral-500">Easy to reach for stay, dining, and events.</p>
             <div className="space-y-3 text-neutral-400">
               <p className="text-sm leading-7">Chandrahiya, Motihari, Chararhiya, Bihar 845401</p>
-              <p className="text-sm leading-7">info@rudraregency.com</p>
-              <p className="text-sm leading-7">+91 8651600015 | +91 8581828182</p>
+              <p className="flex items-start gap-2 text-sm leading-7">
+                <MailIcon className="mt-1 size-4 shrink-0 text-amber-200" />
+                <span>info@rudraregency.com</span>
+              </p>
+              <p className="flex items-start gap-2 text-sm leading-7">
+                <PhoneIcon className="mt-1 size-4 shrink-0 text-amber-200" />
+                <span>+91 8651600015 | +91 8581828182</span>
+              </p>
+              <Link
+                href="https://www.google.com/maps/search/?api=1&query=Hotel+Rudra+Regency+Chandrahiya+Motihari+Bihar+845401"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm leading-7 text-amber-200 transition-colors hover:text-amber-100"
+              >
+                <MapPinnedIcon className="size-4 shrink-0" />
+                <span>Get Directions on Google Maps</span>
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-amber-400/10 pt-6 text-center text-sm text-neutral-500">
+        <Separator className="mt-10 bg-amber-400/10" />
+
+        <div className="pt-6 text-center text-sm text-neutral-500">
           <p>&copy; 2026 Hotel Rudra Regency. All rights reserved.</p>
         </div>
       </div>

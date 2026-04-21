@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Script from "next/script";
+import { createHotelInquiryLink } from "@/lib/whatsapp";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 25 },
@@ -112,7 +113,7 @@ export default function DiningPage() {
               >
                 View Menu
               </a>
-              <Link href="/contact" className="inline-flex items-center justify-center rounded-full border border-amber-300/30 bg-black/70 px-6 py-3 text-base font-semibold text-amber-200 transition hover:bg-black/90 sm:px-8">
+              <Link href={createHotelInquiryLink("a dining reservation at The Flavoresca Restaurant", ["Location: Hotel Rudra Regency, Motihari", "Reservation type: Table booking"]) } className="inline-flex items-center justify-center rounded-full border border-amber-300/30 bg-black/70 px-6 py-3 text-base font-semibold text-amber-200 transition hover:bg-black/90 sm:px-8">
                 Reserve a Table
               </Link>
             </div>
@@ -225,7 +226,7 @@ export default function DiningPage() {
               <p className="mb-6 text-base leading-8 text-amber-200 sm:text-lg">
                 Whether you are planning a family dinner, a premium terrace evening, or a refined meal during your hotel stay, The Flavoresca Restaurant by Hotel Rudra Regency is ready to host you.
               </p>
-              <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-black shadow-lg hover:bg-amber-300 transition">
+              <Link href={createHotelInquiryLink("a dining reservation at The Flavoresca Restaurant", ["Location: Hotel Rudra Regency, Motihari", "Reservation type: Table booking"]) } className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-black shadow-lg hover:bg-amber-300 transition">
                 Reserve your table
               </Link>
             </div>

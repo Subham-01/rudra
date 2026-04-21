@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { createHotelInquiryLink } from "@/lib/whatsapp";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -300,7 +301,7 @@ export default function RoomsPage() {
 
                   <div className="mt-auto flex">
                     <Link
-                      href="/contact"
+                      href={createHotelInquiryLink(`the ${room.name} at Hotel Rudra Regency`)}
                       className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-black shadow-lg shadow-amber-500/20 transition hover:shadow-amber-500/35 sm:w-auto"
                     >
                       Check Availability
@@ -372,7 +373,7 @@ export default function RoomsPage() {
             </motion.p>
             <motion.div variants={itemVariants}>
               <Link
-                href="/contact"
+                href={createHotelInquiryLink("a stay at Hotel Rudra Regency in Motihari")}
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-10 py-4 text-sm font-bold uppercase tracking-[0.18em] text-black shadow-lg shadow-amber-500/25 transition hover:scale-[1.02] hover:shadow-amber-500/40"
               >
                 Contact Us

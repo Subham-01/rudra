@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { createHotelInquiryLink } from "@/lib/whatsapp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -103,7 +104,7 @@ export default function BanquetPage() {
         <div className="absolute right-6 top-16 h-24 w-24 rounded-full bg-amber-400/10 blur-3xl sm:right-12 sm:h-28 sm:w-28" />
         <div className="absolute bottom-12 left-4 h-28 w-28 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-16 sm:left-10 sm:h-40 sm:w-40" />
 
-        <div className="relative mx-auto flex min-h-[58vh] max-w-6xl items-center px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto flex min-h-[58vh] max-w-6xl items-center px-4 pb-10 pt-28 sm:px-6 sm:pt-32 lg:px-8 lg:pt-36">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -130,7 +131,7 @@ export default function BanquetPage() {
             >
               Discover premium event packages with elegant halls, room inventory, and curated inclusions designed for unforgettable weddings, receptions, and milestone celebrations.
             </motion.p>
-            <motion.div variants={fadeUp} className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
+            <motion.div variants={fadeUp} className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
               <Link
                 href="/dining"
                 className="inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-sm transition hover:bg-white/10 sm:w-auto sm:px-8 sm:tracking-[0.18em]"
@@ -148,7 +149,7 @@ export default function BanquetPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={stagger}
-          className="-mt-10 rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:-mt-14 sm:rounded-[34px] sm:p-6 md:p-8"
+          className="mt-8 rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:mt-10 sm:rounded-[34px] sm:p-6 md:p-8"
         >
           <motion.div variants={fadeUp} className="mb-8 text-center">
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.35em] text-amber-300">
@@ -207,7 +208,7 @@ export default function BanquetPage() {
                   </ul>
 
                   <Link
-                    href="/contact"
+                    href={createHotelInquiryLink(`the ${pkg.name} banquet package at Hotel Rudra Regency`, ["Event type: Wedding, reception, or celebration", "Location: Motihari"]) }
                     className={`mt-auto inline-flex w-full items-center justify-center rounded-2xl px-5 py-3 text-xs font-bold uppercase tracking-[0.16em] transition ${
                       pkg.featured
                         ? "bg-gradient-to-r from-amber-400 to-yellow-400 text-black shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40"
@@ -336,7 +337,7 @@ export default function BanquetPage() {
           </motion.p>
           <motion.div variants={fadeUp} className="mt-8">
             <Link
-              href="/contact"
+              href={createHotelInquiryLink("a banquet hall booking at Hotel Rudra Regency", ["Event type: Wedding, reception, or social event", "Location: Motihari"]) }
               className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-6 py-4 text-sm font-bold uppercase tracking-[0.16em] text-black shadow-lg shadow-amber-500/25 transition hover:scale-[1.03] hover:shadow-amber-500/40 sm:w-auto sm:px-10 sm:tracking-[0.2em]"
             >
               Talk to Our Event Team

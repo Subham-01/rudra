@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Banquet Hall in Motihari",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     "luxury wedding venue in Motihari",
   ],
   alternates: {
-    canonical: "/banquet",
+    canonical: "https://rudraregency.com/banquet",
   },
   openGraph: {
     title: "Banquet Hall in Motihari | Hotel Rudra Regency",
@@ -38,6 +39,20 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://rudraregency.com/" },
+    { "@type": "ListItem", position: 2, name: "Banquet Hall", item: "https://rudraregency.com/banquet" },
+  ],
+};
+
 export default function BanquetLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <Script id="banquet-breadcrumb" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      {children}
+    </>
+  );
 }

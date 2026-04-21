@@ -91,6 +91,12 @@ export const metadata: Metadata = {
   },
   category: "hospitality",
   manifest: "/manifest.webmanifest",
+  other: {
+    "geo.region": "IN-BR",
+    "geo.placename": "Motihari, Bihar, India",
+    "geo.position": "26.6512;84.9180",
+    ICBM: "26.6512, 84.9180",
+  },
 };
 
 const structuredData = [
@@ -102,14 +108,23 @@ const structuredData = [
     description:
       "Official website of Hotel Rudra Regency, a premium hotel in Motihari for stays, dining, weddings, and corporate events.",
     inLanguage: "en-IN",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://rudraregency.com/?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
   },
   {
     "@context": "https://schema.org",
-    "@type": "Hotel",
+    "@type": ["Hotel", "LodgingBusiness"],
     name: "Hotel Rudra Regency",
     description:
       "Best luxury hotel in Motihari offering premium rooms, gym, spa, lounge, bar, open terrace restaurant dining, a 10,000 sq ft banquet hall, and a high-tech meeting hall.",
     url: "https://rudraregency.com",
+    logo: "https://rudraregency.com/images/Logo-removebg-preview.png",
     image: [
       "https://rudraregency.com/images/hotel-rudra-regency-motihari-reception4.JPG",
       "https://rudraregency.com/images/hotel-rudra-regency-motihari-reception6.JPG",
@@ -125,59 +140,47 @@ const structuredData = [
       postalCode: "845401",
       addressCountry: "IN",
     },
-    areaServed: "Motihari",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 26.6512,
+      longitude: 84.9180,
+    },
+    hasMap: "https://maps.google.com/?q=Hotel+Rudra+Regency+Motihari",
+    areaServed: [
+      "Motihari",
+      "East Champaran",
+      "Bihar",
+    ],
     priceRange: "₹₹",
+    checkinTime: "12:00",
+    checkoutTime: "11:00",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "00:00",
+        closes: "23:59",
+      },
+    ],
     sameAs: [
       "https://www.facebook.com/hotelrudraregency7",
       "https://www.instagram.com/hotel.rudra.regency?igsh=MTUzbmN6dnJ6bGJidA==",
       "https://wa.me/918651600015",
     ],
     amenityFeature: [
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "Luxury Rooms",
-        value: true,
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "Banquet Hall",
-        value: true,
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "Open Terrace Restaurant",
-        value: true,
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "Conference Room",
-        value: true,
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "Gym",
-        value: true,
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "Spa",
-        value: true,
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "Lounge",
-        value: true,
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "Bar",
-        value: true,
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "High-Tech Meeting Hall",
-        value: true,
-      },
+      { "@type": "LocationFeatureSpecification", name: "Luxury Rooms", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Banquet Hall", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Open Terrace Restaurant", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Conference Room", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Gym", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Spa", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Lounge", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Bar", value: true },
+      { "@type": "LocationFeatureSpecification", name: "High-Tech Meeting Hall", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Accessible Rooms for Differently Abled Guests", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Free WiFi", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Air Conditioning", value: true },
+      { "@type": "LocationFeatureSpecification", name: "24-Hour Front Desk", value: true },
     ],
   },
 ];

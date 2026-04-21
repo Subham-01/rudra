@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "hotel for wedding in Motihari",
   ],
   alternates: {
-    canonical: "/",
+    canonical: "https://rudraregency.com/",
   },
   openGraph: {
     title: pageTitle,

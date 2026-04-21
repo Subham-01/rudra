@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "The Flavoresca Restaurant in Motihari",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     "bar in Motihari hotel",
   ],
   alternates: {
-    canonical: "/dining",
+    canonical: "https://rudraregency.com/dining",
   },
   openGraph: {
     title: "The Flavoresca Restaurant in Motihari | Hotel Rudra Regency",
@@ -44,6 +45,20 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://rudraregency.com/" },
+    { "@type": "ListItem", position: 2, name: "Dining", item: "https://rudraregency.com/dining" },
+  ],
+};
+
 export default function DiningLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <Script id="dining-breadcrumb" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      {children}
+    </>
+  );
 }

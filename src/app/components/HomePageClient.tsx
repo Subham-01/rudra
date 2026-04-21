@@ -58,39 +58,39 @@ const scaleIn = {
 
 const facilities = [
   {
-    eyebrow: "Hotels in Motihari",
+    eyebrow: "Luxury Stay",
     title: "Luxury Rooms",
-    description: "Spacious rooms created for comfort, elegance, and a premium stay experience.",
+    description: "Luxury rooms designed for premium comfort with polished interiors and modern in-room amenities.",
     href: "/rooms",
     action: "Explore Rooms",
     image: "/images/Hotels-in-motihari.JPG",
     position: "center",
   },
   {
-    eyebrow: "Hotels in Motihari",
+    eyebrow: "Grand Events",
     title: "Banquet Hall",
-    description: "A grand venue designed for weddings, parties, and milestone celebrations.",
+    description: "A 10,000 sq ft banquet hall created for weddings, receptions, celebrations, and large social events.",
     href: "/banquet",
     action: "View Banquet Hall",
-    image: "/images/hotel-rudra-regency-motihari-reception6.JPG",
+    image: "/images/banquet hall for  homepage .JPG",
     position: "center",
   },
   {
     eyebrow: "Premium Dining",
-    title: "Open Terrace Restaurant",
-    description: "Enjoy open-air dining with a polished atmosphere and elevated hospitality.",
+    title: "Restaurant",
+    description: "Enjoy Open terrace dining, lounge-style seating, and a premium restaurant experience with bar service.",
     href: "/dining",
     action: "Discover Dining",
-    image: "/images/open terrace motihari.JPG",
+    image: "/images/Premium dining card .JPG",
     position: "center",
   },
   {
     eyebrow: "Business Ready",
-    title: "Meeting & Conference Hall",
-    description: "A refined venue for meetings, conferences, and corporate events.",
+    title: "Meeting Hall",
+    description: "A high-tech meeting and conference hall designed for presentations, business and corporate events.",
     href: "/conference-room",
     action: "View Conference Room",
-    image: "/images/hotel-rudra-regency-motihari-reception4.JPG",
+    image: "/images/Meeting hall for home page .JPG",
     position: "center",
   },
 ];
@@ -121,86 +121,98 @@ const rooms = [
 
 const sliderImages = [
   {
-    src: "/images/hotel-rudra-regency-motihari-reception4.JPG",
-    title: "Luxury Stay Experience",
-    description: "Stylish interiors and polished hospitality for family trips, corporate stays, and local visitors.",
+    src: "/images/homepage slider 1.JPG",
+    title: "Luxury Suite Lounge",
+    description: "Premium interiors, elegant seating, and a refined stay experience designed for comfort.",
     position: "center",
   },
   {
-    src: "/images/open terrace motihari.JPG",
-    title: "Celebrations and Gatherings",
-    description: "Banquet events, rooftop dining, and special occasions in a premium hospitality setting.",
+    src: "/images/Home Page slider 2.JPG",
+    title: "Open Terrace Ambience",
+    description: "A striking terrace setting for evening dining, relaxed conversations, and memorable visits.",
+    position: "center 58%",
+  },
+  {
+    src: "/images/Homepage slider 3.JPG",
+    title: "Business Meeting Hall",
+    description: "A polished conference setting built for presentations, meetings, and corporate sessions.",
     position: "center",
   },
   {
-    src: "/images/restaurant.JPG",
-    title: "Rooms, Dining, and Ambience",
-    description: "A complete Motihari hotel experience with rooms, restaurant service, and event-ready spaces.",
+    src: "/images/Homepage slider 4.JPG",
+    title: "Grand Banquet Hall",
+    description: "Spacious interiors and premium event ambience for celebrations, receptions, and gatherings.",
     position: "center",
+  },
+  {
+    src: "/images/homepage slider 5.JPG",
+    title: "Restaurant Terrace Dining",
+    description: "Open terrace dining with lounge-style seating for relaxed meals and premium hospitality.",
+    position: "center 42%",
   },
 ];
 
 const highlights = [
-  "Best luxury hotel in Motihari for stays, dining, events, and meetings.",
-  "Comfortable rooms, attentive service, and modern amenities for a seamless stay.",
-  "Professional hospitality for families, celebrations, and business visits.",
-  "A premium hotel in Motihari with direct room booking support and event assistance.",
+  "A premium hotel in Motihari with luxury rooms, a 10,000 sq ft banquet hall, and a high-tech meeting hall.",
+  "Modern guest facilities including gym, spa, lounge, bar, and attentive hospitality for a seamless stay.",
+  "Open terrace restaurant, family-friendly ambience, and premium support for celebrations and business visits.",
+  "Direct booking assistance for rooms, dining, banquet events, conferences, and curated guest experiences.",
 ];
 
 const serviceBlocks = [
   {
     title: "Luxury Stay",
     subtitle: "Premium Comfort",
-    text: "Elegant rooms with modern amenities and a polished atmosphere for restful stays.",
+    text: "Luxury rooms designed for premium comfort with polished interiors and modern in-room amenities.",
     href: "/rooms",
     action: "Explore Rooms",
     icon: BedDoubleIcon,
-    highlights: ["Premium room categories", "Comfort-focused in-room amenities"],
+    highlights: ["Premium room categories", "Gym and spa access for guests"],
     accent: "from-amber-300/20 via-amber-200/8 to-transparent",
   },
   {
     title: "Grand Events",
     subtitle: "Banquet Experience",
-    text: "A celebration-ready space for weddings, receptions, and high-energy social occasions.",
+    text: "A 10,000 sq ft banquet hall created for weddings, receptions, celebrations, and large social events.",
     href: "/banquet",
     action: "View Banquet Hall",
     icon: PartyPopperIcon,
-    highlights: ["Wedding and reception hosting", "Banquet support for social events"],
+    highlights: ["Wedding and reception hosting", "Large-format banquet support"],
     accent: "from-rose-300/18 via-amber-200/8 to-transparent",
   },
   {
     title: "Premium Dining",
     subtitle: "Restaurant Ambience",
-    text: "Open terrace and in-house dining crafted for memorable meals and premium hospitality.",
+    text: "Enjoy Open terrace dining, lounge-style seating, and a premium restaurant experience with bar service.",
     href: "/dining",
     action: "Discover Dining",
     icon: UtensilsCrossedIcon,
-    highlights: ["Open terrace setting", "In-house dining experience"],
+    highlights: ["Open terrace restaurant setting", "Lounge and bar experience"],
     accent: "from-yellow-200/18 via-amber-200/8 to-transparent",
   },
   {
     title: "Business Hub",
     subtitle: "Conference Ready",
-    text: "Meeting and conference spaces designed for professional flow and modern comfort.",
+    text: "A high-tech meeting and conference hall designed for presentations, business and corporate events.",
     href: "/conference-room",
     action: "View Conference Room",
     icon: BriefcaseBusinessIcon,
-    highlights: ["Professional meeting setup", "Conference-ready hospitality"],
+    highlights: ["High-tech meeting setup", "Conference-ready hospitality"],
     accent: "from-sky-200/16 via-neutral-200/8 to-transparent",
   },
 ];
 
 const directBookingBenefits = [
-  "Fast assistance for room, banquet hall, and conference room inquiries.",
-  "Location-specific support for guests visiting Motihari for family functions or business travel.",
-  "One property for stay, dining, celebrations, and corporate gatherings.",
+  "Fast assistance for room, banquet hall, restaurant, and conference hall inquiries.",
+  "Support for guests visiting Motihari for family functions, business travel, or premium leisure stays.",
+  "One property for luxury rooms, gym, spa, lounge, bar, open terrace dining, and grand events.",
 ];
 
 const faqItems = [
   {
     question: "Why choose Hotel Rudra Regency in Motihari?",
     answer:
-      "Hotel Rudra Regency combines premium rooms, a banquet hall, open terrace dining, and conference facilities in one location, making it suitable for stays, events, and business visits.",
+      "Hotel Rudra Regency combines luxury rooms, a 10,000 sq ft banquet hall, open terrace restaurant dining, gym, spa, lounge, bar, and a high-tech meeting hall in one destination for stays, events, and business visits.",
   },
   {
     question: "Is Hotel Rudra Regency one of the best hotels in Motihari for family and business stays?",
@@ -225,7 +237,7 @@ const faqItems = [
   {
     question: "Does Hotel Rudra Regency offer dining options?",
     answer:
-      "Yes. The hotel offers an open terrace restaurant and in-house dining with a premium hospitality experience.",
+      "Yes. The hotel offers an open terrace restaurant, premium dining ambience, lounge-style seating, and a hospitality experience suited to family meals and social evenings.",
   },
   {
     question: "Do you have a banquet hall in Motihari for weddings, receptions, and events?",
@@ -264,6 +276,11 @@ export default function HomePageClient() {
     "rounded-full border-white/12 bg-white/[0.02] px-6 text-sm font-semibold uppercase tracking-[0.14em] text-white/88 hover:bg-white/[0.05] hover:text-white sm:px-8 sm:tracking-[0.16em]"
   );
 
+  const roomCtaClass = cn(
+    buttonVariants({ variant: "outline", size: "lg" }),
+    "rounded-full border border-amber-300/70 bg-transparent px-6 text-sm font-semibold uppercase tracking-[0.14em] text-amber-300 hover:bg-amber-300/10 hover:text-amber-200 sm:px-8 sm:tracking-[0.16em]"
+  );
+
   return (
     <div className="min-h-screen overflow-hidden bg-neutral-950 text-white">
       <section className="relative min-h-screen overflow-hidden">
@@ -292,10 +309,10 @@ export default function HomePageClient() {
               </motion.p>
               <motion.h1
                 variants={fadeUp}
-                className="mx-auto max-w-4xl text-4xl font-bold leading-[1.02] text-balance drop-shadow-[0_4px_22px_rgba(0,0,0,0.75)] sm:text-5xl lg:max-w-5xl lg:text-6xl"
+                className="mx-auto max-w-4xl text-4xl font-bold leading-[1.02] drop-shadow-[0_4px_22px_rgba(0,0,0,0.75)] sm:whitespace-nowrap sm:text-5xl lg:max-w-5xl lg:text-6xl"
               >
                 <span className="bg-gradient-to-r from-amber-100 via-yellow-50 to-amber-200 bg-clip-text text-transparent">
-                  Stay, Dine, and Celebrate at Hotel Rudra Regency
+                  Where Royalty Meets Refined Luxury
                 </span>
               </motion.h1>
               <motion.div variants={fadeUp} className="mt-8 flex w-full flex-col justify-center gap-3 sm:mt-9 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
@@ -484,7 +501,7 @@ export default function HomePageClient() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
             variants={stagger}
-            className="grid gap-6 md:grid-cols-2 xl:grid-cols-4"
+            className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
           >
             {facilities.map((facility, index) => (
               <motion.article
@@ -493,33 +510,31 @@ export default function HomePageClient() {
                 whileHover={{ y: -6 }}
                 className="overflow-hidden rounded-[30px] border border-white/10 bg-neutral-900/80 shadow-none"
               >
-                <div className="relative h-56 overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover transition-transform duration-700 hover:scale-105"
-                    style={{
-                      backgroundImage: `url('${facility.image}')`,
-                      backgroundPosition: facility.position,
-                    }}
-                  />
-                  <div
-                    className={`absolute inset-0 ${[
-                      "bg-gradient-to-t from-black/85 via-black/15 to-transparent",
-                      "bg-gradient-to-t from-black/85 via-amber-900/20 to-transparent",
-                      "bg-gradient-to-t from-black/85 via-yellow-900/15 to-transparent",
-                      "bg-gradient-to-t from-black/85 via-neutral-900/20 to-transparent",
-                    ][index]}`}
-                  />
-                  <div className="absolute left-5 top-5 rounded-full border border-white/10 bg-black/35 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-amber-300 backdrop-blur-sm">
-                    {facility.eyebrow}
+                <Link href={facility.href} className="group block h-full">
+                  <div className="relative h-72 overflow-hidden">
+                    <div
+                      className="absolute inset-0 bg-cover transition-transform duration-700 group-hover:scale-105"
+                      style={{
+                        backgroundImage: `url('${facility.image}')`,
+                        backgroundPosition: facility.position,
+                      }}
+                    />
+                    <div
+                      className={`absolute inset-0 ${[
+                        "bg-gradient-to-t from-black/90 via-black/18 to-transparent",
+                        "bg-gradient-to-t from-black/90 via-amber-900/18 to-transparent",
+                        "bg-gradient-to-t from-black/90 via-yellow-900/12 to-transparent",
+                        "bg-gradient-to-t from-black/90 via-neutral-900/18 to-transparent",
+                      ][index]}`}
+                    />
+                    <div className="absolute left-5 top-5 rounded-full border border-white/10 bg-black/35 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-amber-300 backdrop-blur-sm">
+                      {facility.eyebrow}
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 p-6">
+                      <h3 className="text-2xl font-semibold text-white transition group-hover:text-amber-100">{facility.title}</h3>
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="mb-3 text-2xl font-semibold text-white">{facility.title}</h3>
-                  <p className="mb-6 text-sm leading-7 text-neutral-400">{facility.description}</p>
-                  <Link href={facility.href} className="inline-flex items-center text-sm font-semibold uppercase tracking-[0.16em] text-amber-300 transition hover:text-amber-200">
-                    {facility.action}
-                  </Link>
-                </div>
+                </Link>
               </motion.article>
             ))}
           </motion.div>
@@ -567,7 +582,7 @@ export default function HomePageClient() {
                   <p className="mb-3 text-[11px] uppercase tracking-[0.22em] text-neutral-500">Popular</p>
                   <h3 className="mb-3 text-2xl font-semibold text-white">{room.title}</h3>
                   <p className="mb-6 text-sm leading-7 text-neutral-400">{room.description}</p>
-                  <Link href={createHotelInquiryLink(`the ${room.title} at Hotel Rudra Regency`)} className={cn(secondaryCtaClass, "w-full sm:w-auto")}>
+                  <Link href={createHotelInquiryLink(`the ${room.title} at Hotel Rudra Regency`)} className={cn(roomCtaClass, "w-full sm:w-auto")}>
                     Book Now
                   </Link>
                 </CardContent>
@@ -606,9 +621,9 @@ export default function HomePageClient() {
               <motion.div key={block.title} variants={fadeUp} className="h-full">
                 <Card className="group relative flex h-full overflow-hidden rounded-[30px] border-white/10 bg-[linear-gradient(180deg,rgba(26,26,26,0.96),rgba(10,10,10,0.98))] text-white shadow-none">
                   <div className={cn("absolute inset-x-0 top-0 h-24 bg-gradient-to-b", block.accent)} />
-                  <CardContent className="relative flex h-full w-full flex-col p-6">
+                  <CardContent className="relative grid h-full w-full grid-rows-[4.75rem_6rem_1fr_3.25rem] p-6">
                     <div className="flex items-start justify-between gap-4">
-                      <div className="min-h-[5.5rem]">
+                      <div className="min-h-[4.75rem]">
                         <p className="text-[11px] uppercase tracking-[0.22em] text-neutral-500">{block.subtitle}</p>
                         <h3 className="mt-3 text-2xl font-semibold text-white">{block.title}</h3>
                       </div>
@@ -617,9 +632,9 @@ export default function HomePageClient() {
                       </div>
                     </div>
 
-                    <p className="mt-4 min-h-[5.5rem] text-sm leading-7 text-neutral-400">{block.text}</p>
+                    <p className="mt-4 text-sm leading-7 text-neutral-400">{block.text}</p>
 
-                    <ul className="mt-6 grid min-h-[6.5rem] content-start gap-3">
+                    <ul className="mt-6 grid content-start gap-3 self-start">
                       {block.highlights.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <span className="mt-2 size-1.5 shrink-0 rounded-full bg-amber-200" />
@@ -628,8 +643,8 @@ export default function HomePageClient() {
                       ))}
                     </ul>
 
-                    <div className="mt-auto border-t border-white/10 pt-5">
-                      <Link href={block.href} className="inline-flex items-center text-sm font-semibold uppercase tracking-[0.14em] text-amber-200 transition hover:text-amber-100">
+                    <div className="flex items-end border-t border-white/10 pt-5">
+                      <Link href={block.href} className="inline-flex items-center whitespace-nowrap text-[12px] font-semibold uppercase tracking-[0.12em] text-amber-200 transition hover:text-amber-100 sm:text-[13px]">
                         {block.action}
                       </Link>
                     </div>

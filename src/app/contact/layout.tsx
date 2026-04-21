@@ -3,13 +3,15 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Hotel Rudra Regency",
   description:
-    "Contact Hotel Rudra Regency in Motihari for hotel booking, room reservations, banquet bookings, dining inquiries, and conference events.",
+    "Contact Hotel Rudra Regency in Motihari for luxury room reservations, banquet bookings, open terrace dining, high-tech meeting hall events, and inquiries about gym, spa, lounge, and bar facilities.",
   keywords: [
     "Hotel Rudra Regency contact",
     "hotel booking in Motihari",
     "room reservation in Motihari",
     "banquet booking in Motihari",
     "conference booking in Motihari",
+    "hotel facilities in Motihari",
+    "luxury hotel contact in Motihari",
   ],
   alternates: {
     canonical: "/contact",
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Hotel Rudra Regency in Motihari",
     description:
-      "Reach Hotel Rudra Regency for bookings, event planning, and hospitality inquiries in Motihari.",
+      "Reach Hotel Rudra Regency for bookings, event planning, dining reservations, and luxury hospitality inquiries in Motihari.",
     url: "https://rudraregency.com/contact",
     images: [
       {
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Contact Hotel Rudra Regency in Motihari",
-    description: "Contact us for room reservations, banquet bookings, dining, and conference inquiries.",
+    description: "Contact us for room reservations, banquet bookings, dining, conference events, and full-facility inquiries.",
     images: ["/images/hotel-rudra-regency-motihari-reception4.JPG"],
   },
 };

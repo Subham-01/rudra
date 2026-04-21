@@ -72,7 +72,7 @@ export default function ConferenceRoomPage() {
       <section className="relative min-h-[62vh] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-55"
-          style={{ backgroundImage: "url('/images/hotel-rudra-regency-motihari-reception6.JPG')" }}
+          style={{ backgroundImage: "url('/images/conference Hero  section.JPG')" }}
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute right-6 top-16 h-24 w-24 rounded-full bg-amber-400/10 blur-3xl sm:right-12 sm:h-28 sm:w-28" />
@@ -104,7 +104,7 @@ export default function ConferenceRoomPage() {
                 variants={fadeUp}
                 className="max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8"
               >
-                Host presentations, strategy sessions, training programs, and corporate discussions in a conference space designed for clarity, comfort, and smooth coordination.
+                Host presentations, strategy sessions, training programs, and corporate discussions in a high-tech meeting hall designed for clarity, comfort, and smooth coordination.
               </motion.p>
             </div>
           </motion.div>
@@ -129,7 +129,7 @@ export default function ConferenceRoomPage() {
               </span>
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-neutral-400 md:text-base">
-              Inspired by premium hotel meeting pages, simplified into a focused layout for quick decision-making.
+              A business-ready conference setup in Motihari with hospitality support, dining coordination, and premium stay access when required.
             </p>
           </motion.div>
 
@@ -196,7 +196,7 @@ export default function ConferenceRoomPage() {
             <div className="relative h-full min-h-[320px] overflow-hidden">
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/hotel-rudra-regency-motihari-reception4.JPG')" }}
+                style={{ backgroundImage: "url('/images/conference professional ambience.JPG')" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-black/35 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
@@ -204,7 +204,7 @@ export default function ConferenceRoomPage() {
                   Professional Ambience
                 </p>
                 <p className="max-w-lg text-lg leading-7 text-neutral-200">
-                  A premium business-ready environment with elegant interiors and hospitality support that keeps the experience polished without overcomplicating the layout.
+                  A premium business-ready environment with elegant interiors, hospitality support, and high-tech meeting capability that keeps the experience polished without overcomplicating the layout.
                 </p>
               </div>
             </div>
@@ -257,7 +257,7 @@ export default function ConferenceRoomPage() {
             variants={fadeUp}
             className="mx-auto mt-5 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg"
           >
-            Let our team help you plan a conference experience that feels professional, premium, and easy to manage.
+            Let our team help you plan a conference experience with meeting support, dining coordination, and luxury hospitality that feels professional, premium, and easy to manage.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap justify-center gap-4">
             <Link

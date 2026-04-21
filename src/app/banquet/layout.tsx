@@ -3,13 +3,15 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Banquet Hall in Motihari",
   description:
-    "Book the best banquet hall in Motihari at Hotel Rudra Regency for weddings, receptions, marriage functions, parties, and milestone events.",
+    "Book the best banquet hall in Motihari at Hotel Rudra Regency with a 10,000 sq ft event space, luxury rooms, dining support, lounge access, and premium hospitality for weddings, receptions, and celebrations.",
   keywords: [
     "banquet hall in Motihari",
     "best banquet hall in Motihari",
     "wedding banquet hall in Motihari",
     "marriage hall in Motihari",
     "party hall in Motihari",
+    "10000 sq ft banquet hall in Motihari",
+    "luxury wedding venue in Motihari",
   ],
   alternates: {
     canonical: "/banquet",
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Banquet Hall in Motihari | Hotel Rudra Regency",
     description:
-      "Elegant wedding and celebration venue in Motihari with premium banquet hall packages.",
+      "Elegant wedding and celebration venue in Motihari with a 10,000 sq ft banquet hall, premium room inventory, and hospitality support.",
     url: "https://rudraregency.com/banquet",
     images: [
       {
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Best Banquet Hall in Motihari | Hotel Rudra Regency",
-    description: "Premium banquet hall in Motihari for weddings, receptions, and celebrations.",
+    description: "Premium banquet hall in Motihari with large-format event hosting, dining support, and luxury stay options.",
     images: ["/images/hotel-rudra-regency-motihari-reception6.JPG"],
   },
 };

@@ -15,25 +15,27 @@ const diningExperiences = [
     title: "The Flavoresca Main Dining",
     description: "A refined indoor restaurant with warm lighting, plush seating, and a polished setting for family dining, celebrations, and elegant evening meals.",
     details: ["Luxury indoor seating", "Premium hospitality service", "Signature fine-dining ambience"],
-    image: "/images/restaurant (2).JPG",
+    image: "/images/flavoresca main dining  section.png",
   },
   {
     title: "Open Terrace Evenings",
     description: "An open terrace restaurant experience designed for breezy nights, premium lounge seating, and relaxed dining under the sky.",
     details: ["Open terrace atmosphere", "Day and night dining appeal", "Luxury outdoor setting"],
-    image: "/images/DSC08003.JPG",
+    image: "/images/open terrace evening  section.JPG",
   },
   {
     title: "Private Dining Comfort",
     description: "From family meals to hotel guests seeking privacy, our dining service is designed to bring comfort, taste, and premium presentation together.",
     details: ["Curated menu selections", "Comfort-first hospitality", "Ideal for couples and families"],
-    image: "/images/food.JPG",
+    image: "/images/private dining comfort section.JPG",
   },
 ];
 
 const featurePoints = [
   "Luxury indoor restaurant ambience",
   "Open terrace restaurant setting",
+  "Lounge-style evening atmosphere",
+  "Bar-ready social experience",
   "Premium family and couple dining",
   "Warm hospitality by Hotel Rudra Regency",
 ];
@@ -41,8 +43,8 @@ const featurePoints = [
 const signatureMoments = [
   {
     title: "Indoor Fine Dining",
-    text: "The Flavoresca Restaurant by Hotel Rudra Regency brings together polished interiors, comfortable seating, and a welcoming premium atmosphere in Motihari.",
-    image: "/images/restaurant.JPG",
+    text: "The Flavoresca Restaurant by Hotel Rudra Regency brings together polished interiors, comfortable seating, lounge ambience, and a welcoming premium atmosphere in Motihari.",
+    image: "/images/indoor fine dining .JPG",
   },
   {
     title: "Open Terrace Luxury",
@@ -103,7 +105,7 @@ export default function DiningPage() {
               </span>
             </h1>
             <p className="max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8 md:text-xl">
-              Discover a premium restaurant in Motihari where elegant indoor dining, open terrace evenings, and warm hospitality come together in one luxury culinary destination.
+              Discover a premium restaurant in Motihari where elegant indoor dining, open terrace evenings, lounge ambience, and warm hospitality come together in one luxury culinary destination.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <a
@@ -128,7 +130,7 @@ export default function DiningPage() {
               <p className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-4">Restaurant Branding</p>
               <h2 className="mb-6 text-3xl font-bold text-white text-balance sm:text-4xl">A luxury dining destination with a stronger identity</h2>
               <p className="text-base leading-8 text-neutral-400 mb-6">
-                The Flavoresca Restaurant by Hotel Rudra Regency is designed as a premium restaurant in Motihari for guests who want indoor elegance, open terrace charm, and memorable service in one destination.
+                The Flavoresca Restaurant by Hotel Rudra Regency is designed as a premium restaurant in Motihari for guests who want indoor elegance, open terrace charm, lounge-style ambience, and memorable service in one destination.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
                 {featurePoints.map((item) => (
@@ -150,6 +152,7 @@ export default function DiningPage() {
                   <ul className="space-y-4 text-amber-100">
                     <li>Elegant indoor restaurant ambience</li>
                     <li>Luxury open terrace evenings</li>
+                    <li>Lounge and bar-style social atmosphere</li>
                     <li>Warm hospitality for families and couples</li>
                     <li>Premium dining by Hotel Rudra Regency</li>
                   </ul>
@@ -199,7 +202,6 @@ export default function DiningPage() {
               <div className={`${index % 2 === 1 ? 'lg:order-2' : ''} min-h-[320px] bg-cover bg-center`} style={{ backgroundImage: `url('${moment.image}')` }} />
               <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} flex items-center p-5 sm:p-8 md:p-10`}>
                 <div>
-                  <p className="mb-3 text-sm uppercase tracking-[0.28em] text-amber-300">Signature Dining</p>
                   <h3 className="mb-4 text-3xl font-semibold text-white text-balance">{moment.title}</h3>
                   <p className="text-base leading-8 text-neutral-300 sm:text-lg">{moment.text}</p>
                 </div>
@@ -208,23 +210,12 @@ export default function DiningPage() {
           ))}
         </section>
 
-        <section className="mt-12 grid gap-6 sm:mt-16 sm:gap-8 lg:grid-cols-2">
-          <motion.div initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900 shadow-2xl shadow-amber-500/5 sm:rounded-[32px]">
-            <div
-              className="h-80 bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/DSC07740.JPG')" }}
-            />
-            <div className="p-5 sm:p-8">
-              <p className="text-sm uppercase tracking-[0.28em] text-neutral-500 mb-4">Luxury open terrace</p>
-              <p className="text-lg leading-8 text-neutral-300">A stylish terrace setting with premium outdoor seating, soft evening lighting, and the relaxed luxury that makes The Flavoresca Restaurant stand out in Motihari.</p>
-            </div>
-          </motion.div>
-
+        <section className="mt-12 sm:mt-16">
           <motion.div initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="flex min-h-[320px] items-center justify-center rounded-[28px] bg-black p-5 text-center text-white shadow-2xl sm:min-h-[360px] sm:rounded-[32px] sm:p-10">
             <div>
               <h3 className="mb-4 text-3xl font-semibold text-amber-300 text-balance">Reserve The Flavoresca experience</h3>
               <p className="mb-6 text-base leading-8 text-amber-200 sm:text-lg">
-                Whether you are planning a family dinner, a premium terrace evening, or a refined meal during your hotel stay, The Flavoresca Restaurant by Hotel Rudra Regency is ready to host you.
+                Whether you are planning a family dinner, a premium terrace evening, or a refined lounge-style meal during your hotel stay, The Flavoresca Restaurant by Hotel Rudra Regency is ready to host you.
               </p>
               <Link href={createHotelInquiryLink("a dining reservation at The Flavoresca Restaurant", ["Location: Hotel Rudra Regency, Motihari", "Reservation type: Table booking"]) } className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-black shadow-lg hover:bg-amber-300 transition">
                 Reserve your table

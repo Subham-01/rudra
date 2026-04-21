@@ -3,13 +3,16 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Rooms in Motihari",
   description:
-    "Explore room booking in Motihari with Premium Deluxe Rooms, Royal Semi-Suites, and Royal Suites at Hotel Rudra Regency, one of the best hotels in Motihari.",
+    "Explore room booking in Motihari with Premium Deluxe Rooms, Royal Semi-Suites, and Royal Suites at Hotel Rudra Regency, a luxury hotel with gym, spa, lounge, bar, open terrace restaurant, banquet hall, and meeting facilities.",
   keywords: [
     "rooms in Motihari",
     "room booking in Motihari",
     "luxury rooms in Motihari",
     "best hotel rooms in Motihari",
     "premium hotel in Motihari",
+    "hotel with gym in Motihari",
+    "hotel with spa in Motihari",
+    "luxury stay in Motihari",
   ],
   alternates: {
     canonical: "/rooms",
@@ -17,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Luxury Rooms in Motihari | Hotel Rudra Regency",
     description:
-      "Book luxury rooms in Motihari at Hotel Rudra Regency with premium comfort and hospitality.",
+      "Book luxury rooms in Motihari at Hotel Rudra Regency with premium comfort, gym, spa, lounge, restaurant, and full-service hospitality.",
     url: "https://rudraregency.com/rooms",
     images: [
       {
@@ -31,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Luxury Rooms in Motihari | Hotel Rudra Regency",
-    description: "Book Premium Deluxe Rooms, Royal Semi-Suites, and Royal Suites in Motihari.",
+    description: "Book luxury rooms in Motihari with premium facilities including restaurant, lounge, gym, and spa access.",
     images: ["/images/Hotels-in-motihari.JPG"],
   },
 };

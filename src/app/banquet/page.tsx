@@ -98,7 +98,7 @@ export default function BanquetPage() {
       <section className="relative min-h-[58vh] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-55"
-          style={{ backgroundImage: "url('/images/hotel-rudra-regency-motihari-reception6.JPG')" }}
+          style={{ backgroundImage: "url('/images/banquet hall hero section.JPG')" }}
         />
         <div className="absolute inset-0 bg-black/22" />
         <div className="absolute right-6 top-16 h-24 w-24 rounded-full bg-amber-400/10 blur-3xl sm:right-12 sm:h-28 sm:w-28" />
@@ -129,7 +129,7 @@ export default function BanquetPage() {
               variants={fadeUp}
               className="max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8"
             >
-              Discover premium event packages with elegant halls, room inventory, and curated inclusions designed for unforgettable weddings, receptions, and milestone celebrations.
+              Discover premium event packages with a 10,000 sq ft banquet hall, luxury room inventory, dining support, and curated inclusions designed for unforgettable weddings, receptions, and milestone celebrations.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
               <Link
@@ -229,12 +229,12 @@ export default function BanquetPage() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
             variants={stagger}
-            className="overflow-hidden rounded-[34px] border border-white/10 bg-neutral-900/80 shadow-2xl shadow-amber-500/5 backdrop-blur-xl"
+            className="h-full overflow-hidden rounded-[34px] border border-white/10 bg-neutral-900/80 shadow-2xl shadow-amber-500/5 backdrop-blur-xl"
           >
-            <div className="relative h-72 overflow-hidden">
+            <div className="relative h-full min-h-[22rem] overflow-hidden lg:min-h-full">
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/open-terrace-motihari.JPG')" }}
+                style={{ backgroundImage: "url('/images/venue atmosphere .JPG')" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
@@ -242,7 +242,7 @@ export default function BanquetPage() {
                   Venue Atmosphere
                 </p>
                 <p className="max-w-lg text-lg leading-7 text-neutral-200">
-                  Elegant halls, polished interiors, and refined hospitality for premium wedding and celebration experiences.
+                  Elegant halls, polished interiors, luxury stay support, and refined hospitality for premium wedding and celebration experiences.
                 </p>
               </div>
             </div>
@@ -329,11 +329,8 @@ export default function BanquetPage() {
               Ready to Host a Grand Event?
             </span>
           </motion.h3>
-          <motion.p
-            variants={fadeUp}
-            className="mx-auto mt-5 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg"
-          >
-            Speak with our team to reserve the right banquet package, customize your event details, and plan a celebration with confidence.
+          <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg">
+            Speak with our team to reserve the right banquet package, align dining and room requirements, and plan a celebration with confidence at one of Motihari's premium event destinations.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-8">
             <Link

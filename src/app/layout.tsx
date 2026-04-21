@@ -108,7 +108,7 @@ const structuredData = [
     "@type": "Hotel",
     name: "Hotel Rudra Regency",
     description:
-      "Best luxury hotel in Motihari offering premium rooms, banquet hall bookings, dining, and conference facilities.",
+      "Best luxury hotel in Motihari offering premium rooms, gym, spa, lounge, bar, open terrace restaurant dining, a 10,000 sq ft banquet hall, and a high-tech meeting hall.",
     url: "https://rudraregency.com",
     image: [
       "https://rudraregency.com/images/hotel-rudra-regency-motihari-reception4.JPG",
@@ -151,6 +151,31 @@ const structuredData = [
       {
         "@type": "LocationFeatureSpecification",
         name: "Conference Room",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Gym",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Spa",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Lounge",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Bar",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "High-Tech Meeting Hall",
         value: true,
       },
     ],

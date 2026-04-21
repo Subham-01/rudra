@@ -27,7 +27,7 @@ export default function ContactPage() {
               <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">Get in touch with Hotel Rudra Regency</span>
             </h1>
             <p className="max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg">
-              Reach out for reservations, event planning, or any questions about your stay. Our team is ready to assist you with warm and attentive hospitality.
+              Reach out for reservations, event planning, dining, conference bookings, or any questions about your stay. Our team can guide you on luxury rooms, banquet events, gym, spa, lounge, bar, and restaurant facilities.
             </p>
           </motion.div>
         </div>
@@ -40,7 +40,7 @@ export default function ContactPage() {
               <p className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-4">We are here to help</p>
               <h2 className="mb-4 text-3xl font-bold text-white text-balance sm:text-4xl">Plan your stay or event with confidence</h2>
               <p className="text-base leading-8 text-neutral-400">
-                Our concierge team is available to assist with room reservations, banquet inquiries, dining requests, and local recommendations.
+                Our concierge team is available to assist with room reservations, banquet inquiries, dining requests, conference planning, and information about the hotel's gym, spa, lounge, bar, and other guest facilities.
               </p>
             </div>
 

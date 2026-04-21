@@ -4,7 +4,7 @@ import HomePageClient from "./components/HomePageClient";
 
 const pageTitle = "Best Hotel in Motihari | Rooms, Banquet Hall, Dining";
 const pageDescription =
-  "Hotel Rudra Regency is a luxury hotel in Motihari with premium rooms, banquet hall bookings, open terrace dining, and conference facilities for stays, weddings, and business travel.";
+  "Hotel Rudra Regency is a luxury hotel in Motihari with premium rooms, gym, spa, lounge, bar, open terrace restaurant dining, a 10,000 sq ft banquet hall, and a high-tech meeting hall for stays, weddings, and business travel.";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -88,7 +88,7 @@ const homepageStructuredData = [
         name: "Why choose Hotel Rudra Regency in Motihari?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Hotel Rudra Regency combines premium rooms, a banquet hall, open terrace dining, and conference facilities in one location, making it suitable for stays, events, and business visits.",
+          text: "Hotel Rudra Regency combines luxury rooms, a 10,000 sq ft banquet hall, open terrace restaurant dining, gym, spa, lounge, bar, and a high-tech meeting hall in one destination for stays, events, and business visits.",
         },
       },
       {
@@ -128,7 +128,7 @@ const homepageStructuredData = [
         name: "Does Hotel Rudra Regency offer dining options?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. The hotel offers an open terrace restaurant and in-house dining with a premium hospitality experience.",
+          text: "Yes. The hotel offers an open terrace restaurant, premium dining ambience, lounge-style seating, and a hospitality experience suited to family meals and social evenings.",
         },
       },
       {

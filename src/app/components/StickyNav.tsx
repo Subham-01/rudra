@@ -51,14 +51,14 @@ export default function StickyNav() {
         <div className="rounded-[20px] border border-white/10 bg-neutral-950/92 p-1 backdrop-blur-xl">
           <nav className="flex items-center gap-3 px-1 py-0.5 sm:px-2">
             <Link href="/" className="inline-flex shrink-0 items-center rounded-[18px] px-0.5 py-0.5">
-              <div className="flex h-14 w-40 items-center justify-center overflow-hidden sm:h-[4.25rem] sm:w-52 lg:h-20 lg:w-64">
+              <div className="flex h-14 w-40 items-center justify-start overflow-hidden sm:h-[4.25rem] sm:w-52 lg:h-20 lg:w-64">
                 <Image
                   src="/images/Logo-removebg-preview.png"
                   alt="Hotel Rudra Regency"
                   width={512}
                   height={512}
                   priority
-                  className="-ml-5 -mt-1 h-32 w-auto max-w-none object-contain sm:-ml-7 sm:-mt-1.5 sm:h-40 lg:-ml-9 lg:-mt-2 lg:h-48"
+                  className="-mt-1 h-32 w-auto max-w-none object-contain sm:-mt-1.5 sm:h-40 lg:-mt-2 lg:h-48"
                 />
               </div>
             </Link>

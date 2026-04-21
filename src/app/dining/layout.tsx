@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "The Flavoresca Restaurant in Motihari",
   description:
-    "Discover The Flavoresca Restaurant by Hotel Rudra Regency in Motihari for premium indoor dining, open terrace evenings, and luxury restaurant ambience.",
+    "Discover The Flavoresca Restaurant by Hotel Rudra Regency in Motihari for premium indoor dining, open terrace evenings, lounge ambience, bar service, and a luxury restaurant experience.",
   keywords: [
     "The Flavoresca Restaurant",
     "The Flavoresca Restaurant by Hotel Rudra Regency",
@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     "luxury restaurant in Motihari",
     "family restaurant in Motihari",
     "rooftop dining in Motihari",
+    "restaurant with lounge in Motihari",
+    "bar in Motihari hotel",
   ],
   alternates: {
     canonical: "/dining",
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Flavoresca Restaurant in Motihari | Hotel Rudra Regency",
     description:
-      "Premium restaurant dining and open terrace ambience at The Flavoresca Restaurant by Hotel Rudra Regency in Motihari.",
+      "Premium restaurant dining, open terrace ambience, lounge seating, and elevated hospitality at The Flavoresca Restaurant in Motihari.",
     url: "https://rudraregency.com/dining",
     images: [
       {
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "The Flavoresca Restaurant in Motihari | Hotel Rudra Regency",
-    description: "Luxury indoor dining and open terrace restaurant experience in Motihari.",
+    description: "Luxury indoor dining, lounge ambience, bar-ready evenings, and open terrace restaurant experience in Motihari.",
     images: ["/images/DSC08003.JPG"],
   },
 };

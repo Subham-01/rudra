@@ -89,29 +89,29 @@ const features = [
     icon: "✨",
     title: "Luxury Comfort",
     description:
-      "Experience premium comfort with spacious rooms, elegant interiors, and plush bedding designed for a relaxing stay.",
+      "Experience premium comfort with spacious rooms, elegant interiors, plush bedding, and a hospitality experience designed for a relaxing stay.",
   },
   {
-    icon: "💻",
-    title: "Modern Amenities",
+    icon: "🏋️",
+    title: "Wellness & Amenities",
     description:
-      "Enjoy high-speed WiFi, smart TV, air conditioning, and all essential facilities for a seamless and comfortable experience.",
+      "Enjoy modern amenities along with access to gym, spa, lounge spaces, and the comforts expected from a luxury hotel in Motihari.",
   },
   {
-    icon: "📍",
-    title: "Perfect Location",
+    icon: "🍽️",
+    title: "Full-Service Hospitality",
     description:
-      "Located near Bariya Devi Mandir, our hotel offers easy access to key attractions and a peaceful environment.",
+      "Stay connected to open terrace dining, banquet experiences, and business-ready spaces within one premium hospitality destination.",
   },
 ];
 
 const whyChooseUs = [
-  "A complete experience of stay, dining, and events",
-  "Perfect blend of luxury, convenience, and hospitality",
-  "Professional and attentive service at every step",
-  "Elegant spaces for stays, dining, and celebrations",
-  "Thoughtfully designed rooms for comfort and relaxation",
-  "Experience refined comfort with modern amenities",
+  "A complete experience of luxury stay, dining, wellness, and events",
+  "Premium rooms backed by gym, spa, lounge, and bar facilities",
+  "Professional and attentive hospitality for families, couples, and business travelers",
+  "Elegant spaces for stays, dining, celebrations, and corporate visits",
+  "Thoughtfully designed rooms for comfort, privacy, and refined relaxation",
+  "A premium hotel in Motihari with modern amenities and direct booking support",
 ];
 
 export default function RoomsPage() {
@@ -155,7 +155,7 @@ export default function RoomsPage() {
                 variants={heroVariants}
                 className="max-w-3xl text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8 md:text-xl"
               >
-                Experience comfort, elegance, and modern amenities at one of the best hotels in Motihari.
+                Experience comfort, elegance, and modern amenities at one of the best luxury hotels in Motihari, with premium rooms, wellness facilities, dining, and event-ready hospitality.
               </motion.p>
             </div>
 

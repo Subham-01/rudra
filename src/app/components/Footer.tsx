@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MailIcon, MapPinnedIcon, PhoneIcon } from "lucide-react";
+import { BookOpenTextIcon, CircleHelpIcon, MailIcon, MapPinnedIcon, PhoneIcon } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
@@ -38,6 +38,11 @@ const supportLinks = [
   { label: "Call Us", href: "tel:+918651600015" },
   { label: "Email Us", href: "mailto:info@rudraregency.com" },
   { label: "WhatsApp", href: "https://wa.me/918651600015" },
+];
+
+const footerPageLinks = [
+  { label: "About Us", href: "/about", icon: CircleHelpIcon },
+  { label: "Blogs", href: "/blogs", icon: BookOpenTextIcon },
 ];
 
 export default function Footer() {
@@ -92,6 +97,22 @@ export default function Footer() {
                   </svg>
                 </Link>
               ))}
+            </div>
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              {footerPageLinks.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="inline-flex items-center gap-2 rounded-full border border-amber-400/12 bg-white/[0.03] px-4 py-2 text-sm font-medium text-neutral-200 transition hover:border-amber-300/30 hover:bg-amber-400/10 hover:text-white"
+                  >
+                    <Icon className="size-4 text-amber-200" />
+                    <span>{item.label}</span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
 

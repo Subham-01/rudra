@@ -3,8 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --blue-primary: #006eff;
-  --blue-secondary: #3b82f6;
+  --gold-primary: #d4af37;
+  --gold-secondary: #f59e0b;
+  --black-primary: #000000;
+  --black-secondary: #1f2937;
 }
 
 @theme inline {
@@ -44,8 +46,10 @@ input, select {
 }
 
 input:focus, select:focus {
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
 }
+
+/* Custom animations */
 
 /* Custom animations */
 @keyframes fadeInUp {
@@ -129,16 +133,16 @@ input:focus, select:focus {
 
 /* Custom button styles */
 .btn-primary {
-  @apply bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  @apply bg-gradient-to-r from-amber-400 to-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105;
+  box-shadow: 0 4px 15px rgba(217, 168, 50, 0.28);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 25px rgba(217, 168, 50, 0.38);
 }
 
 .btn-secondary {
-  @apply bg-white text-blue-600 px-6 py-3 rounded-full font-semibold border-2 border-blue-600 hover:bg-blue-50 transition-all duration-300;
+  @apply bg-transparent text-amber-300 px-6 py-3 rounded-full font-semibold border border-amber-400/40 hover:bg-amber-400/10 transition-all duration-300;
 }
 
 /* Card hover effects with depth */

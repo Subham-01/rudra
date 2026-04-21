@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+import StickyNav from "./components/StickyNav";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,10 +16,146 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rudra Hotel - Luxury Accommodations & Exceptional Service",
-  description: "Experience world-class hospitality at Rudra Hotel. Book your perfect stay with premium amenities, stunning locations, and unforgettable experiences.",
-  keywords: "hotel, luxury accommodation, booking, vacation, travel, hospitality",
+  metadataBase: new URL("https://rudraregency.com"),
+  applicationName: "Hotel Rudra Regency",
+  title: {
+    default: "Hotel Rudra Regency | Luxury Hotel in Motihari",
+    template: "%s | Hotel Rudra Regency",
+  },
+  description:
+    "Hotel Rudra Regency is among the best hotels in Motihari, offering luxury rooms, banquet hall bookings, open terrace dining, conference facilities, and premium stays for families, business travelers, and events.",
+  keywords: [
+    "Hotel Rudra Regency",
+    "hotel in Motihari",
+    "best hotel in Motihari",
+    "luxury hotel in Motihari",
+    "best luxury hotel in Motihari",
+    "hotels in Motihari",
+    "premium hotels in Motihari",
+    "top hotels in Motihari",
+    "hotel booking in Motihari",
+    "room booking in Motihari",
+    "banquet hall in Motihari",
+    "best banquet hall in Motihari",
+    "wedding banquet hall in Motihari",
+    "marriage hall in Motihari",
+    "conference hall in Motihari",
+    "meeting hall in Motihari",
+    "restaurant in Motihari",
+    "open terrace restaurant in Motihari",
+    "rooms in Motihari",
+    "stay in Motihari",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://rudraregency.com",
+    siteName: "Hotel Rudra Regency",
+    title: "Hotel Rudra Regency | Luxury Hotel in Motihari",
+    description:
+      "Book premium rooms, banquet celebrations, dining experiences, and conference events at one of the best hotels in Motihari.",
+    images: [
+      {
+        url: "/images/hotel-rudra-regency-motihari-reception4.JPG",
+        width: 1200,
+        height: 630,
+        alt: "Hotel Rudra Regency reception and premium hotel ambience",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hotel Rudra Regency | Luxury Hotel in Motihari",
+    description:
+      "Best luxury hotel in Motihari for rooms, dining, banquet hall events, and conference bookings.",
+    images: ["/images/hotel-rudra-regency-motihari-reception4.JPG"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  category: "hospitality",
+  manifest: "/manifest.webmanifest",
 };
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Hotel Rudra Regency",
+    url: "https://rudraregency.com",
+    description:
+      "Official website of Hotel Rudra Regency, a premium hotel in Motihari for stays, dining, weddings, and corporate events.",
+    inLanguage: "en-IN",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    name: "Hotel Rudra Regency",
+    description:
+      "Best luxury hotel in Motihari offering premium rooms, banquet hall bookings, dining, and conference facilities.",
+    url: "https://rudraregency.com",
+    image: [
+      "https://rudraregency.com/images/hotel-rudra-regency-motihari-reception4.JPG",
+      "https://rudraregency.com/images/hotel-rudra-regency-motihari-reception6.JPG",
+      "https://rudraregency.com/images/Hotels-in-motihari.JPG",
+    ],
+    telephone: "+91 8651600015",
+    email: "info@rudraregency.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Chandrahiya, Chararhiya",
+      addressLocality: "Motihari",
+      addressRegion: "Bihar",
+      postalCode: "845401",
+      addressCountry: "IN",
+    },
+    areaServed: "Motihari",
+    priceRange: "₹₹",
+    sameAs: [
+      "https://www.facebook.com/hotelrudraregency7",
+      "https://www.instagram.com/hotel.rudra.regency?igsh=MTUzbmN6dnJ6bGJidA==",
+      "https://wa.me/+9186516000015",
+    ],
+    amenityFeature: [
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Luxury Rooms",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Banquet Hall",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Open Terrace Restaurant",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Conference Room",
+        value: true,
+      },
+    ],
+  },
+];
 
 export default function RootLayout({
   children,
@@ -28,7 +167,16 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Script
+          id="hotel-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <StickyNav />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

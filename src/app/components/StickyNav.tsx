@@ -48,17 +48,17 @@ export default function StickyNav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-gradient-to-b from-black/40 via-black/20 to-transparent">
       <div className="mx-auto max-w-7xl px-4 pt-2 sm:px-6 sm:pt-3 lg:px-8">
-        <div className="rounded-[20px] border border-white/10 bg-neutral-950/92 p-1.5 backdrop-blur-xl">
-          <nav className="flex items-center gap-3 px-1.5 py-1 sm:px-2.5">
-            <Link href="/" className="inline-flex shrink-0 items-center rounded-[18px] px-1 py-1">
-              <div className="flex h-12 w-28 items-center justify-center overflow-hidden sm:h-14 sm:w-36 lg:h-16 lg:w-44">
+        <div className="rounded-[20px] border border-white/10 bg-neutral-950/92 p-1 backdrop-blur-xl">
+          <nav className="flex items-center gap-3 px-1 py-0.5 sm:px-2">
+            <Link href="/" className="inline-flex shrink-0 items-center rounded-[18px] px-0.5 py-0.5">
+              <div className="flex h-14 w-40 items-center justify-center overflow-hidden sm:h-[4.25rem] sm:w-52 lg:h-20 lg:w-64">
                 <Image
                   src="/images/Logo-removebg-preview.png"
                   alt="Hotel Rudra Regency"
                   width={512}
                   height={512}
                   priority
-                  className="-ml-4 h-20 w-auto max-w-none object-contain sm:-ml-5 sm:h-24 lg:-ml-7 lg:h-28"
+                  className="-ml-5 -mt-1 h-32 w-auto max-w-none object-contain sm:-ml-7 sm:-mt-1.5 sm:h-40 lg:-ml-9 lg:-mt-2 lg:h-48"
                 />
               </div>
             </Link>

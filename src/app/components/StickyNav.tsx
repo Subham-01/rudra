@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import {
   MenuIcon,
@@ -39,6 +40,7 @@ function isActivePath(pathname: string, href: string) {
 
 export default function StickyNav() {
   const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
   const bookingHref = createHotelInquiryLink("a stay at Hotel Rudra Regency in Motihari");
   const primaryActionClass = cn(
     buttonVariants({ size: "lg" }),
@@ -101,7 +103,7 @@ export default function StickyNav() {
                 Book
               </Link>
 
-              <Sheet>
+              <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
                 <SheetTrigger
                   render={
                     <button
@@ -135,6 +137,7 @@ export default function StickyNav() {
                           <Link
                             key={item.href}
                             href={item.href}
+                            onClick={() => setMobileOpen(false)}
                             className={cn(
                               "flex items-center rounded-[18px] border border-white/8 bg-white/[0.02] px-4 py-4 text-sm font-medium text-neutral-200 transition hover:bg-white/[0.05]",
                               isActive && "bg-white/[0.06] text-white"

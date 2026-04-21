@@ -25,20 +25,17 @@ const highlights = [
   "Banquet spaces for weddings, receptions, and celebrations",
   "Restaurant and open terrace dining experiences",
   "Conference-ready hospitality with premium support",
+  "Specially designed rooms and facilities for differently abled guests",
 ];
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
-      <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-black">
-        <Image
-          src="/images/_Facebook Cover.png"
-          alt="Hotel Rudra Regency — About Us"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+      <section className="relative flex min-h-[35vh] items-end overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-950 via-neutral-950 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+        <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-yellow-400/20 blur-3xl" />
+        <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-amber-300/20 blur-3xl" />
         <div className="relative mx-auto w-full max-w-6xl px-4 pb-6 text-center sm:px-6 sm:pb-8 lg:px-8 lg:pb-10">
           <h1 className="mx-auto max-w-4xl text-2xl font-bold leading-[1.1] sm:text-3xl lg:text-4xl">
             <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
@@ -48,13 +45,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <main className="mx-auto max-w-7xl px-4 pt-6 pb-14 sm:px-6 sm:pt-8 sm:pb-16 lg:px-8 lg:pt-10 lg:pb-20">
         <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
           <div className="rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[32px] sm:p-8 lg:p-10">
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">Our Story</p>
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">About Us</p>
             <h2 className="mb-5 text-3xl font-bold text-white sm:text-4xl">Designed to host every kind of guest journey</h2>
             <p className="text-base leading-8 text-neutral-400">
-              Whether guests arrive for a premium stay, a wedding function, a family dinner, or a business gathering, Hotel Rudra Regency is structured to make the experience smooth, polished, and memorable. The space, service, and atmosphere are all shaped around dependable hospitality with a luxury edge.
+              Hotel Rudra Regency is built around one idea — that every guest deserves a stay, meal, or event that feels effortless and well-considered. From the room interiors to banquet setups and dining experiences, each space reflects genuine care and attention to detail. Whether it is a quiet overnight stay or a grand celebration, we ensure the experience is always smooth and memorable. Our team takes pride in warm, attentive service that makes every visit feel personal and valued. We are constantly evolving our spaces and offerings to match the expectations of modern guests without losing the warmth that defines us. Located in Motihari, we have grown into a trusted name for families, professionals, and event planners who value quality hospitality.
             </p>
           </div>
 
@@ -117,6 +114,7 @@ export default function AboutPage() {
                 From luxury rooms and banquet celebrations to Flavoresca dining and business visits, every detail is guided by comfort, care, and quality. It is our privilege to host you, and we remain committed to making every visit to Hotel Rudra Regency feel effortless, refined, and welcoming.
               </p>
             </div>
+            <p className="mt-8 text-center text-sm italic tracking-wide text-amber-400/70">— Thank You —</p>
           </div>
         </section>
 

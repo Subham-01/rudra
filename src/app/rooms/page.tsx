@@ -98,6 +98,12 @@ const features = [
       "Enjoy modern amenities along with access to gym, spa, lounge spaces, and the comforts expected from a luxury hotel in Motihari.",
   },
   {
+    icon: "♿",
+    title: "Accessible Facilities",
+    description:
+      "Specially designed rooms and facilities for differently abled guests, ensuring a comfortable, barrier-free, and welcoming stay for everyone.",
+  },
+  {
     icon: "🍽️",
     title: "Full-Service Hospitality",
     description:
@@ -111,6 +117,7 @@ const whyChooseUs = [
   "Professional and attentive hospitality for families, couples, and business travelers",
   "Elegant spaces for stays, dining, celebrations, and corporate visits",
   "Thoughtfully designed rooms for comfort, privacy, and refined relaxation",
+  "Specially equipped rooms and facilities for differently abled guests",
   "A premium hotel in Motihari with modern amenities and direct booking support",
 ];
 
@@ -192,7 +199,7 @@ export default function RoomsPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 gap-5 md:grid-cols-3"
+            className="grid grid-cols-2 gap-5 lg:grid-cols-4"
           >
             {features.map((feature) => (
               <motion.div

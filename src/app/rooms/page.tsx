@@ -125,8 +125,8 @@ export default function RoomsPage() {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/45 to-neutral-950" />
-        <div className="absolute top-20 right-10 h-24 w-24 rounded-full bg-amber-400/10 blur-3xl" />
-        <div className="absolute bottom-24 left-10 h-44 w-44 rounded-full bg-yellow-400/10 blur-3xl" />
+        <div className="absolute right-6 top-20 h-20 w-20 rounded-full bg-amber-400/10 blur-3xl sm:right-10 sm:h-24 sm:w-24" />
+        <div className="absolute bottom-20 left-4 h-28 w-28 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-24 sm:left-10 sm:h-44 sm:w-44" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 md:pb-20 lg:px-8">
           <motion.div
@@ -138,13 +138,13 @@ export default function RoomsPage() {
             <div>
               <motion.p
                 variants={heroVariants}
-                className="mb-4 text-sm font-medium uppercase tracking-[0.38em] text-amber-300"
+                className="mb-4 text-[11px] font-medium uppercase tracking-[0.3em] text-amber-300 sm:text-sm sm:tracking-[0.38em]"
               >
                 Stay Collection
               </motion.p>
               <motion.h1
                 variants={heroVariants}
-                className="mb-6 text-4xl font-bold leading-tight md:text-6xl"
+                className="mb-5 text-4xl font-bold leading-[1.02] text-balance sm:text-5xl lg:text-6xl"
               >
                 <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
                   Luxury Rooms in Motihari
@@ -152,7 +152,7 @@ export default function RoomsPage() {
               </motion.h1>
               <motion.p
                 variants={heroVariants}
-                className="max-w-3xl text-lg leading-8 text-neutral-300 md:text-xl"
+                className="max-w-3xl text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8 md:text-xl"
               >
                 Experience comfort, elegance, and modern amenities at one of the best hotels in Motihari.
               </motion.p>
@@ -160,7 +160,7 @@ export default function RoomsPage() {
 
             <motion.div
               variants={heroVariants}
-              className="rounded-[28px] border border-white/10 bg-neutral-950/70 p-4 shadow-2xl shadow-amber-500/5 backdrop-blur-xl md:p-5"
+              className="rounded-[24px] border border-white/10 bg-neutral-950/70 p-4 shadow-2xl shadow-amber-500/5 backdrop-blur-xl md:rounded-[28px] md:p-5"
             >
               <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.24em] text-amber-300">
                 Room Highlights
@@ -184,7 +184,7 @@ export default function RoomsPage() {
         </div>
       </section>
 
-      <section className="relative z-10 -mt-10 pb-8">
+      <section className="relative z-10 -mt-8 pb-8 sm:-mt-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}
@@ -197,7 +197,7 @@ export default function RoomsPage() {
               <motion.div
                 key={feature.title}
                 variants={itemVariants}
-                className="rounded-[28px] border border-white/10 bg-neutral-900/85 p-6 shadow-xl shadow-amber-500/5 backdrop-blur-xl transition-all hover:-translate-y-1"
+                className="rounded-[24px] border border-white/10 bg-neutral-900/85 p-5 shadow-xl shadow-amber-500/5 backdrop-blur-xl transition-all hover:-translate-y-1 sm:rounded-[28px] sm:p-6"
               >
                 <div className="mb-4 text-4xl">{feature.icon}</div>
                 <h3 className="mb-3 text-xl font-semibold text-white">{feature.title}</h3>
@@ -208,7 +208,7 @@ export default function RoomsPage() {
         </div>
       </section>
 
-      <section className="bg-neutral-950 py-14 md:py-16">
+      <section className="bg-neutral-950 py-12 sm:py-14 md:py-16">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -225,7 +225,7 @@ export default function RoomsPage() {
             </motion.p>
             <motion.h2
               variants={itemVariants}
-              className="mb-4 text-3xl font-bold text-white md:text-5xl"
+              className="mb-4 text-3xl font-bold text-white text-balance sm:text-4xl md:text-5xl"
             >
               A Curated Collection of Elegant Stays
             </motion.h2>
@@ -245,7 +245,7 @@ export default function RoomsPage() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={containerVariants}
-                className="grid overflow-hidden rounded-[34px] border border-white/10 bg-neutral-900/85 shadow-2xl shadow-amber-500/5 backdrop-blur-xl lg:grid-cols-2"
+                className="grid overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900/85 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[34px] lg:grid-cols-2"
               >
                 <motion.div
                   variants={itemVariants}
@@ -270,7 +270,7 @@ export default function RoomsPage() {
 
                 <motion.div
                   variants={itemVariants}
-                  className={`${index % 2 === 1 ? 'lg:order-1' : ''} flex flex-col p-6 md:p-7 lg:p-8`}
+                  className={`${index % 2 === 1 ? 'lg:order-1' : ''} flex flex-col p-5 sm:p-6 md:p-7 lg:p-8`}
                 >
                   <div className="mb-5">
                     <p className="mb-3 text-xs font-medium uppercase tracking-[0.26em] text-amber-300">
@@ -301,7 +301,7 @@ export default function RoomsPage() {
                   <div className="mt-auto flex">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-black shadow-lg shadow-amber-500/20 transition hover:shadow-amber-500/35"
+                      className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-black shadow-lg shadow-amber-500/20 transition hover:shadow-amber-500/35 sm:w-auto"
                     >
                       Check Availability
                     </Link>
@@ -313,14 +313,14 @@ export default function RoomsPage() {
         </div>
       </section>
 
-      <section className="bg-neutral-900 py-16">
+      <section className="bg-neutral-900 py-14 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="rounded-[34px] border border-white/10 bg-neutral-950/80 p-8 shadow-2xl shadow-amber-500/5 md:p-10"
+            className="rounded-[28px] border border-white/10 bg-neutral-950/80 p-5 shadow-2xl shadow-amber-500/5 sm:rounded-[34px] sm:p-8 md:p-10"
           >
             <motion.div variants={itemVariants} className="mb-8 text-center">
               <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
@@ -352,21 +352,21 @@ export default function RoomsPage() {
         </div>
       </section>
 
-      <section className="bg-neutral-950 py-16">
+      <section className="bg-neutral-950 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="rounded-[36px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-8 py-12 text-center shadow-2xl shadow-amber-500/10"
+            className="rounded-[30px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-5 py-10 text-center shadow-2xl shadow-amber-500/10 sm:rounded-[36px] sm:px-8 sm:py-12"
           >
             <motion.h2 variants={itemVariants} className="mb-5 text-3xl font-bold md:text-5xl">
               Ready to Book Your Stay?
             </motion.h2>
             <motion.p
               variants={itemVariants}
-              className="mx-auto mb-8 max-w-2xl text-lg leading-8 text-neutral-300"
+              className="mx-auto mb-8 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg"
             >
               Experience luxury and comfort at Hotel Rudra Regency. Choose the perfect room for your needs.
             </motion.p>

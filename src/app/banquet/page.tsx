@@ -100,8 +100,8 @@ export default function BanquetPage() {
           style={{ backgroundImage: "url('/images/hotel-rudra-regency-motihari-reception6.JPG')" }}
         />
         <div className="absolute inset-0 bg-black/22" />
-        <div className="absolute top-16 right-12 h-28 w-28 rounded-full bg-amber-400/10 blur-3xl" />
-        <div className="absolute bottom-16 left-10 h-40 w-40 rounded-full bg-yellow-400/10 blur-3xl" />
+        <div className="absolute right-6 top-16 h-24 w-24 rounded-full bg-amber-400/10 blur-3xl sm:right-12 sm:h-28 sm:w-28" />
+        <div className="absolute bottom-12 left-4 h-28 w-28 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-16 sm:left-10 sm:h-40 sm:w-40" />
 
         <div className="relative mx-auto flex min-h-[58vh] max-w-6xl items-center px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -112,13 +112,13 @@ export default function BanquetPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="mb-4 text-sm font-medium uppercase tracking-[0.38em] text-amber-300"
+              className="mb-4 text-[11px] font-medium uppercase tracking-[0.3em] text-amber-300 sm:text-sm sm:tracking-[0.38em]"
             >
               Banquet Hall
             </motion.p>
             <motion.h1
               variants={fadeUp}
-              className="mb-6 text-4xl font-bold leading-tight md:text-6xl"
+              className="mb-5 text-4xl font-bold leading-[1.04] text-balance sm:text-5xl lg:text-6xl"
             >
               <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
                 Banquet Packages Crafted for Grand Celebrations
@@ -126,14 +126,14 @@ export default function BanquetPage() {
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="max-w-2xl text-lg leading-8 text-neutral-300"
+              className="max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8"
             >
               Discover premium event packages with elegant halls, room inventory, and curated inclusions designed for unforgettable weddings, receptions, and milestone celebrations.
             </motion.p>
-            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
+            <motion.div variants={fadeUp} className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
               <Link
                 href="/dining"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm transition hover:bg-white/10"
+                className="inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-sm transition hover:bg-white/10 sm:w-auto sm:px-8 sm:tracking-[0.18em]"
               >
                 View Catering
               </Link>
@@ -148,7 +148,7 @@ export default function BanquetPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={stagger}
-          className="-mt-14 rounded-[34px] border border-white/10 bg-neutral-900/80 p-6 shadow-2xl shadow-amber-500/5 backdrop-blur-xl md:p-8"
+          className="-mt-10 rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:-mt-14 sm:rounded-[34px] sm:p-6 md:p-8"
         >
           <motion.div variants={fadeUp} className="mb-8 text-center">
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.35em] text-amber-300">
@@ -170,7 +170,7 @@ export default function BanquetPage() {
                 key={pkg.name}
                 variants={scaleIn}
                 whileHover={{ y: -6 }}
-                className={`group relative overflow-hidden rounded-[30px] border ${pkg.border} bg-neutral-950 p-1 shadow-xl shadow-amber-500/5 transition-transform h-full ${
+                className={`group relative h-full overflow-hidden rounded-[26px] border ${pkg.border} bg-neutral-950 p-1 shadow-xl shadow-amber-500/5 transition-transform sm:rounded-[30px] ${
                   pkg.featured ? "ring-1 ring-amber-400/20" : ""
                 }`}
               >
@@ -222,7 +222,7 @@ export default function BanquetPage() {
           </motion.div>
         </motion.section>
 
-        <section className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <section className="mt-8 grid gap-6 sm:mt-10 sm:gap-8 lg:grid-cols-[1.15fr_0.85fr]">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -252,7 +252,7 @@ export default function BanquetPage() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
             variants={stagger}
-            className="rounded-[34px] border border-white/10 bg-neutral-900/80 p-8 shadow-2xl shadow-amber-500/5 backdrop-blur-xl"
+            className="rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[34px] sm:p-8"
           >
             <motion.div variants={fadeUp}>
               <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-amber-300">
@@ -288,7 +288,7 @@ export default function BanquetPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
           variants={stagger}
-          className="mt-10 rounded-[34px] border border-white/10 bg-neutral-900/80 p-8 shadow-2xl shadow-amber-500/5 backdrop-blur-xl md:p-10"
+          className="mt-8 rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:mt-10 sm:rounded-[34px] sm:p-8 md:p-10"
         >
           <motion.div variants={fadeUp} className="mb-8 flex items-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400/10 text-xl text-amber-300">
@@ -321,23 +321,23 @@ export default function BanquetPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
           variants={stagger}
-          className="mt-10 rounded-[36px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-8 py-12 text-center shadow-2xl shadow-amber-500/10"
+          className="mt-8 rounded-[30px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-5 py-10 text-center shadow-2xl shadow-amber-500/10 sm:mt-10 sm:rounded-[36px] sm:px-8 sm:py-12"
         >
-          <motion.h3 variants={fadeUp} className="text-3xl font-bold md:text-5xl">
+          <motion.h3 variants={fadeUp} className="text-3xl font-bold text-balance sm:text-4xl md:text-5xl">
             <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
               Ready to Host a Grand Event?
             </span>
           </motion.h3>
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-neutral-300"
+            className="mx-auto mt-5 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg"
           >
             Speak with our team to reserve the right banquet package, customize your event details, and plan a celebration with confidence.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-8">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-10 py-4 text-sm font-bold uppercase tracking-[0.2em] text-black shadow-lg shadow-amber-500/25 transition hover:scale-[1.03] hover:shadow-amber-500/40"
+              className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-6 py-4 text-sm font-bold uppercase tracking-[0.16em] text-black shadow-lg shadow-amber-500/25 transition hover:scale-[1.03] hover:shadow-amber-500/40 sm:w-auto sm:px-10 sm:tracking-[0.2em]"
             >
               Talk to Our Event Team
             </Link>

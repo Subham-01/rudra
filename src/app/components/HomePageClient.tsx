@@ -225,26 +225,26 @@ export default function HomePageClient() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/22 via-black/18 to-neutral-950/90" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(217,168,50,0.18),_transparent_35%)]" />
-        <div className="absolute right-12 top-20 h-28 w-28 rounded-full bg-amber-400/10 blur-3xl" />
-        <div className="absolute bottom-16 left-10 h-44 w-44 rounded-full bg-yellow-400/10 blur-3xl" />
+        <div className="absolute right-6 top-20 h-24 w-24 rounded-full bg-amber-400/10 blur-3xl sm:right-12 sm:h-28 sm:w-28" />
+        <div className="absolute bottom-12 left-4 h-32 w-32 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-16 sm:left-10 sm:h-44 sm:w-44" />
 
-        <div className="relative mx-auto flex min-h-screen max-w-7xl items-center justify-center px-4 pb-16 pt-28 sm:px-6 lg:px-8">
+        <div className="relative mx-auto flex min-h-screen max-w-7xl items-center justify-center px-4 pb-14 pt-36 sm:px-6 sm:pb-16 sm:pt-40 lg:px-8">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={stagger}
             className="flex w-full justify-center"
           >
-            <div className="flex w-full max-w-5xl flex-col items-center py-8 text-center">
+            <div className="flex w-full max-w-5xl flex-col items-center py-6 text-center sm:py-8">
               <motion.p
                 variants={fadeUp}
-                className="mb-5 text-sm font-medium uppercase tracking-[0.4em] text-amber-300 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]"
+                className="mb-4 text-[11px] font-medium uppercase tracking-[0.32em] text-amber-300 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:mb-5 sm:text-sm sm:tracking-[0.4em]"
               >
                 Luxury Hotel in Motihari, Bihar
               </motion.p>
               <motion.h1
                 variants={fadeUp}
-                className="mx-auto max-w-6xl text-3xl font-bold leading-[1.08] drop-shadow-[0_4px_22px_rgba(0,0,0,0.75)] md:text-5xl xl:text-[3.25rem] xl:whitespace-nowrap"
+                className="mx-auto max-w-4xl text-4xl font-bold leading-[1.02] text-balance drop-shadow-[0_4px_22px_rgba(0,0,0,0.75)] sm:text-5xl lg:max-w-5xl lg:text-6xl"
               >
                 <span className="bg-gradient-to-r from-amber-100 via-yellow-50 to-amber-200 bg-clip-text text-transparent">
                   Stay, Dine, and Celebrate at Hotel Rudra Regency
@@ -252,32 +252,32 @@ export default function HomePageClient() {
               </motion.h1>
               <motion.p
                 variants={fadeUp}
-                className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-neutral-200 [text-shadow:0_2px_14px_rgba(0,0,0,0.7)] md:text-base"
+                className="mx-auto mt-4 max-w-3xl px-1 text-base leading-7 text-neutral-200 [text-shadow:0_2px_14px_rgba(0,0,0,0.7)] sm:mt-5 sm:text-lg sm:leading-8"
               >
                 Hotel Rudra Regency is a premium hotel in Motihari offering luxury rooms, banquet hall bookings, open terrace dining, and conference facilities for family stays, weddings, celebrations, and business travel.
               </motion.p>
-              <motion.div variants={fadeUp} className="mt-9 flex flex-wrap justify-center gap-4">
-                <Link href="/rooms" className="btn-primary inline-flex items-center justify-center px-8 py-3 text-sm uppercase tracking-[0.18em]">
+              <motion.div variants={fadeUp} className="mt-8 flex w-full flex-col justify-center gap-3 sm:mt-9 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
+                <Link href="/rooms" className="btn-primary inline-flex w-full items-center justify-center px-6 py-3 text-sm uppercase tracking-[0.16em] sm:w-auto sm:px-8 sm:tracking-[0.18em]">
                   Explore Rooms
                 </Link>
-                <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-8 py-3 text-sm uppercase tracking-[0.18em]">
+                <Link href="/contact" className="btn-secondary inline-flex w-full items-center justify-center px-6 py-3 text-sm uppercase tracking-[0.16em] sm:w-auto sm:px-8 sm:tracking-[0.18em]">
                   Book Directly
                 </Link>
               </motion.div>
 
               <motion.div
                 variants={fadeUp}
-                className="mt-10 grid w-full max-w-5xl gap-4 md:grid-cols-3"
+                className="mt-8 grid w-full max-w-5xl gap-3 sm:mt-10 sm:gap-4 md:grid-cols-3"
               >
-                <div className="rounded-[28px] border border-white/10 bg-black/30 px-5 py-4 text-left backdrop-blur-md">
+                <div className="rounded-[24px] border border-white/10 bg-black/30 px-4 py-4 text-left backdrop-blur-md sm:rounded-[28px] sm:px-5">
                   <p className="text-[11px] uppercase tracking-[0.24em] text-amber-300">Stay</p>
                   <p className="mt-2 text-sm leading-7 text-neutral-200">Luxury rooms designed for premium comfort in Motihari.</p>
                 </div>
-                <div className="rounded-[28px] border border-white/10 bg-black/30 px-5 py-4 text-left backdrop-blur-md">
+                <div className="rounded-[24px] border border-white/10 bg-black/30 px-4 py-4 text-left backdrop-blur-md sm:rounded-[28px] sm:px-5">
                   <p className="text-[11px] uppercase tracking-[0.24em] text-amber-300">Celebrate</p>
                   <p className="mt-2 text-sm leading-7 text-neutral-200">Banquet spaces for weddings, receptions, and milestone events.</p>
                 </div>
-                <div className="rounded-[28px] border border-white/10 bg-black/30 px-5 py-4 text-left backdrop-blur-md">
+                <div className="rounded-[24px] border border-white/10 bg-black/30 px-4 py-4 text-left backdrop-blur-md sm:rounded-[28px] sm:px-5">
                   <p className="text-[11px] uppercase tracking-[0.24em] text-amber-300">Meet</p>
                   <p className="mt-2 text-sm leading-7 text-neutral-200">Conference-ready hospitality for business visitors and meetings.</p>
                 </div>
@@ -285,7 +285,7 @@ export default function HomePageClient() {
 
               <motion.div
                 variants={fadeUp}
-                className="mt-10 w-full max-w-5xl rounded-[34px] border border-white/10 bg-neutral-950/75 p-4 shadow-2xl shadow-amber-500/10 backdrop-blur-xl md:p-5"
+                className="mt-8 w-full max-w-5xl rounded-[28px] border border-white/10 bg-neutral-950/75 p-4 shadow-2xl shadow-amber-500/10 backdrop-blur-xl sm:mt-10 sm:rounded-[34px] md:p-5"
               >
                 <div className="grid gap-3 md:grid-cols-[1fr_1fr_0.9fr_auto]">
                   <label className="block text-left">
@@ -332,7 +332,7 @@ export default function HomePageClient() {
                   <div className="flex items-end">
                     <Link
                       href={bookingHref}
-                      className="inline-flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-amber-400 to-yellow-400 px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-black shadow-lg shadow-amber-500/20 transition hover:shadow-amber-500/35"
+                      className="inline-flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-amber-400 to-yellow-400 px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-black shadow-lg shadow-amber-500/20 transition hover:shadow-amber-500/35 md:min-h-[50px]"
                     >
                       Book Now
                     </Link>
@@ -344,8 +344,8 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="bg-neutral-950 py-20">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
+      <section className="bg-neutral-950 py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -353,7 +353,7 @@ export default function HomePageClient() {
             variants={stagger}
             className="overflow-hidden rounded-[36px] border border-white/10 bg-neutral-950 shadow-2xl shadow-amber-500/5"
           >
-            <div className="relative min-h-[560px]">
+            <div className="relative min-h-[420px] sm:min-h-[500px] lg:min-h-[560px]">
               {sliderImages.map((slide, index) => (
                 <div
                   key={`${slide.title}-${index}`}
@@ -371,13 +371,13 @@ export default function HomePageClient() {
                 </div>
               ))}
 
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent px-8 pb-24 pt-20">
-                <h2 className="max-w-xl text-2xl font-semibold text-white md:text-3xl">{sliderImages[activeSlide].title}</h2>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent px-5 pb-24 pt-16 sm:px-8 sm:pt-20">
+                <h2 className="max-w-xl text-2xl font-semibold text-white sm:text-3xl">{sliderImages[activeSlide].title}</h2>
                 <p className="mt-3 max-w-2xl text-sm leading-7 text-neutral-200 md:text-base">{sliderImages[activeSlide].description}</p>
               </div>
 
-              <div className="absolute bottom-8 left-8 right-8 flex items-center justify-between gap-4">
-                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/15 px-4 py-3">
+              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-3 sm:bottom-8 sm:left-8 sm:right-8 sm:gap-4">
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/15 px-3 py-2.5 sm:px-4 sm:py-3">
                   {sliderImages.map((slide, index) => (
                     <button
                       key={slide.title}
@@ -389,12 +389,12 @@ export default function HomePageClient() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/15 px-3 py-3">
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/15 px-2 py-2 sm:px-3 sm:py-3">
                   <button
                     type="button"
                     aria-label="Previous slide"
                     onClick={() => setActiveSlide((current) => (current - 1 + sliderImages.length) % sliderImages.length)}
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:bg-white/10"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:bg-white/10 sm:h-11 sm:w-11"
                   >
                     ‹
                   </button>
@@ -402,7 +402,7 @@ export default function HomePageClient() {
                     type="button"
                     aria-label="Next slide"
                     onClick={() => setActiveSlide((current) => (current + 1) % sliderImages.length)}
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:bg-white/10"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:bg-white/10 sm:h-11 sm:w-11"
                   >
                     ›
                   </button>
@@ -416,7 +416,7 @@ export default function HomePageClient() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
             variants={stagger}
-            className="rounded-[36px] border border-white/10 bg-neutral-900/80 p-8 shadow-2xl shadow-amber-500/5"
+            className="rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 sm:rounded-[36px] sm:p-8"
           >
             <motion.p variants={fadeUp} className="mb-4 text-sm font-medium uppercase tracking-[0.32em] text-amber-300">
               Why Guests Choose Us
@@ -445,7 +445,7 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-neutral-950 to-neutral-900 py-20">
+      <section className="bg-gradient-to-b from-neutral-950 to-neutral-900 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -512,7 +512,7 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="bg-neutral-950 py-20">
+      <section className="bg-neutral-950 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -567,7 +567,7 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-neutral-900 to-black py-20">
+      <section className="bg-gradient-to-b from-neutral-900 to-black py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -606,7 +606,7 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="bg-neutral-950 py-20">
+      <section className="bg-neutral-950 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -615,7 +615,7 @@ export default function HomePageClient() {
             variants={stagger}
             className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]"
           >
-            <div className="rounded-[34px] border border-white/10 bg-neutral-900/70 p-8 shadow-xl shadow-amber-500/5">
+            <div className="rounded-[28px] border border-white/10 bg-neutral-900/70 p-5 shadow-xl shadow-amber-500/5 sm:rounded-[34px] sm:p-8">
               <motion.p variants={fadeUp} className="text-sm font-medium uppercase tracking-[0.32em] text-amber-300">
                 Direct Booking Advantage
               </motion.p>
@@ -634,7 +634,7 @@ export default function HomePageClient() {
               </motion.div>
             </div>
 
-            <div className="rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(217,168,50,0.08),rgba(10,10,10,0.94))] p-8 shadow-xl shadow-amber-500/5">
+            <div className="rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(217,168,50,0.08),rgba(10,10,10,0.94))] p-5 shadow-xl shadow-amber-500/5 sm:rounded-[34px] sm:p-8">
               <motion.p variants={fadeUp} className="text-sm font-medium uppercase tracking-[0.32em] text-amber-300">
                 Frequently Asked Questions
               </motion.p>
@@ -657,14 +657,14 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="bg-neutral-950 py-20">
+      <section className="bg-neutral-950 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
             variants={stagger}
-            className="rounded-[38px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-8 py-12 text-center shadow-2xl shadow-amber-500/10"
+            className="rounded-[30px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-5 py-10 text-center shadow-2xl shadow-amber-500/10 sm:rounded-[38px] sm:px-8 sm:py-12"
           >
             <motion.p variants={fadeUp} className="mb-4 text-sm font-medium uppercase tracking-[0.34em] text-amber-300">
               Reserve Your Experience
@@ -672,7 +672,7 @@ export default function HomePageClient() {
             <motion.h2 variants={fadeUp} className="text-xl font-bold text-white md:text-2xl xl:text-3xl">
               Experience a more refined stay in Motihari
             </motion.h2>
-            <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-neutral-300">
+            <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg">
               Plan your stay, event, dining experience, or corporate gathering with a hotel designed to feel premium at every touchpoint.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8 flex flex-wrap justify-center gap-4">

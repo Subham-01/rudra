@@ -16,29 +16,29 @@ const contactDetails = [
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
-      <section className="relative overflow-hidden bg-black text-white py-24">
+      <section className="relative overflow-hidden bg-black py-24 text-white sm:py-28">
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-black to-neutral-950" />
-        <div className="absolute top-16 right-10 h-24 w-24 rounded-full bg-amber-400/10 blur-2xl"></div>
-        <div className="absolute bottom-16 left-10 h-36 w-36 rounded-full bg-yellow-400/10 blur-3xl"></div>
+        <div className="absolute right-6 top-16 h-20 w-20 rounded-full bg-amber-400/10 blur-2xl sm:right-10 sm:h-24 sm:w-24"></div>
+        <div className="absolute bottom-12 left-4 h-28 w-28 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-16 sm:left-10 sm:h-36 sm:w-36"></div>
         <div className="relative mx-auto flex max-w-6xl justify-center px-4 text-center sm:px-6 lg:px-8">
           <motion.div initial="hidden" animate="visible" variants={sectionVariants} className="flex max-w-5xl flex-col items-center">
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-amber-300">Contact Us</p>
-            <h1 className="mb-6 text-4xl font-bold md:text-5xl xl:whitespace-nowrap">
+            <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-amber-300 sm:text-sm sm:tracking-[0.3em]">Contact Us</p>
+            <h1 className="mb-6 text-4xl font-bold leading-[1.05] text-balance sm:text-5xl">
               <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">Get in touch with Hotel Rudra Regency</span>
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-neutral-300">
+            <p className="max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg">
               Reach out for reservations, event planning, or any questions about your stay. Our team is ready to assist you with warm and attentive hospitality.
             </p>
           </motion.div>
         </div>
       </section>
 
-      <main className="relative -mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="rounded-[32px] border border-white/10 bg-neutral-900/80 p-10 shadow-2xl shadow-amber-500/5 backdrop-blur-xl">
+      <main className="relative mx-auto -mt-14 max-w-7xl px-4 pb-24 sm:-mt-20 sm:px-6 lg:px-8">
+        <div className="grid gap-6 sm:gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+          <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[32px] sm:p-8 lg:p-10">
             <div className="mb-8">
               <p className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-4">We are here to help</p>
-              <h2 className="text-3xl font-bold text-white mb-4">Plan your stay or event with confidence</h2>
+              <h2 className="mb-4 text-3xl font-bold text-white text-balance sm:text-4xl">Plan your stay or event with confidence</h2>
               <p className="text-base leading-8 text-neutral-400">
                 Our concierge team is available to assist with room reservations, banquet inquiries, dining requests, and local recommendations.
               </p>
@@ -46,15 +46,15 @@ export default function ContactPage() {
 
             <div className="grid gap-6">
               {contactDetails.map((item) => (
-                <div key={item.label} className="rounded-3xl border border-white/10 bg-neutral-950/80 p-6">
+                <div key={item.label} className="rounded-[24px] border border-white/10 bg-neutral-950/80 p-5 sm:rounded-3xl sm:p-6">
                   <p className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-2">{item.label}</p>
-                  <p className="text-lg font-semibold text-white">{item.value}</p>
+                  <p className="text-base font-semibold leading-7 text-white sm:text-lg">{item.value}</p>
                 </div>
               ))}
             </div>
           </motion.section>
 
-          <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="rounded-[32px] border border-white/10 bg-neutral-900/80 p-10 shadow-2xl shadow-amber-500/5 backdrop-blur-xl">
+          <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[32px] sm:p-8 lg:p-10">
             <h3 className="text-2xl font-semibold text-white mb-6">Send us a message</h3>
             <form className="space-y-6">
               <label className="block">
@@ -73,18 +73,18 @@ export default function ContactPage() {
                 <span className="text-sm font-medium text-neutral-300">Message</span>
                 <textarea rows={5} className="mt-2 w-full rounded-2xl border border-white/10 bg-neutral-950/80 px-4 py-3 text-white focus:border-amber-500 focus:ring-2 focus:ring-amber-400/20 outline-none" placeholder="How can we help you?" />
               </label>
-              <button type="submit" className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-8 py-3 text-base font-semibold text-black shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition">
+              <button type="submit" className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-8 py-3 text-base font-semibold text-black shadow-lg shadow-amber-500/25 transition hover:shadow-amber-500/40 sm:w-auto">
                 Send Message
               </button>
             </form>
           </motion.section>
         </div>
 
-        <section className="mt-16 rounded-[32px] overflow-hidden border border-white/10 bg-neutral-900 shadow-2xl shadow-amber-500/5">
+        <section className="mt-12 overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900 shadow-2xl shadow-amber-500/5 sm:mt-16 sm:rounded-[32px]">
           <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="p-10">
+            <div className="p-5 sm:p-8 lg:p-10">
               <p className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-4">Visit Us</p>
-              <h2 className="text-3xl font-bold text-white mb-6">Located minutes from Bariya Devi Mandir</h2>
+              <h2 className="mb-6 text-3xl font-bold text-white text-balance sm:text-4xl">Located minutes from Bariya Devi Mandir</h2>
               <p className="text-base leading-8 text-neutral-400 mb-8">
                 Our hotel offers easy access to Motihari's top cultural attractions, shopping, and business districts, while providing a calm retreat for guests.
               </p>
@@ -105,7 +105,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            <div className="h-96 bg-[url('/images/hotel-rudra-regency-motihari-reception4.JPG')] bg-cover bg-center" />
+            <div className="min-h-[280px] bg-[url('/images/hotel-rudra-regency-motihari-reception4.JPG')] bg-cover bg-center sm:min-h-[360px] lg:min-h-full" />
           </div>
         </section>
       </main>

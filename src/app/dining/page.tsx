@@ -91,28 +91,28 @@ export default function DiningPage() {
           style={{ backgroundImage: "url('/images/DSC08003.JPG')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/48 to-black/30" />
-        <div className="absolute top-16 right-10 h-24 w-24 rounded-full bg-amber-400/10 blur-2xl"></div>
-        <div className="absolute bottom-16 left-10 h-36 w-36 rounded-full bg-yellow-400/10 blur-3xl"></div>
+        <div className="absolute right-6 top-16 h-20 w-20 rounded-full bg-amber-400/10 blur-2xl sm:right-10 sm:h-24 sm:w-24"></div>
+        <div className="absolute bottom-12 left-4 h-28 w-28 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-16 sm:left-10 sm:h-36 sm:w-36"></div>
         <div className="relative flex min-h-[62vh] items-center max-w-6xl mx-auto px-4 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
           <motion.div initial="hidden" animate="visible" variants={sectionVariants} className="max-w-3xl">
-            <p className="text-sm uppercase tracking-[0.32em] text-amber-300 mb-4">Premium Restaurant Experience</p>
-            <h1 className="mb-5 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl xl:max-w-4xl">
+            <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-amber-300 sm:text-sm sm:tracking-[0.32em]">Premium Restaurant Experience</p>
+            <h1 className="mb-5 text-4xl font-bold leading-[1.04] text-balance sm:text-5xl lg:text-6xl xl:max-w-4xl">
               <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
                 The Flavoresca Restaurant by Hotel Rudra Regency
               </span>
             </h1>
-            <p className="text-lg text-neutral-300 leading-relaxed max-w-2xl md:text-xl">
+            <p className="max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8 md:text-xl">
               Discover a premium restaurant in Motihari where elegant indoor dining, open terrace evenings, and warm hospitality come together in one luxury culinary destination.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <a
                 href="/pdf/flavoresca-menu.pdf"
                 download
-                className="inline-flex items-center justify-center rounded-full bg-amber-400 px-8 py-3 text-base font-semibold text-black shadow-xl transition hover:bg-amber-300"
+                className="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-base font-semibold text-black shadow-xl transition hover:bg-amber-300 sm:px-8"
               >
                 View Menu
               </a>
-              <Link href="/contact" className="inline-flex items-center justify-center rounded-full border border-amber-300/30 bg-black/70 px-8 py-3 text-base font-semibold text-amber-200 transition hover:bg-black/90">
+              <Link href="/contact" className="inline-flex items-center justify-center rounded-full border border-amber-300/30 bg-black/70 px-6 py-3 text-base font-semibold text-amber-200 transition hover:bg-black/90 sm:px-8">
                 Reserve a Table
               </Link>
             </div>
@@ -121,11 +121,11 @@ export default function DiningPage() {
       </section>
 
       <main className="relative mt-2 md:mt-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="rounded-[32px] border border-white/10 bg-neutral-900/80 p-10 shadow-2xl shadow-amber-500/5 backdrop-blur-xl">
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[32px] sm:p-8 lg:p-10">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
             <div>
               <p className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-4">Restaurant Branding</p>
-              <h2 className="text-3xl font-bold text-white mb-6">A luxury dining destination with a stronger identity</h2>
+              <h2 className="mb-6 text-3xl font-bold text-white text-balance sm:text-4xl">A luxury dining destination with a stronger identity</h2>
               <p className="text-base leading-8 text-neutral-400 mb-6">
                 The Flavoresca Restaurant by Hotel Rudra Regency is designed as a premium restaurant in Motihari for guests who want indoor elegance, open terrace charm, and memorable service in one destination.
               </p>
@@ -158,7 +158,7 @@ export default function DiningPage() {
           </div>
         </motion.section>
 
-        <section className="mt-12 grid gap-6 lg:grid-cols-3">
+        <section className="mt-10 grid gap-6 lg:grid-cols-3 sm:mt-12">
           {diningExperiences.map((item) => (
             <motion.article
               key={item.title}
@@ -166,12 +166,12 @@ export default function DiningPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="overflow-hidden rounded-[32px] border border-white/10 bg-neutral-900 shadow-lg shadow-amber-500/5"
+              className="overflow-hidden rounded-[26px] border border-white/10 bg-neutral-900 shadow-lg shadow-amber-500/5 sm:rounded-[32px]"
             >
               <div className="h-56 bg-cover bg-center" style={{ backgroundImage: `url('${item.image}')` }} />
-              <div className="p-8">
+              <div className="p-5 sm:p-8">
                 <p className="text-xs uppercase tracking-[0.24em] text-amber-500 mb-3">{item.title}</p>
-                <h3 className="text-lg md:text-xl font-semibold text-white mb-3 leading-7">{item.description}</h3>
+                <h3 className="mb-3 text-lg font-semibold leading-7 text-white md:text-xl">{item.description}</h3>
                 <ul className="space-y-2.5 text-sm text-neutral-400 leading-6">
                   {item.details.map((point) => (
                     <li key={point} className="flex items-start gap-3">
@@ -185,7 +185,7 @@ export default function DiningPage() {
           ))}
         </section>
 
-        <section className="mt-16 space-y-8">
+        <section className="mt-12 space-y-6 sm:mt-16 sm:space-y-8">
           {signatureMoments.map((moment, index) => (
             <motion.div
               key={moment.title}
@@ -193,36 +193,36 @@ export default function DiningPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="grid overflow-hidden rounded-[34px] border border-white/10 bg-neutral-900 shadow-2xl shadow-amber-500/5 lg:grid-cols-[1.02fr_0.98fr]"
+              className="grid overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900 shadow-2xl shadow-amber-500/5 sm:rounded-[34px] lg:grid-cols-[1.02fr_0.98fr]"
             >
               <div className={`${index % 2 === 1 ? 'lg:order-2' : ''} min-h-[320px] bg-cover bg-center`} style={{ backgroundImage: `url('${moment.image}')` }} />
-              <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} flex items-center p-8 md:p-10`}>
+              <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} flex items-center p-5 sm:p-8 md:p-10`}>
                 <div>
                   <p className="mb-3 text-sm uppercase tracking-[0.28em] text-amber-300">Signature Dining</p>
-                  <h3 className="mb-4 text-3xl font-semibold text-white">{moment.title}</h3>
-                  <p className="text-lg leading-8 text-neutral-300">{moment.text}</p>
+                  <h3 className="mb-4 text-3xl font-semibold text-white text-balance">{moment.title}</h3>
+                  <p className="text-base leading-8 text-neutral-300 sm:text-lg">{moment.text}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </section>
 
-        <section className="mt-16 grid gap-8 lg:grid-cols-2">
-          <motion.div initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="overflow-hidden rounded-[32px] border border-white/10 bg-neutral-900 shadow-2xl shadow-amber-500/5">
+        <section className="mt-12 grid gap-6 sm:mt-16 sm:gap-8 lg:grid-cols-2">
+          <motion.div initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900 shadow-2xl shadow-amber-500/5 sm:rounded-[32px]">
             <div
               className="h-80 bg-cover bg-center"
               style={{ backgroundImage: "url('/images/DSC07740.JPG')" }}
             />
-            <div className="p-8">
+            <div className="p-5 sm:p-8">
               <p className="text-sm uppercase tracking-[0.28em] text-neutral-500 mb-4">Luxury open terrace</p>
               <p className="text-lg leading-8 text-neutral-300">A stylish terrace setting with premium outdoor seating, soft evening lighting, and the relaxed luxury that makes The Flavoresca Restaurant stand out in Motihari.</p>
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="rounded-[32px] bg-black p-10 text-white shadow-2xl flex items-center justify-center text-center min-h-[360px]">
+          <motion.div initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="flex min-h-[320px] items-center justify-center rounded-[28px] bg-black p-5 text-center text-white shadow-2xl sm:min-h-[360px] sm:rounded-[32px] sm:p-10">
             <div>
-              <h3 className="text-3xl font-semibold mb-4 text-amber-300">Reserve The Flavoresca experience</h3>
-              <p className="text-lg leading-8 mb-6 text-amber-200">
+              <h3 className="mb-4 text-3xl font-semibold text-amber-300 text-balance">Reserve The Flavoresca experience</h3>
+              <p className="mb-6 text-base leading-8 text-amber-200 sm:text-lg">
                 Whether you are planning a family dinner, a premium terrace evening, or a refined meal during your hotel stay, The Flavoresca Restaurant by Hotel Rudra Regency is ready to host you.
               </p>
               <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-black shadow-lg hover:bg-amber-300 transition">

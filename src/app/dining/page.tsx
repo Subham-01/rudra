@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Script from "next/script";
@@ -89,10 +90,16 @@ export default function DiningPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }}
       />
       <section className="relative overflow-hidden bg-black text-white min-h-[62vh]">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-55"
-          style={{ backgroundImage: "url('/images/DSC08003.JPG')" }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="/images/DSC08003.JPG"
+            alt="Restaurant interior dining ambience"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/48 to-black/30" />
         <div className="absolute right-6 top-16 h-20 w-20 rounded-full bg-amber-400/10 blur-2xl sm:right-10 sm:h-24 sm:w-24"></div>
         <div className="absolute bottom-12 left-4 h-28 w-28 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-16 sm:left-10 sm:h-36 sm:w-36"></div>
@@ -141,9 +148,12 @@ export default function DiningPage() {
               </div>
             </div>
             <div className="relative overflow-hidden rounded-[28px] ring-1 ring-amber-200/10 shadow-xl min-h-[360px]">
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/restaurant.JPG')" }}
+              <Image
+                src="/images/restaurant.JPG"
+                alt="Restaurant dining area"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10" />
               <div className="relative flex min-h-[360px] items-end p-8 text-center sm:text-left">
@@ -172,7 +182,15 @@ export default function DiningPage() {
               transition={{ duration: 0.5 }}
               className="overflow-hidden rounded-[26px] border border-white/10 bg-neutral-900 shadow-lg shadow-amber-500/5 sm:rounded-[32px]"
             >
-              <div className="h-56 bg-cover bg-center" style={{ backgroundImage: `url('${item.image}')` }} />
+              <div className="relative h-56 overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                />
+              </div>
               <div className="p-5 sm:p-8">
                 <p className="text-xs uppercase tracking-[0.24em] text-amber-500 mb-3">{item.title}</p>
                 <h3 className="mb-3 text-lg font-semibold leading-7 text-white md:text-xl">{item.description}</h3>
@@ -199,7 +217,15 @@ export default function DiningPage() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
               className="grid overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900 shadow-2xl shadow-amber-500/5 sm:rounded-[34px] lg:grid-cols-[1.02fr_0.98fr]"
             >
-              <div className={`${index % 2 === 1 ? 'lg:order-2' : ''} min-h-[320px] bg-cover bg-center`} style={{ backgroundImage: `url('${moment.image}')` }} />
+              <div className={`${index % 2 === 1 ? 'lg:order-2' : ''} relative min-h-[320px] overflow-hidden`}>
+                <Image
+                  src={moment.image}
+                  alt={moment.title}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </div>
               <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} flex items-center p-5 sm:p-8 md:p-10`}>
                 <div>
                   <h3 className="mb-4 text-3xl font-semibold text-white text-balance">{moment.title}</h3>

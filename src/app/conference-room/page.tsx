@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { createHotelInquiryLink } from "@/lib/whatsapp";
@@ -70,9 +71,13 @@ export default function ConferenceRoomPage() {
   return (
     <div className="min-h-screen overflow-hidden bg-neutral-950 text-white">
       <section className="relative min-h-[62vh] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-55"
-          style={{ backgroundImage: "url('/images/conference Hero  section.JPG')" }}
+        <Image
+          src="/images/conference Hero  section.JPG"
+          alt="Conference room hero"
+          fill
+          className="object-cover opacity-55"
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute right-6 top-16 h-24 w-24 rounded-full bg-amber-400/10 blur-3xl sm:right-12 sm:h-28 sm:w-28" />
@@ -194,9 +199,12 @@ export default function ConferenceRoomPage() {
             className="overflow-hidden rounded-[34px] border border-white/10 bg-neutral-900/80 shadow-2xl shadow-amber-500/5 backdrop-blur-xl"
           >
             <div className="relative h-full min-h-[320px] overflow-hidden">
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/conference professional ambience.JPG')" }}
+              <Image
+                src="/images/conference professional ambience.JPG"
+                alt="Professional ambience"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-black/35 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

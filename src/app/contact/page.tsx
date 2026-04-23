@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const sectionVariants = {
@@ -105,7 +106,15 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            <div className="min-h-[280px] bg-[url('/images/hotel-rudra-regency-motihari-reception4.JPG')] bg-cover bg-center sm:min-h-[360px] lg:min-h-full" />
+            <div className="relative min-h-[280px] overflow-hidden sm:min-h-[360px] lg:min-h-full">
+              <Image
+                src="/images/hotel-rudra-regency-motihari-reception4.JPG"
+                alt="Hotel reception"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </div>
           </div>
         </section>
       </main>

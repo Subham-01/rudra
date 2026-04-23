@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { createHotelInquiryLink } from "@/lib/whatsapp";
@@ -259,12 +260,13 @@ export default function RoomsPage() {
                   variants={itemVariants}
                   className={`${index % 2 === 1 ? 'lg:order-2' : ''} relative min-h-[240px] overflow-hidden`}
                 >
-                  <div
-                    className="absolute inset-0 bg-cover transition-transform duration-700 hover:scale-105"
-                    style={{
-                      backgroundImage: `url('${room.image}')`,
-                      backgroundPosition: room.position,
-                    }}
+                  <Image
+                    src={room.image}
+                    alt={room.name}
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: room.position }}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${room.color} opacity-30`} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />

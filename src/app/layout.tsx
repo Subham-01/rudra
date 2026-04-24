@@ -91,6 +91,9 @@ export const metadata: Metadata = {
   },
   category: "hospitality",
   manifest: "/manifest.webmanifest",
+  icons: {
+    icon: "/images/Logo.png",
+  },
   other: {
     "geo.region": "IN-BR",
     "geo.placename": "Motihari, Bihar, India",

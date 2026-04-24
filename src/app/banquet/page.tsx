@@ -1,35 +1,8 @@
 'use client';
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { createHotelInquiryLink } from "@/lib/whatsapp";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
-
-const stagger = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.12, delayChildren: 0.15 },
-  },
-};
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
 
 const packages = [
   {
@@ -110,53 +83,43 @@ export default function BanquetPage() {
         <div className="absolute bottom-12 left-4 h-28 w-28 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-16 sm:left-10 sm:h-40 sm:w-40" />
 
         <div className="relative mx-auto flex min-h-[58vh] max-w-6xl items-center px-4 pb-10 pt-28 sm:px-6 sm:pt-32 lg:px-8 lg:pt-36">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={stagger}
-            className="max-w-3xl"
+          <div
+            className="animate-fade-in-up max-w-3xl"
           >
-            <motion.p
-              variants={fadeUp}
+            <p
               className="mb-4 text-[11px] font-medium uppercase tracking-[0.3em] text-amber-300 sm:text-sm sm:tracking-[0.38em]"
             >
               Banquet Hall
-            </motion.p>
-            <motion.h1
-              variants={fadeUp}
+            </p>
+            <h1
               className="mb-5 text-4xl font-bold leading-[1.04] text-balance sm:text-5xl lg:text-6xl"
             >
               <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
                 Banquet Packages Crafted for Grand Celebrations
               </span>
-            </motion.h1>
-            <motion.p
-              variants={fadeUp}
+            </h1>
+            <p
               className="max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8"
             >
               Discover premium event packages with a 10,000 sq ft banquet hall, luxury room inventory, dining support, and curated inclusions designed for unforgettable weddings, receptions, and milestone celebrations.
-            </motion.p>
-            <motion.div variants={fadeUp} className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
+            </p>
+            <div className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
               <Link
                 href="/dining"
                 className="inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-sm transition hover:bg-white/10 sm:w-auto sm:px-8 sm:tracking-[0.18em]"
               >
                 View Catering
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
       <main className="relative mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={stagger}
-          className="mt-8 rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:mt-10 sm:rounded-[34px] sm:p-6 md:p-8"
+        <section
+          className="animate-fade-in-up mt-8 rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:mt-10 sm:rounded-[34px] sm:p-6 md:p-8"
         >
-          <motion.div variants={fadeUp} className="mb-8 text-center">
+          <div className="mb-8 text-center">
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.35em] text-amber-300">
               Banquet Packages
             </p>
@@ -168,15 +131,13 @@ export default function BanquetPage() {
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-neutral-400 md:text-base">
               Three premium package tiers designed to match the scale, comfort, and elegance of your event.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div variants={stagger} className="grid gap-5 lg:grid-cols-3">
+          <div className="grid gap-5 lg:grid-cols-3">
             {packages.map((pkg) => (
-              <motion.article
+              <article
                 key={pkg.name}
-                variants={scaleIn}
-                whileHover={{ y: -6 }}
-                className={`group relative h-full overflow-hidden rounded-[26px] border ${pkg.border} bg-neutral-950 p-1 shadow-xl shadow-amber-500/5 transition-transform sm:rounded-[30px] ${
+                className={`group animate-fade-in-up relative h-full overflow-hidden rounded-[26px] border ${pkg.border} bg-neutral-950 p-1 shadow-xl shadow-amber-500/5 transition-transform sm:rounded-[30px] ${
                   pkg.featured ? "ring-1 ring-amber-400/20" : ""
                 }`}
               >
@@ -223,18 +184,14 @@ export default function BanquetPage() {
                     Enquire Now
                   </Link>
                 </div>
-              </motion.article>
+              </article>
             ))}
-          </motion.div>
-        </motion.section>
+          </div>
+        </section>
 
         <section className="mt-8 grid gap-6 sm:mt-10 sm:gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
-            variants={stagger}
-            className="h-full overflow-hidden rounded-[34px] border border-white/10 bg-neutral-900/80 shadow-2xl shadow-amber-500/5 backdrop-blur-xl"
+          <div
+            className="animate-fade-in-up h-full overflow-hidden rounded-[34px] border border-white/10 bg-neutral-900/80 shadow-2xl shadow-amber-500/5 backdrop-blur-xl"
           >
             <div className="relative h-full min-h-[22rem] overflow-hidden lg:min-h-full">
               <Image
@@ -254,31 +211,25 @@ export default function BanquetPage() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
-            variants={stagger}
-            className="rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[34px] sm:p-8"
+          <div
+            className="animate-fade-in-up rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[34px] sm:p-8"
           >
-            <motion.div variants={fadeUp}>
+            <div>
               <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-amber-300">
                 Complimentary
               </p>
               <h3 className="mb-6 text-3xl font-bold text-white">
                 Included in Every Package
               </h3>
-            </motion.div>
+            </div>
 
-            <motion.div variants={stagger} className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
               {complimentaryItems.map((item) => (
-                <motion.div
+                <div
                   key={item}
-                  variants={fadeUp}
-                  whileHover={{ y: -4 }}
-                  className="rounded-[24px] border border-white/10 bg-neutral-950 px-5 py-5 text-center shadow-lg shadow-amber-500/5"
+                  className="animate-fade-in-up rounded-[24px] border border-white/10 bg-neutral-950 px-5 py-5 text-center shadow-lg shadow-amber-500/5"
                 >
                   <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/10 text-xl text-amber-300">
                     ✦
@@ -286,20 +237,16 @@ export default function BanquetPage() {
                   <p className="text-sm font-semibold uppercase tracking-[0.14em] text-neutral-100">
                     {item}
                   </p>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </section>
 
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-          variants={stagger}
-          className="mt-8 rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:mt-10 sm:rounded-[34px] sm:p-8 md:p-10"
+        <section
+          className="animate-fade-in-up mt-8 rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:mt-10 sm:rounded-[34px] sm:p-8 md:p-10"
         >
-          <motion.div variants={fadeUp} className="mb-8 flex items-center gap-4">
+          <div className="mb-8 flex items-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400/10 text-xl text-amber-300">
               !
             </div>
@@ -309,46 +256,41 @@ export default function BanquetPage() {
               </p>
               <h3 className="mt-1 text-2xl font-bold text-white">Important Booking Notes</h3>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.ul variants={stagger} className="grid gap-4 md:grid-cols-2">
+          <ul className="grid gap-4 md:grid-cols-2">
             {terms.map((term) => (
-              <motion.li
+              <li
                 key={term}
-                variants={fadeUp}
-                className="flex items-start gap-3 rounded-[24px] border border-white/8 bg-neutral-950 px-5 py-4 text-neutral-300"
+                className="animate-fade-in-up flex items-start gap-3 rounded-[24px] border border-white/8 bg-neutral-950 px-5 py-4 text-neutral-300"
               >
                 <span className="mt-1 text-amber-400">•</span>
                 <span className="leading-6">{term}</span>
-              </motion.li>
+              </li>
             ))}
-          </motion.ul>
-        </motion.section>
+          </ul>
+        </section>
 
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-          variants={stagger}
-          className="mt-8 rounded-[30px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-5 py-10 text-center shadow-2xl shadow-amber-500/10 sm:mt-10 sm:rounded-[36px] sm:px-8 sm:py-12"
+        <section
+          className="animate-fade-in-up mt-8 rounded-[30px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-5 py-10 text-center shadow-2xl shadow-amber-500/10 sm:mt-10 sm:rounded-[36px] sm:px-8 sm:py-12"
         >
-          <motion.h3 variants={fadeUp} className="text-3xl font-bold text-balance sm:text-4xl md:text-5xl">
+          <h3 className="text-3xl font-bold text-balance sm:text-4xl md:text-5xl">
             <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
               Ready to Host a Grand Event?
             </span>
-          </motion.h3>
-          <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg">
+          </h3>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg">
             Speak with our team to reserve the right banquet package, align dining and room requirements, and plan a celebration with confidence at one of Motihari's premium event destinations.
-          </motion.p>
-          <motion.div variants={fadeUp} className="mt-8">
+          </p>
+          <div className="mt-8">
             <Link
               href={createHotelInquiryLink("a banquet hall booking at Hotel Rudra Regency", ["Event type: Wedding, reception, or social event", "Location: Motihari"]) }
               className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-6 py-4 text-sm font-bold uppercase tracking-[0.16em] text-black shadow-lg shadow-amber-500/25 transition hover:scale-[1.03] hover:shadow-amber-500/40 sm:w-auto sm:px-10 sm:tracking-[0.2em]"
             >
               Talk to Our Event Team
             </Link>
-          </motion.div>
-        </motion.section>
+          </div>
+        </section>
       </main>
     </div>
   );

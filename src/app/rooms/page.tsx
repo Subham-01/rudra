@@ -2,37 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { createHotelInquiryLink } from "@/lib/whatsapp";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.14,
-      delayChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { y: 24, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
-
-const heroVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
 
 const rooms = [
   {
@@ -138,37 +108,30 @@ export default function RoomsPage() {
         <div className="absolute bottom-20 left-4 h-28 w-28 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-24 sm:left-10 sm:h-44 sm:w-44" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 md:pb-20 lg:px-8">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-            className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end"
+          <div
+            className="animate-fade-in-up grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end"
           >
             <div>
-              <motion.p
-                variants={heroVariants}
+              <p
                 className="mb-4 text-[11px] font-medium uppercase tracking-[0.3em] text-amber-300 sm:text-sm sm:tracking-[0.38em]"
               >
                 Stay Collection
-              </motion.p>
-              <motion.h1
-                variants={heroVariants}
+              </p>
+              <h1
                 className="mb-5 text-4xl font-bold leading-[1.02] text-balance sm:text-5xl lg:text-6xl"
               >
                 <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
                   Luxury Rooms in Motihari
                 </span>
-              </motion.h1>
-              <motion.p
-                variants={heroVariants}
+              </h1>
+              <p
                 className="max-w-3xl text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8 md:text-xl"
               >
                 Experience comfort, elegance, and modern amenities at one of the best luxury hotels in Motihari, with premium rooms, wellness facilities, dining, and event-ready hospitality.
-              </motion.p>
+              </p>
             </div>
 
-            <motion.div
-              variants={heroVariants}
+            <div
               className="rounded-[24px] border border-white/10 bg-neutral-950/70 p-4 shadow-2xl shadow-amber-500/5 backdrop-blur-xl md:rounded-[28px] md:p-5"
             >
               <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.24em] text-amber-300">
@@ -188,76 +151,59 @@ export default function RoomsPage() {
                   <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-neutral-500">Restaurant</p>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="relative z-10 -mt-8 pb-8 sm:-mt-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+          <div
             className="grid grid-cols-2 gap-5 lg:grid-cols-4"
           >
             {features.map((feature) => (
-              <motion.div
+              <div
                 key={feature.title}
-                variants={itemVariants}
-                className="rounded-[24px] border border-white/10 bg-neutral-900/85 p-5 shadow-xl shadow-amber-500/5 backdrop-blur-xl transition-all hover:-translate-y-1 sm:rounded-[28px] sm:p-6"
+                className="animate-fade-in-up rounded-[24px] border border-white/10 bg-neutral-900/85 p-5 shadow-xl shadow-amber-500/5 backdrop-blur-xl transition-all hover:-translate-y-1 sm:rounded-[28px] sm:p-6"
               >
                 <div className="mb-4 text-4xl">{feature.icon}</div>
                 <h3 className="mb-3 text-xl font-semibold text-white">{feature.title}</h3>
                 <p className="text-sm leading-6 text-neutral-400">{feature.description}</p>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       <section className="bg-neutral-950 py-12 sm:py-14 md:py-16">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="mb-12 text-center md:mb-14"
+          <div
+            className="animate-fade-in-up mb-12 text-center md:mb-14"
           >
-            <motion.p
-              variants={itemVariants}
+            <p
               className="mb-3 text-sm font-medium uppercase tracking-[0.34em] text-amber-300"
             >
               Our Room Categories
-            </motion.p>
-            <motion.h2
-              variants={itemVariants}
+            </p>
+            <h2
               className="mb-4 text-3xl font-bold text-white text-balance sm:text-4xl md:text-5xl"
             >
               A Curated Collection of Elegant Stays
-            </motion.h2>
-            <motion.p
-              variants={itemVariants}
+            </h2>
+            <p
               className="mx-auto max-w-2xl text-base leading-8 text-neutral-400 md:text-lg"
             >
               Choose from our carefully curated collection of rooms designed to exceed your expectations.
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
 
           <div className="space-y-6 md:space-y-8">
             {rooms.map((room, index) => (
-              <motion.article
+              <article
                 key={room.id}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={containerVariants}
-                className="grid overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900/85 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[34px] lg:grid-cols-2"
+                className="animate-fade-in-up grid overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900/85 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[34px] lg:grid-cols-2"
               >
-                <motion.div
-                  variants={itemVariants}
+                <div
                   className={`${index % 2 === 1 ? 'lg:order-2' : ''} relative min-h-[240px] overflow-hidden`}
                 >
                   <Image
@@ -276,10 +222,9 @@ export default function RoomsPage() {
                   <div className="absolute bottom-6 left-6 right-6">
                     <h3 className="text-2xl font-bold text-white md:text-3xl">{room.name}</h3>
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  variants={itemVariants}
+                <div
                   className={`${index % 2 === 1 ? 'lg:order-1' : ''} flex flex-col p-5 sm:p-6 md:p-7 lg:p-8`}
                 >
                   <div className="mb-5">
@@ -316,8 +261,8 @@ export default function RoomsPage() {
                       Check Availability
                     </Link>
                   </div>
-                </motion.div>
-              </motion.article>
+                </div>
+              </article>
             ))}
           </div>
         </div>
@@ -325,70 +270,59 @@ export default function RoomsPage() {
 
       <section className="bg-neutral-900 py-14 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="rounded-[28px] border border-white/10 bg-neutral-950/80 p-5 shadow-2xl shadow-amber-500/5 sm:rounded-[34px] sm:p-8 md:p-10"
+          <div
+            className="animate-fade-in-up rounded-[28px] border border-white/10 bg-neutral-950/80 p-5 shadow-2xl shadow-amber-500/5 sm:rounded-[34px] sm:p-8 md:p-10"
           >
-            <motion.div variants={itemVariants} className="mb-8 text-center">
+            <div className="mb-8 text-center">
               <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
                 Why Guests Choose Rudra Regency
               </h2>
               <p className="mx-auto max-w-2xl text-base leading-8 text-neutral-400 md:text-lg">
                 Discover what makes Hotel Rudra Regency the perfect choice for your stay.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={containerVariants}
+            <div
               className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3"
             >
               {whyChooseUs.map((reason, index) => (
-                <motion.div
+                <div
                   key={index}
-                  variants={itemVariants}
-                  className="rounded-[24px] border border-white/10 bg-white/[0.03] px-5 py-5 shadow-lg shadow-amber-500/5"
+                  className="animate-fade-in-up rounded-[24px] border border-white/10 bg-white/[0.03] px-5 py-5 shadow-lg shadow-amber-500/5"
                 >
                   <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-amber-400/10 text-amber-300">
                     ✓
                   </div>
                   <p className="text-sm leading-7 text-neutral-300 md:text-base">{reason}</p>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="bg-neutral-950 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="rounded-[30px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-5 py-10 text-center shadow-2xl shadow-amber-500/10 sm:rounded-[36px] sm:px-8 sm:py-12"
+          <div
+            className="animate-fade-in-up rounded-[30px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-5 py-10 text-center shadow-2xl shadow-amber-500/10 sm:rounded-[36px] sm:px-8 sm:py-12"
           >
-            <motion.h2 variants={itemVariants} className="mb-5 text-3xl font-bold md:text-5xl">
+            <h2 className="mb-5 text-3xl font-bold md:text-5xl">
               Ready to Book Your Stay?
-            </motion.h2>
-            <motion.p
-              variants={itemVariants}
+            </h2>
+            <p
               className="mx-auto mb-8 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg"
             >
               Experience luxury and comfort at Hotel Rudra Regency. Choose the perfect room for your needs.
-            </motion.p>
-            <motion.div variants={itemVariants}>
+            </p>
+            <div>
               <Link
                 href={createHotelInquiryLink("a stay at Hotel Rudra Regency in Motihari")}
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-10 py-4 text-sm font-bold uppercase tracking-[0.18em] text-black shadow-lg shadow-amber-500/25 transition hover:scale-[1.02] hover:shadow-amber-500/40"
               >
                 Contact Us
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

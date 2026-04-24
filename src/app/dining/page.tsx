@@ -1,15 +1,9 @@
 'use client';
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Script from "next/script";
 import { createHotelInquiryLink } from "@/lib/whatsapp";
-
-const sectionVariants = {
-  hidden: { opacity: 0, y: 25 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
 
 const diningExperiences = [
   {
@@ -104,7 +98,7 @@ export default function DiningPage() {
         <div className="absolute right-6 top-16 h-20 w-20 rounded-full bg-amber-400/10 blur-2xl sm:right-10 sm:h-24 sm:w-24"></div>
         <div className="absolute bottom-12 left-4 h-28 w-28 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-16 sm:left-10 sm:h-36 sm:w-36"></div>
         <div className="relative flex min-h-[62vh] items-center max-w-6xl mx-auto px-4 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
-          <motion.div initial="hidden" animate="visible" variants={sectionVariants} className="max-w-3xl">
+          <div className="animate-fade-in-up max-w-3xl">
             <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-amber-300 sm:text-sm sm:tracking-[0.32em]">Premium Restaurant Experience</p>
             <h1 className="mb-5 text-4xl font-bold leading-[1.04] text-balance sm:text-5xl lg:text-6xl xl:max-w-4xl">
               <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
@@ -126,12 +120,12 @@ export default function DiningPage() {
                 Reserve a Table
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       <main className="relative mt-2 md:mt-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[32px] sm:p-8 lg:p-10">
+        <section className="animate-fade-in-up rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[32px] sm:p-8 lg:p-10">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
             <div>
               <p className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-4">Restaurant Branding</p>
@@ -170,17 +164,13 @@ export default function DiningPage() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </section>
 
         <section className="mt-10 grid gap-6 lg:grid-cols-3 sm:mt-12">
           {diningExperiences.map((item) => (
-            <motion.article
+            <article
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="overflow-hidden rounded-[26px] border border-white/10 bg-neutral-900 shadow-lg shadow-amber-500/5 sm:rounded-[32px]"
+              className="animate-fade-in-up overflow-hidden rounded-[26px] border border-white/10 bg-neutral-900 shadow-lg shadow-amber-500/5 sm:rounded-[32px]"
             >
               <div className="relative h-56 overflow-hidden">
                 <Image
@@ -203,19 +193,15 @@ export default function DiningPage() {
                   ))}
                 </ul>
               </div>
-            </motion.article>
+            </article>
           ))}
         </section>
 
         <section className="mt-12 space-y-6 sm:mt-16 sm:space-y-8">
           {signatureMoments.map((moment, index) => (
-            <motion.div
+            <div
               key={moment.title}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="grid overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900 shadow-2xl shadow-amber-500/5 sm:rounded-[34px] lg:grid-cols-[1.02fr_0.98fr]"
+              className="animate-fade-in-up grid overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900 shadow-2xl shadow-amber-500/5 sm:rounded-[34px] lg:grid-cols-[1.02fr_0.98fr]"
             >
               <div className={`${index % 2 === 1 ? 'lg:order-2' : ''} relative min-h-[320px] overflow-hidden`}>
                 <Image
@@ -232,12 +218,12 @@ export default function DiningPage() {
                   <p className="text-base leading-8 text-neutral-300 sm:text-lg">{moment.text}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </section>
 
         <section className="mt-12 sm:mt-16">
-          <motion.div initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="flex min-h-[320px] items-center justify-center rounded-[28px] bg-black p-5 text-center text-white shadow-2xl sm:min-h-[360px] sm:rounded-[32px] sm:p-10">
+          <div className="animate-fade-in-up flex min-h-[320px] items-center justify-center rounded-[28px] bg-black p-5 text-center text-white shadow-2xl sm:min-h-[360px] sm:rounded-[32px] sm:p-10">
             <div>
               <h3 className="mb-4 text-3xl font-semibold text-amber-300 text-balance">Reserve The Flavoresca experience</h3>
               <p className="mb-6 text-base leading-8 text-amber-200 sm:text-lg">
@@ -247,7 +233,7 @@ export default function DiningPage() {
                 Reserve your table
               </Link>
             </div>
-          </motion.div>
+          </div>
         </section>
       </main>
     </div>

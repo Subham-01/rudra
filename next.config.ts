@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: '/wp-content/uploads/2024/05/menu-hotel-4.pdf',
+        destination: '/pdf/menu-hotel-4.pdf',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

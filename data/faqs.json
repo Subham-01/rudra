@@ -1,0 +1,956 @@
+[
+  {
+    "id": "faq_1",
+    "category": "Check-in",
+    "question": "What is the check-in and check-out time?",
+    "keywords": [
+      "check in",
+      "check-in",
+      "checkout",
+      "check out",
+      "check-out",
+      "time",
+      "arrival",
+      "departure"
+    ],
+    "answer": "Our standard check-in time is 12:00 PM and check-out time is 11:00 AM."
+  },
+  {
+    "id": "faq_2",
+    "category": "Parking",
+    "question": "Do you have parking facilities?",
+    "keywords": [
+      "parking",
+      "park",
+      "car",
+      "valet",
+      "vehicle",
+      "garage"
+    ],
+    "answer": "Yes, we offer free and secure parking for all our guests at Hotel Rudra Regency."
+  },
+  {
+    "id": "faq_3",
+    "category": "Location",
+    "question": "Where is the hotel located?",
+    "keywords": [
+      "location",
+      "address",
+      "situated",
+      "map",
+      "directions",
+      "reach"
+    ],
+    "answer": "We are located at Chandrahiya, Chararhiya, Motihari, Bihar 845401. [View on Google Maps](https://maps.google.com/?q=Hotel+Rudra+Regency,+Motihari)"
+  },
+  {
+    "id": "faq_4",
+    "category": "Contact",
+    "question": "How can I contact the hotel?",
+    "keywords": [
+      "contact",
+      "phone",
+      "number",
+      "call",
+      "email",
+      "reach",
+      "whatsapp",
+      "contact no",
+      "mobile no",
+      "mob.",
+      "phone no."
+    ],
+    "answer": "You can reach us by phone or WhatsApp at [+91 8651600015](tel:+918651600015), or email us at [info@rudraregency.com](mailto:info@rudraregency.com)."
+  },
+  {
+    "id": "temp_oec0oxbal",
+    "category": "General",
+    "question": "What is Hotel Rudra Regency?",
+    "answer": "Hotel Rudra Regency is a premium hotel in Motihari, Bihar, offering comfortable accommodations, an open terrace restaurant, conference facilities, a gym, and banquet services for business and leisure travelers.",
+    "keywords": []
+  },
+  {
+    "id": "temp_dsay46ztj",
+    "category": "General",
+    "question": "Where is Hotel Rudra Regency located?",
+    "answer": "We are located at Chandrahiya, Chararhiya, Motihari, Bihar 845401. [View on Google Maps](https://maps.google.com/?q=Hotel+Rudra+Regency,+Motihari)",
+    "keywords": []
+  },
+  {
+    "id": "temp_o5h469zbb",
+    "category": "General",
+    "question": "How can I contact Hotel Rudra Regency?",
+    "answer": "You can contact our reception at [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182) for bookings and assistance.",
+    "keywords": []
+  },
+  {
+    "id": "temp_jn4r1j1m2",
+    "category": "General",
+    "question": "What are the check-in and check-out timings?",
+    "answer": "Check-in: 12:00 Noon to 2:00 PM. Check-out: 11:00 AM.",
+    "keywords": []
+  },
+  {
+    "id": "temp_2794io6rw",
+    "category": "General",
+    "question": "Is early check-in available?",
+    "answer": "Early check-in depends on room availability. Please contact our reception at [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182) before your arrival.",
+    "keywords": []
+  },
+  {
+    "id": "temp_lm5rps1cq",
+    "category": "General",
+    "question": "Is late check-out available?",
+    "answer": "Late check-out is subject to availability. Please contact the reception for assistance.",
+    "keywords": []
+  },
+  {
+    "id": "temp_xflohd2px",
+    "category": "General",
+    "question": "Is Hotel Rudra Regency suitable for families?",
+    "answer": "Yes, Hotel Rudra Regency welcomes families and offers comfortable accommodations for family stays.",
+    "keywords": []
+  },
+  {
+    "id": "temp_3sfcs02jo",
+    "category": "General",
+    "question": "Is Hotel Rudra Regency suitable for business travelers?",
+    "answer": "Yes. The hotel offers conference facilities, comfortable rooms, and amenities suitable for business travelers.",
+    "keywords": []
+  },
+  {
+    "id": "temp_eel05tsqs",
+    "category": "General",
+    "question": "What facilities are available at Hotel Rudra Regency?",
+    "answer": "We offer premium rooms, royal semi suites, royal suites, a conference hall, gym, open terrace restaurant, banquet facilities, and complimentary hospitality services.",
+    "keywords": []
+  },
+  {
+    "id": "temp_8x43756ht",
+    "category": "Rooms",
+    "question": "What room types are available?",
+    "answer": "We offer Premium Rooms, Royal Semi Suites, and Royal Suites. For detailed information and recommendations, please contact our reception at [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182).",
+    "keywords": []
+  },
+  {
+    "id": "temp_oacrkyajb",
+    "category": "Rooms",
+    "question": "What is the price of a Premium Room?",
+    "answer": "Room tariffs vary based on season, occupancy, and offers. Please contact our reception at [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182) for the latest pricing.",
+    "keywords": []
+  },
+  {
+    "id": "temp_iklammf2t",
+    "category": "Rooms",
+    "question": "What is the price of a Royal Semi Suite?",
+    "answer": "Room tariffs vary based on season, occupancy, and offers. Please contact our reception for the latest pricing.",
+    "keywords": []
+  },
+  {
+    "id": "temp_9wz96sx8y",
+    "category": "Rooms",
+    "question": "What is the price of a Royal Suite?",
+    "answer": "Room tariffs vary based on season, occupancy, and offers. Please contact our reception for the latest pricing.",
+    "keywords": []
+  },
+  {
+    "id": "temp_kagacwn6f",
+    "category": "Rooms",
+    "question": "How can I know the room price?",
+    "answer": "We have different pricing models depending on your requirements and dates. Please contact our reception at [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182) for the best available rate.",
+    "keywords": []
+  },
+  {
+    "id": "temp_8zubjsju0",
+    "category": "Rooms",
+    "question": "Which room should I choose?",
+    "answer": "Our reception team will help you select the most suitable room based on your budget, number of guests, and requirements. Please call [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182).",
+    "keywords": []
+  },
+  {
+    "id": "temp_wjbzivcl2",
+    "category": "Restaurant",
+    "question": "How can I reserve a table?",
+    "answer": "To reserve a table at our Open Terrace Restaurant, please contact our reception at [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182).",
+    "keywords": []
+  },
+  {
+    "id": "temp_cxdgkwz0v",
+    "category": "Conference",
+    "question": "Do you have a conference hall?",
+    "answer": "Yes. Hotel Rudra Regency has conference facilities suitable for meetings, seminars, and corporate events.",
+    "keywords": []
+  },
+  {
+    "id": "temp_t0iv0fe7l",
+    "category": "Conference",
+    "question": "How can I book the conference hall?",
+    "answer": "Please contact our reception at [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182) for conference hall availability and booking.",
+    "keywords": []
+  },
+  {
+    "id": "temp_nzjdzxmuf",
+    "category": "Gym",
+    "question": "Does the hotel have a gym?",
+    "answer": "Yes. Hotel Rudra Regency offers a gym for guests.",
+    "keywords": []
+  },
+  {
+    "id": "temp_wcxr8nyd6",
+    "category": "Banquet",
+    "question": "How can I book the banquet hall?",
+    "answer": "Please contact our reception at [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182) for availability, pricing, and customized event packages.",
+    "keywords": []
+  },
+  {
+    "id": "temp_ez61xh5vv",
+    "category": "Pricing",
+    "question": "How much does a banquet cost?",
+    "answer": "Banquet pricing depends on the event type, guest count, and requirements. Please contact our reception for a customized quotation.",
+    "keywords": []
+  },
+  {
+    "id": "temp_ly5iwiphj",
+    "category": "Booking",
+    "question": "How do I make a booking?",
+    "answer": "Please contact our reception at [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182). Our team will assist you with room reservations, banquet bookings, and restaurant reservations.",
+    "keywords": []
+  },
+  {
+    "id": "temp_4pygiux7s",
+    "category": "General",
+    "question": "Is Hotel Rudra Regency a luxury hotel?",
+    "answer": "Hotel Rudra Regency offers premium hospitality with comfortable accommodations, quality dining, and event facilities in Motihari.",
+    "keywords": []
+  },
+  {
+    "id": "temp_yx85dx0w1",
+    "category": "General",
+    "question": "Is the hotel open 24 hours?",
+    "answer": "Yes, our reception is available to assist guests. For any assistance, please contact [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182).",
+    "keywords": []
+  },
+  {
+    "id": "temp_jvxpqailq",
+    "category": "General",
+    "question": "Can I visit the hotel before booking?",
+    "answer": "Yes, you are welcome to visit the property. Please contact the reception before your visit.",
+    "keywords": []
+  },
+  {
+    "id": "temp_a3oz3kzne",
+    "category": "General",
+    "question": "Do you welcome walk-in guests?",
+    "answer": "Yes, walk-in bookings are accepted subject to room availability.",
+    "keywords": []
+  },
+  {
+    "id": "temp_5tadm5x1m",
+    "category": "General",
+    "question": "Is Hotel Rudra Regency safe for families?",
+    "answer": "Yes, Hotel Rudra Regency provides a safe and comfortable environment for families.",
+    "keywords": []
+  },
+  {
+    "id": "temp_awisc2vts",
+    "category": "General",
+    "question": "Do you have elevators?",
+    "answer": "Please contact the reception for detailed information about hotel facilities.",
+    "keywords": []
+  },
+  {
+    "id": "temp_pqkvp3mj2",
+    "category": "General",
+    "question": "Is your hotel suitable for senior citizens?",
+    "answer": "Yes, we welcome senior citizen guests and strive to provide a comfortable stay.",
+    "keywords": []
+  },
+  {
+    "id": "temp_jauqra7ap",
+    "category": "General",
+    "question": "Can international guests stay here?",
+    "answer": "Yes, valid government-issued identification and applicable travel documents are required.",
+    "keywords": []
+  },
+  {
+    "id": "temp_9tvhxwum5",
+    "category": "General",
+    "question": "Do you have 24-hour reception?",
+    "answer": "Our reception team is available to assist guests.",
+    "keywords": []
+  },
+  {
+    "id": "temp_23nm5phii",
+    "category": "General",
+    "question": "Do you provide luggage assistance?",
+    "answer": "Yes, our staff will assist you with luggage whenever required.",
+    "keywords": []
+  },
+  {
+    "id": "temp_n9ee50yxv",
+    "category": "Rooms",
+    "question": "Which is your best room?",
+    "answer": "We offer Premium Rooms, Royal Semi Suites, and Royal Suites. Our reception team can help you choose the best room based on your requirements.",
+    "keywords": []
+  },
+  {
+    "id": "temp_yyp8p3pcg",
+    "category": "Rooms",
+    "question": "Which room is suitable for couples?",
+    "answer": "Our reception team will recommend the most suitable room based on your preferences.",
+    "keywords": []
+  },
+  {
+    "id": "temp_rn9x6d9c0",
+    "category": "Rooms",
+    "question": "Which room is suitable for families?",
+    "answer": "Please contact our reception to find the best room option for your family.",
+    "keywords": []
+  },
+  {
+    "id": "temp_9fj2hnez0",
+    "category": "Rooms",
+    "question": "Do rooms have attached bathrooms?",
+    "answer": "Yes, guest rooms include attached bathrooms.",
+    "keywords": []
+  },
+  {
+    "id": "temp_8u7gkhis7",
+    "category": "Rooms",
+    "question": "Are towels provided?",
+    "answer": "Yes, towels are provided for guests.",
+    "keywords": []
+  },
+  {
+    "id": "temp_iwsa92cgo",
+    "category": "Rooms",
+    "question": "Do rooms have air conditioning?",
+    "answer": "Yes, all rooms are air-conditioned.",
+    "keywords": []
+  },
+  {
+    "id": "temp_gpk2anpjc",
+    "category": "Rooms",
+    "question": "Is hot water available?",
+    "answer": "Yes, hot and cold water are available.",
+    "keywords": []
+  },
+  {
+    "id": "temp_8gytvwydm",
+    "category": "Rooms",
+    "question": "Are rooms cleaned every day?",
+    "answer": "Yes, housekeeping maintains guest rooms regularly.",
+    "keywords": []
+  },
+  {
+    "id": "temp_ap4ymraqt",
+    "category": "Rooms",
+    "question": "Can I request extra pillows?",
+    "answer": "Yes, subject to availability.",
+    "keywords": []
+  },
+  {
+    "id": "temp_lb43xktuw",
+    "category": "Rooms",
+    "question": "Can I request housekeeping?",
+    "answer": "Yes, housekeeping assistance is available during your stay.",
+    "keywords": []
+  },
+  {
+    "id": "temp_nrf0tunkh",
+    "category": "Rooms",
+    "question": "Are smoking rooms available?",
+    "answer": "Please contact reception regarding smoking policies and room availability.",
+    "keywords": []
+  },
+  {
+    "id": "temp_5k9qzc528",
+    "category": "Rooms",
+    "question": "Do you have rooms with a city view?",
+    "answer": "Please contact reception for room preferences and availability.",
+    "keywords": []
+  },
+  {
+    "id": "temp_o3rj3ppe7",
+    "category": "Rooms",
+    "question": "Can I request a quiet room?",
+    "answer": "Yes, preferences can be requested and are subject to availability.",
+    "keywords": []
+  },
+  {
+    "id": "temp_pog52ga8q",
+    "category": "Rooms",
+    "question": "Are rooms suitable for business travelers?",
+    "answer": "Yes, our rooms are suitable for both leisure and business travelers.",
+    "keywords": []
+  },
+  {
+    "id": "temp_dqjm290bf",
+    "category": "Rooms",
+    "question": "How many people can stay in one room?",
+    "answer": "Occupancy depends on the room category. Please contact reception for details.",
+    "keywords": []
+  },
+  {
+    "id": "temp_qq3t725a5",
+    "category": "Bookings",
+    "question": "How can I reserve a room?",
+    "answer": "Please contact our reception at [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182).",
+    "keywords": []
+  },
+  {
+    "id": "temp_zx5mzo738",
+    "category": "Bookings",
+    "question": "Can I book through WhatsApp?",
+    "answer": "Please contact our reception for available booking options.",
+    "keywords": []
+  },
+  {
+    "id": "temp_ymetl0exr",
+    "category": "Bookings",
+    "question": "Do you accept advance bookings?",
+    "answer": "Yes, advance bookings are recommended.",
+    "keywords": []
+  },
+  {
+    "id": "temp_alrqvs8fd",
+    "category": "Bookings",
+    "question": "Can I reserve multiple rooms?",
+    "answer": "Yes, subject to availability.",
+    "keywords": []
+  },
+  {
+    "id": "temp_d0nun7ysk",
+    "category": "Bookings",
+    "question": "How far in advance should I book?",
+    "answer": "We recommend booking as early as possible during peak seasons.",
+    "keywords": []
+  },
+  {
+    "id": "temp_v6p6ke7bp",
+    "category": "Bookings",
+    "question": "Can I change my booking date?",
+    "answer": "Reservation changes depend on availability.",
+    "keywords": []
+  },
+  {
+    "id": "temp_kqju72p7k",
+    "category": "Bookings",
+    "question": "Can I extend my stay?",
+    "answer": "Extensions are subject to room availability.",
+    "keywords": []
+  },
+  {
+    "id": "temp_4izajmym1",
+    "category": "Bookings",
+    "question": "Can I book for someone else?",
+    "answer": "Yes, bookings can be made for another guest.",
+    "keywords": []
+  },
+  {
+    "id": "temp_u51dks9ce",
+    "category": "Bookings",
+    "question": "Do I need ID proof during check-in?",
+    "answer": "Yes, valid government-issued ID is required.",
+    "keywords": []
+  },
+  {
+    "id": "temp_9v7sk3h3k",
+    "category": "Bookings",
+    "question": "Can I book directly with the hotel?",
+    "answer": "Yes, direct bookings can be made through our reception.",
+    "keywords": []
+  },
+  {
+    "id": "temp_9o4hw420e",
+    "category": "Restaurant",
+    "question": "What is the name of your restaurant?",
+    "answer": "Hotel Rudra Regency has in house Restaurant named-The Flavoresca,features an Open Terrace Restaurant as well.",
+    "keywords": []
+  },
+  {
+    "id": "temp_vmxkmjdhh",
+    "category": "Restaurant",
+    "question": "Can I book the restaurant for a private dinner?",
+    "answer": "Please contact reception for reservation options.",
+    "keywords": []
+  },
+  {
+    "id": "temp_pxzgzvtpp",
+    "category": "Restaurant",
+    "question": "Is rooftop dining available?",
+    "answer": "Yes, we have an Open Terrace Restaurant.",
+    "keywords": []
+  },
+  {
+    "id": "temp_rknq7c933",
+    "category": "Restaurant",
+    "question": "Do you serve breakfast?",
+    "answer": "Please contact reception for the latest dining information.",
+    "keywords": []
+  },
+  {
+    "id": "temp_ckgb9ekto",
+    "category": "Restaurant",
+    "question": "Do you serve lunch?",
+    "answer": "Yes, our restaurant serves meals during operating hours.",
+    "keywords": []
+  },
+  {
+    "id": "temp_jsi1mpm1d",
+    "category": "Restaurant",
+    "question": "Do you serve dinner?",
+    "answer": "Yes, dinner is available during restaurant hours.",
+    "keywords": []
+  },
+  {
+    "id": "temp_osv0w0lju",
+    "category": "Restaurant",
+    "question": "Can families dine together?",
+    "answer": "Yes, families are welcome.",
+    "keywords": []
+  },
+  {
+    "id": "temp_dkhvc1thg",
+    "category": "Restaurant",
+    "question": "Do you have vegetarian food?",
+    "answer": "Yes, vegetarian options are available.",
+    "keywords": []
+  },
+  {
+    "id": "temp_l9atn54wi",
+    "category": "Restaurant",
+    "question": "Do you have non-vegetarian food?",
+    "answer": "Yes, non-vegetarian dishes are available.",
+    "keywords": []
+  },
+  {
+    "id": "temp_s7la5w4xu",
+    "category": "Restaurant",
+    "question": "Can I reserve a table?",
+    "answer": "Yes, please contact reception for reservations.",
+    "keywords": []
+  },
+  {
+    "id": "temp_3k998aqv0",
+    "category": "Banquet",
+    "question": "Is your banquet hall air-conditioned?",
+    "answer": "Please contact reception for banquet hall specifications.",
+    "keywords": []
+  },
+  {
+    "id": "temp_iyr9eq1qp",
+    "category": "Banquet",
+    "question": "Can I book a wedding?",
+    "answer": "Yes, weddings can be hosted at our banquet facility.",
+    "keywords": []
+  },
+  {
+    "id": "temp_773bvst8x",
+    "category": "Banquet",
+    "question": "Can I host an engagement ceremony?",
+    "answer": "Yes.",
+    "keywords": []
+  },
+  {
+    "id": "temp_nnetb467h",
+    "category": "Banquet",
+    "question": "Can I celebrate an anniversary?",
+    "answer": "Yes.",
+    "keywords": []
+  },
+  {
+    "id": "temp_nm0qxc1ld",
+    "category": "Banquet",
+    "question": "Can I organize a birthday party?",
+    "answer": "Yes.",
+    "keywords": []
+  },
+  {
+    "id": "temp_fj1lc6ol2",
+    "category": "Banquet",
+    "question": "Can I organize a baby shower?",
+    "answer": "Yes.",
+    "keywords": []
+  },
+  {
+    "id": "temp_wpxienrjk",
+    "category": "Banquet",
+    "question": "Can I organize a reception?",
+    "answer": "Yes.",
+    "keywords": []
+  },
+  {
+    "id": "temp_76jeqyce0",
+    "category": "Banquet",
+    "question": "Can I organize a corporate seminar?",
+    "answer": "Yes.",
+    "keywords": []
+  },
+  {
+    "id": "temp_i9zbbhisx",
+    "category": "Banquet",
+    "question": "Can I organize a conference?",
+    "answer": "Yes, we have conference facilities.",
+    "keywords": []
+  },
+  {
+    "id": "temp_49g99po6m",
+    "category": "Banquet",
+    "question": "How do I check banquet availability?",
+    "answer": "Please contact reception for availability and booking.",
+    "keywords": []
+  },
+  {
+    "id": "temp_p2mo0hn3w",
+    "category": "Gym",
+    "question": "Do you have a fitness center?",
+    "answer": "Yes, Hotel Rudra Regency has a gym.",
+    "keywords": []
+  },
+  {
+    "id": "temp_pvy2i8zdv",
+    "category": "Gym",
+    "question": "Can hotel guests use the gym?",
+    "answer": "Yes, eligible guests may use the gym according to hotel policies.",
+    "keywords": []
+  },
+  {
+    "id": "temp_dx9va6qzf",
+    "category": "Gym",
+    "question": "Is the gym included with the stay?",
+    "answer": "Please contact reception for details regarding gym access.",
+    "keywords": []
+  },
+  {
+    "id": "temp_vof7rqequ",
+    "category": "Gym",
+    "question": "What are the gym timings?",
+    "answer": "Please contact reception for the latest gym timings.",
+    "keywords": []
+  },
+  {
+    "id": "temp_7m1g0p1rz",
+    "category": "Gym",
+    "question": "Is the gym air-conditioned?",
+    "answer": "Please contact reception for facility details.",
+    "keywords": []
+  },
+  {
+    "id": "temp_i0tdgheax",
+    "category": "Contact",
+    "question": "How do I contact reception?",
+    "answer": "Call [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182).",
+    "keywords": []
+  },
+  {
+    "id": "temp_209bcw7lx",
+    "category": "Contact",
+    "question": "What is your phone number?",
+    "answer": "[+91 8651600015](tel:+918651600015) / [+91 8581828182](tel:+918581828182)",
+    "keywords": []
+  },
+  {
+    "id": "temp_4egdhi5mm",
+    "category": "Contact",
+    "question": "Where is the hotel?",
+    "answer": "We are located at Chandrahiya, Chararhiya, Motihari, Bihar 845401. [View on Google Maps](https://maps.google.com/?q=Hotel+Rudra+Regency,+Motihari)",
+    "keywords": []
+  },
+  {
+    "id": "temp_ndgyrclzv",
+    "category": "Contact",
+    "question": "Can I get directions?",
+    "answer": "We are located at Chandrahiya, Chararhiya, Motihari, Bihar 845401. [View on Google Maps](https://maps.google.com/?q=Hotel+Rudra+Regency,+Motihari)",
+    "keywords": []
+  },
+  {
+    "id": "temp_tumssq3aw",
+    "category": "Contact",
+    "question": "Who should I call for bookings?",
+    "answer": "Please call [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182).",
+    "keywords": []
+  },
+  {
+    "id": "temp_antd0rchs",
+    "category": "General",
+    "question": "Where is Hotel Rudra Regency located?",
+    "answer": "Hotel Rudra Regency is located in Motihari, Bihar, offering premium accommodation, dining, and event facilities.",
+    "keywords": []
+  },
+  {
+    "id": "temp_6ybuq4cmu",
+    "category": "General",
+    "question": "How can I book a room at Hotel Rudra Regency?",
+    "answer": "You can book a room by contacting our reception directly. Our team can assist you with availability, room options, rates, and reservations. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_txv0exbpg",
+    "category": "General",
+    "question": "What types of rooms are available?",
+    "answer": "Hotel Rudra Regency offers Premium Rooms, Royal Semi Suites, and Royal Suites, designed for a comfortable and premium stay.",
+    "keywords": []
+  },
+  {
+    "id": "temp_p72wkce4z",
+    "category": "General",
+    "question": "What time is check-in?",
+    "answer": "The standard check-in time at Hotel Rudra Regency is 12:00 Noon.",
+    "keywords": []
+  },
+  {
+    "id": "temp_8pdd3o8i0",
+    "category": "General",
+    "question": "What time is check-out?",
+    "answer": "The standard check-out time is 11:00 AM.",
+    "keywords": []
+  },
+  {
+    "id": "temp_qtvw33xlc",
+    "category": "General",
+    "question": "Can I check the room availability before booking?",
+    "answer": "Yes. Please contact our reception for the latest room availability and booking assistance. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_tjqa7xp5j",
+    "category": "General",
+    "question": "How can I get the current room rates?",
+    "answer": "Room rates can vary depending on the room category and date. Please contact reception for the latest available rates. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_fy5pk6r67",
+    "category": "General",
+    "question": "Does Hotel Rudra Regency accept direct bookings?",
+    "answer": "Yes. You can contact the hotel directly for booking assistance and availability. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_bflb2a8xm",
+    "category": "General",
+    "question": "Does the hotel have a restaurant?",
+    "answer": "Yes. Hotel Rudra Regency has The Flavoresca, our in-house restaurant with dining facilities. The hotel also has an open terrace restaurant.",
+    "keywords": []
+  },
+  {
+    "id": "temp_ijz7ftsmt",
+    "category": "General",
+    "question": "What is the name of the hotel's restaurant?",
+    "answer": "Our in-house restaurant is called The Flavoresca.",
+    "keywords": []
+  },
+  {
+    "id": "temp_38h4zbc7j",
+    "category": "General",
+    "question": "Does The Flavoresca offer in-house dining?",
+    "answer": "Yes. The Flavoresca provides in-house dining facilities at Hotel Rudra Regency.",
+    "keywords": []
+  },
+  {
+    "id": "temp_dysaufbqx",
+    "category": "General",
+    "question": "Does Hotel Rudra Regency have an open terrace restaurant?",
+    "answer": "Yes. Hotel Rudra Regency has an open terrace restaurant, providing guests with an additional dining experience.",
+    "keywords": []
+  },
+  {
+    "id": "temp_x0ql32tiq",
+    "category": "General",
+    "question": "Can non-hotel guests dine at The Flavoresca?",
+    "answer": "Yes, The Flavoresca is available for dining enquiries from both hotel guests and visitors, subject to availability.",
+    "keywords": []
+  },
+  {
+    "id": "temp_yms9dldpz",
+    "category": "General",
+    "question": "Does Hotel Rudra Regency have banquet facilities?",
+    "answer": "Yes. Hotel Rudra Regency has two dedicated banquet halls suitable for weddings, receptions, corporate events, parties, conferences, and other functions.",
+    "keywords": []
+  },
+  {
+    "id": "temp_pn5w6r7xq",
+    "category": "General",
+    "question": "How many banquet halls does Hotel Rudra Regency have?",
+    "answer": "Hotel Rudra Regency has two dedicated banquet halls: Saumya Hall (10,000 sq. ft.) and Rivansh Hall (4000 sq. ft).",
+    "keywords": [
+      "Banquet Hall"
+    ]
+  },
+  {
+    "id": "temp_kovt5zsqf",
+    "category": "General",
+    "question": "What is the size of Saumya Hall?",
+    "answer": "Saumya Hall is 10,000 sq. ft., making it suitable for large-scale events and functions.",
+    "keywords": []
+  },
+  {
+    "id": "temp_ny0rpgpbq",
+    "category": "General",
+    "question": "What is the size of Rivansh Hall?",
+    "answer": "Rivansh Hall is 4,000 sq. ft., suitable for medium-sized events, gatherings, celebrations, and corporate functions.",
+    "keywords": []
+  },
+  {
+    "id": "temp_tsec6l4rx",
+    "category": "General",
+    "question": "Which banquet hall is larger?",
+    "answer": "Saumya Hall is larger, with an area of 10,000 sq. ft., while Rivansh Hall covers 4,000 sq. ft.",
+    "keywords": []
+  },
+  {
+    "id": "temp_zh666mv12",
+    "category": "General",
+    "question": "Can I book Saumya Hall for a wedding?",
+    "answer": "Yes. Saumya Hall can be considered for weddings, receptions, large celebrations, and other events. For availability, packages, and booking details, contact reception. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_1pctfmh73",
+    "category": "General",
+    "question": "Can I book Rivansh Hall for a private event?",
+    "answer": "Yes. Rivansh Hall is suitable for private celebrations, parties, meetings, corporate events, and other gatherings. Contact reception for availability and booking details. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_lejpirnk2",
+    "category": "General",
+    "question": "Can I book a banquet hall for a corporate event?",
+    "answer": "Yes. Hotel Rudra Regency offers dedicated banquet spaces suitable for corporate meetings, conferences, seminars, and other business events. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_tgbwgb0uk",
+    "category": "General",
+    "question": "Can I organize a wedding at Hotel Rudra Regency?",
+    "answer": "Yes. Hotel Rudra Regency offers dedicated banquet facilities for weddings and wedding-related functions. Saumya Hall and Rivansh Hall can accommodate different event requirements.",
+    "keywords": []
+  },
+  {
+    "id": "temp_9nlbzobcn",
+    "category": "General",
+    "question": "Can I organize a birthday party at the hotel?",
+    "answer": "Yes. Hotel Rudra Regency can be considered for birthday celebrations and private events. Contact reception to discuss availability and event requirements. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_7tgr8jdsj",
+    "category": "General",
+    "question": "Can I organize a conference at Hotel Rudra Regency?",
+    "answer": "Yes. The hotel has dedicated event and banquet spaces suitable for conferences, meetings, seminars, and corporate gatherings.",
+    "keywords": []
+  },
+  {
+    "id": "temp_hby59mdpm",
+    "category": "General",
+    "question": "Does the hotel have a rooftop or terrace dining option?",
+    "answer": "Yes. Hotel Rudra Regency has an open terrace restaurant in addition to The Flavoresca.",
+    "keywords": []
+  },
+  {
+    "id": "temp_8pgkvht0x",
+    "category": "General",
+    "question": "Is Hotel Rudra Regency suitable for family stays?",
+    "answer": "Yes. The hotel offers comfortable accommodation and dining facilities suitable for families, couples, business travellers, and other guests.",
+    "keywords": []
+  },
+  {
+    "id": "temp_nm1rxguay",
+    "category": "General",
+    "question": "Is Hotel Rudra Regency suitable for business travellers?",
+    "answer": "Yes. The hotel offers premium accommodation and facilities suitable for business and corporate travellers.",
+    "keywords": []
+  },
+  {
+    "id": "temp_y4y1es8xp",
+    "category": "General",
+    "question": "Does the hotel have suites?",
+    "answer": "Yes. Hotel Rudra Regency offers Royal Semi Suites and Royal Suites in addition to Premium Rooms.",
+    "keywords": []
+  },
+  {
+    "id": "temp_bu57u4sq5",
+    "category": "General",
+    "question": "How can I book a suite?",
+    "answer": "Please contact reception for suite availability, current rates, and booking assistance. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_ccnmcd1a3",
+    "category": "General",
+    "question": "Can I book directly with the hotel instead of using a booking website?",
+    "answer": "Yes. You can contact Hotel Rudra Regency's reception for direct booking assistance. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_fkzo1v9l1",
+    "category": "General",
+    "question": "Can I enquire about banquet pricing?",
+    "answer": "Yes. Banquet pricing depends on the event, hall, date, guest count, and requirements. Contact reception for the latest package and pricing information. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_h3yfi60zl",
+    "category": "General",
+    "question": "Can I check banquet hall availability for a particular date?",
+    "answer": "Yes. Please contact reception with your event date, expected guest count, and event type so the team can assist you with availability. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_xwqb09bh5",
+    "category": "General",
+    "question": "Which hall should I choose for a large event?",
+    "answer": "For larger events, Saumya Hall (10,000 sq. ft.) provides the larger dedicated event space. The final recommendation depends on your guest count and event setup.",
+    "keywords": []
+  },
+  {
+    "id": "temp_vgzx3cwfn",
+    "category": "General",
+    "question": "Which hall is suitable for a smaller gathering?",
+    "answer": "Rivansh Hall (4,000 sq. ft.) may be suitable for smaller or medium-sized gatherings. The appropriate hall depends on your guest count and event requirements.",
+    "keywords": []
+  },
+  {
+    "id": "temp_0sj02k4im",
+    "category": "General",
+    "question": "Does the hotel offer dining for guests?",
+    "answer": "Yes. Guests can enjoy in-house dining at The Flavoresca, as well as the hotel's open terrace restaurant.",
+    "keywords": []
+  },
+  {
+    "id": "temp_ftfjw6p22",
+    "category": "General",
+    "question": "Where can I have a meal at Hotel Rudra Regency?",
+    "answer": "You can dine at The Flavoresca, the hotel's in-house restaurant, or enjoy the experience at our open terrace restaurant.",
+    "keywords": []
+  },
+  {
+    "id": "temp_6qjk6ceab",
+    "category": "General",
+    "question": "Can I contact the hotel for restaurant-related enquiries?",
+    "answer": "Yes. For restaurant-related enquiries, dining information, or reservations, you can contact the hotel reception. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_ff0dqcets",
+    "category": "General",
+    "question": "Can I contact the hotel for event planning?",
+    "answer": "Yes. For weddings, parties, corporate events, conferences, or other functions, contact our reception team to discuss your requirements. Reception: +91 8651600015 / +91 8581828182",
+    "keywords": []
+  },
+  {
+    "id": "temp_it13qyg3c",
+    "category": "General",
+    "question": "Why should I choose Hotel Rudra Regency for an event?",
+    "answer": "Hotel Rudra Regency offers two dedicated banquet halls—Saumya Hall (10,000 sq. ft.) and Rivansh Hall (4,000 sq. ft.)—along with accommodation and dining facilities including The Flavoresca and an open terrace restaurant.",
+    "keywords": []
+  },
+  {
+    "id": "temp_qvmw1siw6",
+    "category": "General",
+    "question": "How do I contact Hotel Rudra Regency?",
+    "answer": "You can contact Hotel Rudra Regency's reception at +91 8651600015 or +91 8581828182.",
+    "keywords": []
+  }
+]

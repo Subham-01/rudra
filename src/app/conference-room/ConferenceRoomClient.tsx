@@ -1,0 +1,256 @@
+'use client';
+
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { createHotelInquiryLink } from "@/lib/whatsapp";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
+
+const stagger = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.15 },
+  },
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
+
+export default function ConferenceRoomClient({ 
+  roomFormats, 
+  essentials, 
+  process,
+  whatsappNumber 
+}: { 
+  roomFormats: any[], 
+  essentials: string[], 
+  process: string[],
+  whatsappNumber?: string
+}) {
+  return (
+    <div className="min-h-screen overflow-hidden bg-neutral-950 text-white">
+      <section className="relative min-h-[62vh] overflow-hidden">
+        <Image
+          src="/images/conference Hero  section.JPG"
+          alt="Conference room hero"
+          fill
+          className="object-cover opacity-55"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute right-6 top-16 h-24 w-24 rounded-full bg-amber-400/10 blur-3xl sm:right-12 sm:h-28 sm:w-28" />
+        <div className="absolute bottom-12 left-4 h-28 w-28 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-16 sm:left-10 sm:h-40 sm:w-40" />
+
+        <div className="relative mx-auto flex min-h-[62vh] max-w-6xl items-center px-4 pb-10 pt-28 sm:px-6 sm:pt-32 lg:px-8 lg:pt-36">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={stagger}
+            className="w-full"
+          >
+            <div className="max-w-3xl">
+              <motion.p
+                variants={fadeUp}
+                className="mb-4 text-[11px] font-medium uppercase tracking-[0.3em] text-amber-300 sm:text-sm sm:tracking-[0.38em]"
+              >
+                Conference Room
+              </motion.p>
+              <motion.h1
+                variants={fadeUp}
+                className="mb-5 text-4xl font-bold leading-[1.04] text-balance sm:text-5xl lg:text-6xl"
+              >
+                <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
+                  Business Meetings in a Refined, Simplified Setting
+                </span>
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                className="max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8"
+              >
+                Host presentations, strategy sessions, training programs, and corporate discussions in a high-tech meeting hall designed for clarity, comfort, and smooth coordination.
+              </motion.p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <main className="relative mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={stagger}
+          className="mt-8 rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:mt-10 sm:rounded-[34px] sm:p-6 md:p-8"
+        >
+          <motion.div variants={fadeUp} className="mb-8 text-center">
+            <p className="mb-3 text-sm font-medium uppercase tracking-[0.35em] text-amber-300">
+              Event Formats
+            </p>
+            <h2 className="text-2xl font-bold md:text-4xl">
+              <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
+                A Clearer Layout for Professional Gatherings
+              </span>
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-neutral-400 md:text-base">
+              A business-ready conference setup in Motihari with hospitality support, dining coordination, and premium stay access when required.
+            </p>
+          </motion.div>
+
+          <motion.div variants={stagger} className="grid gap-5 lg:grid-cols-3">
+            {roomFormats.map((format) => (
+              <motion.article
+                key={format.title}
+                variants={scaleIn}
+                whileHover={{ y: -6 }}
+                className="rounded-[28px] border border-white/10 bg-neutral-950 p-6 shadow-xl shadow-amber-500/5"
+              >
+                <h3 className="mb-3 text-xl font-bold text-white">{format.title}</h3>
+                <p className="mb-5 text-sm leading-6 text-neutral-400">{format.description}</p>
+                <ul className="space-y-2 text-sm text-neutral-300">
+                  {format.points.map((point: string) => (
+                    <li key={point} className="flex items-start gap-2">
+                      <span className="mt-0.5 text-amber-400">✦</span>
+                      <span className="leading-6">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.article>
+            ))}
+          </motion.div>
+        </motion.section>
+
+        <section className="mt-10 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            variants={stagger}
+            className="rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[34px] sm:p-8"
+          >
+            <motion.div variants={fadeUp} className="mb-6">
+              <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-amber-300">
+                Included Essentials
+              </p>
+              <h3 className="text-3xl font-bold text-white">
+                Everything Needed for a Smooth Session
+              </h3>
+            </motion.div>
+
+            <motion.div variants={stagger} className="grid gap-4 sm:grid-cols-2">
+              {essentials.map((item) => (
+                <motion.div
+                  key={item}
+                  variants={fadeUp}
+                  className="rounded-[22px] border border-white/10 bg-neutral-950 px-5 py-4 shadow-lg shadow-amber-500/5"
+                >
+                  <p className="text-sm leading-6 text-neutral-200">{item}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            variants={stagger}
+            className="overflow-hidden rounded-[34px] border border-white/10 bg-neutral-900/80 shadow-2xl shadow-amber-500/5 backdrop-blur-xl"
+          >
+            <div className="relative h-full min-h-[320px] overflow-hidden">
+              <Image
+                src="/images/conference professional ambience.JPG"
+                alt="Professional ambience"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-black/35 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="mb-2 text-sm font-medium uppercase tracking-[0.3em] text-amber-300">
+                  Professional Ambience
+                </p>
+                <p className="max-w-lg text-lg leading-7 text-neutral-200">
+                  A premium business-ready environment with elegant interiors, hospitality support, and high-tech meeting capability that keeps the experience polished without overcomplicating the layout.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          variants={stagger}
+          className="mt-8 rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:mt-10 sm:rounded-[34px] sm:p-8 md:p-10"
+        >
+          <motion.div variants={fadeUp} className="mb-8">
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-amber-300">
+              Booking Flow
+            </p>
+            <h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">
+              How to Plan Your Conference with Us
+            </h3>
+          </motion.div>
+
+          <motion.div variants={stagger} className="grid gap-4 md:grid-cols-3">
+            {process.map((step, index) => (
+              <motion.div
+                key={step}
+                variants={fadeUp}
+                className="rounded-[24px] border border-white/8 bg-neutral-950 px-5 py-5 text-neutral-300"
+              >
+                <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-amber-300">
+                  Step {index + 1}
+                </p>
+                <p className="leading-7">{step}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          variants={stagger}
+          className="mt-8 rounded-[30px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black px-5 py-10 text-center shadow-2xl shadow-amber-500/10 sm:mt-10 sm:rounded-[36px] sm:px-8 sm:py-12"
+        >
+          <motion.h3 variants={fadeUp} className="text-3xl font-bold text-balance sm:text-4xl md:text-5xl">
+            Ready to Schedule Your Next Meeting?
+          </motion.h3>
+          <motion.p
+            variants={fadeUp}
+            className="mx-auto mt-5 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg"
+          >
+            Let our team help you plan a conference experience with meeting support, dining coordination, and luxury hospitality that feels professional, premium, and easy to manage.
+          </motion.p>
+          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              href={createHotelInquiryLink("a conference room booking at Hotel Rudra Regency", ["Event type: Meeting, presentation, or training session", "Location: Motihari"], whatsappNumber) }
+              className="inline-flex items-center justify-center rounded-full border border-amber-400/40 bg-transparent px-8 py-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-300 transition hover:bg-amber-400/10"
+            >
+              Contact Our Team
+            </Link>
+          </motion.div>
+        </motion.section>
+      </main>
+    </div>
+  );
+}

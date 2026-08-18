@@ -1,0 +1,56 @@
+{
+  "hotelName": "Hotel Rudra Regency",
+  "location": "Chandrahiya, Chararhiya, Motihari, Bihar 845401",
+  "contact": {
+    "phone": "+91 8651600015",
+    "email": "info@rudraregency.com",
+    "whatsapp": "+918651600015"
+  },
+  "description": "Hotel Rudra Regency is a luxury hotel in Motihari with premium rooms, gym, spa, lounge, bar, open terrace restaurant dining, a 10,000 sq ft banquet hall, and a high-tech meeting hall for stays, weddings, and business travel.",
+  "rooms": [
+    {
+      "type": "Standard Room",
+      "description": "Comfortable room for budget travelers.",
+      "amenities": ["Free Wi-Fi", "AC", "TV"]
+    },
+    {
+      "type": "Deluxe Room",
+      "description": "Spacious room with modern amenities.",
+      "amenities": ["Free Wi-Fi", "AC", "TV", "Mini Fridge"]
+    },
+    {
+      "type": "Suite Room",
+      "description": "Luxury suite with a living area.",
+      "amenities": ["Free Wi-Fi", "AC", "TV", "Mini Fridge", "Living Area"]
+    },
+    {
+      "type": "Royal Suite",
+      "description": "Premium luxury suite with top-tier facilities.",
+      "amenities": ["Free Wi-Fi", "AC", "TV", "Mini Fridge", "Living Area", "Bathtub"]
+    }
+  ],
+  "facilities": [
+    "Banquet Hall (10,000 sq ft, fits up to 1000 guests)",
+    "Rooftop Restaurant",
+    "Multi-cuisine Restaurant",
+    "Lounge & Bar",
+    "Gym",
+    "Spa",
+    "Meeting/Conference Hall",
+    "Free Parking",
+    "24/7 Room Service",
+    "Free Wi-Fi"
+  ],
+  "policies": {
+    "checkIn": "12:00 PM",
+    "checkOut": "11:00 AM",
+    "cancellation": "Free cancellation up to 48 hours before check-in."
+  },
+  "events": [
+    "Weddings",
+    "Corporate Meetings",
+    "Birthdays",
+    "Anniversaries",
+    "Engagements"
+  ]
+}

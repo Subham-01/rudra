@@ -1,0 +1,208 @@
+import Link from "next/link";
+import { BookOpenTextIcon, CircleHelpIcon, MailIcon, MapPinnedIcon, PhoneIcon } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
+import { createHotelInquiryLink, createWhatsAppLink } from "@/lib/whatsapp";
+
+const footerPageLinks = [
+  { label: "About Us", href: "/about", icon: CircleHelpIcon },
+  { label: "Blogs", href: "/blogs", icon: BookOpenTextIcon },
+];
+
+const quickLinks = [
+  { label: "Rooms", href: "/rooms" },
+  { label: "Dining", href: "/dining" },
+  { label: "Banquet Hall", href: "/banquet" },
+  { label: "Conference Room", href: "/conference-room" },
+  { label: "Contact", href: "/contact" },
+];
+
+import AdminOverlayWrapper from "./AdminOverlayWrapper";
+
+export default function Footer({ settings = {}, footerData = {}, isEditMode = false }: { settings?: Record<string, string>, footerData?: Record<string, any>, isEditMode?: boolean }) {
+  const whatsappNumber = settings.whatsapp_number || "+918651600015";
+  const whatsappHref = createWhatsAppLink("Hello", whatsappNumber);
+  const planVisitHref = createHotelInquiryLink("a stay, event, or dining plan at Hotel Rudra Regency", [], whatsappNumber);
+  
+  const socialLinks = footerData?.socialLinks || [
+    {
+      href: "https://www.facebook.com/hotelrudraregency7",
+      label: "Facebook",
+      svg: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z",
+    },
+    {
+      href: "https://www.instagram.com/hotel.rudra.regency?igsh=MTUzbmN6dnJ6bGJidA==",
+      label: "Instagram",
+      svg: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4-4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z",
+    },
+    {
+      href: whatsappHref,
+      label: "WhatsApp",
+      svg: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488",
+    },
+  ];
+
+  const companyInfo = footerData?.companyInfo || {
+    name: 'Hotel Rudra Regency',
+    description1: 'Book a refined stay, plan a banquet, reserve dining, or coordinate a conference experience with one hospitality team.',
+    description2: 'A premium hospitality destination in Motihari for luxury stays, banquets, dining, and business gatherings.',
+    copyright: 'Hotel Rudra Regency. All rights reserved.'
+  };
+
+  const contactInfo = footerData?.contactInfo || {
+    subtitle: 'Easy to reach for stay, dining, and events.',
+    address: 'Chandrahiya, Motihari, Chararhiya, Bihar 845401',
+    email: 'info@rudraregency.com',
+    phone: '+91 8651600015 | +91 8581828182',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Hotel+Rudra+Regency+Chandrahiya+Motihari+Bihar+845401'
+  };
+
+  const supportLinks = [
+    { label: "Call Us", href: `tel:${(settings.phone_number || contactInfo.phone).replace(/[^0-9+]/g, '')}` },
+    { label: "Email Us", href: `mailto:${contactInfo.email}` },
+    { label: "WhatsApp", href: whatsappHref },
+  ];
+
+  return (
+    <footer className="border-t border-amber-400/10 bg-[linear-gradient(180deg,rgba(18,18,18,0.98),rgba(8,8,8,1))] text-neutral-200">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="mb-8 flex flex-col gap-4 rounded-[24px] border border-white/10 bg-white/[0.02] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div className="relative">
+            <AdminOverlayWrapper isAdmin={isEditMode} sectionKey="companyInfo" label="Company Description">
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-neutral-500">
+                {companyInfo.name}
+              </p>
+              <p className="mt-2 max-w-2xl text-sm leading-7 text-neutral-400">
+                {companyInfo.description1}
+              </p>
+            </AdminOverlayWrapper>
+          </div>
+
+          <div className="flex sm:flex-row">
+            <Link
+              href={planVisitHref}
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "rounded-full border border-amber-300/20 bg-amber-300 text-neutral-950 hover:bg-amber-200"
+              )}
+            >
+              Plan Your Visit
+            </Link>
+          </div>
+        </div>
+
+        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.25fr_0.8fr_0.8fr_1fr]">
+          <div className="space-y-5 rounded-[24px] border border-white/10 bg-white/[0.02] px-5 py-5 sm:px-6 relative">
+            <AdminOverlayWrapper isAdmin={isEditMode} sectionKey="companyInfo" label="Company Description">
+              <Link href="/" className="inline-flex whitespace-nowrap text-xl font-semibold tracking-[0.06em] text-amber-200 sm:text-[1.65rem]">
+                {companyInfo.name}
+              </Link>
+              <p className="max-w-sm text-sm leading-7 text-neutral-400 mt-5">
+                {companyInfo.description2}
+              </p>
+            </AdminOverlayWrapper>
+            <div className="flex flex-wrap items-center gap-3">
+              {socialLinks.map((social: any, index: number) => (
+                <div key={social.label} className="relative">
+                  <AdminOverlayWrapper isAdmin={isEditMode} sectionKey="socialLinks" label={social.label} itemIndex={index}>
+                    <Link
+                      href={social.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-amber-400/12 bg-white/[0.03] transition hover:border-amber-300/30 hover:bg-amber-400/10"
+                      aria-label={social.label}
+                    >
+                      <svg className="w-5 h-5 text-amber-200" viewBox="0 0 24 24" fill="currentColor">
+                        <path d={social.svg} />
+                      </svg>
+                    </Link>
+                  </AdminOverlayWrapper>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              {footerPageLinks.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="inline-flex items-center gap-2 rounded-full border border-amber-400/12 bg-white/[0.03] px-4 py-2 text-sm font-medium text-neutral-200 transition hover:border-amber-300/30 hover:bg-amber-400/10 hover:text-white"
+                  >
+                    <Icon className="size-4 text-amber-200" />
+                    <span>{item.label}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-4 text-lg font-semibold text-white">Quick Links</p>
+            <p className="mb-4 text-sm text-neutral-500">Move through the main guest journeys.</p>
+              <ul className="space-y-3 text-neutral-400">
+              {quickLinks.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="transition-colors hover:text-white">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              </ul>
+          </div>
+
+          <div>
+            <p className="mb-4 text-lg font-semibold text-white">Reach Us</p>
+            <p className="mb-4 text-sm text-neutral-500">Direct support for bookings and events.</p>
+              <ul className="space-y-3 text-neutral-400">
+              {supportLinks.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="transition-colors hover:text-white">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              </ul>
+          </div>
+
+          <div className="relative">
+            <AdminOverlayWrapper isAdmin={isEditMode} sectionKey="contactInfo" label="Contact Info">
+              <p className="mb-4 text-lg font-semibold text-white">Address</p>
+              <p className="mb-4 text-sm text-neutral-500">{contactInfo.subtitle}</p>
+              <div className="space-y-3 text-neutral-400">
+                <p className="text-sm leading-7 whitespace-pre-wrap">{contactInfo.address}</p>
+                <p className="flex items-start gap-2 text-sm leading-7">
+                  <MailIcon className="mt-1 size-4 shrink-0 text-amber-200" />
+                  <span>{contactInfo.email}</span>
+                </p>
+                <p className="flex items-start gap-2 text-sm leading-7">
+                  <PhoneIcon className="mt-1 size-4 shrink-0 text-amber-200" />
+                  <span>{contactInfo.phone}</span>
+                </p>
+                <Link
+                  href={contactInfo.mapUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm leading-7 text-amber-200 transition-colors hover:text-amber-100"
+                >
+                  <MapPinnedIcon className="size-4 shrink-0" />
+                  <span>Get Directions on Google Maps</span>
+                </Link>
+              </div>
+            </AdminOverlayWrapper>
+          </div>
+        </div>
+
+        <Separator className="mt-10 bg-amber-400/10" />
+
+        <div className="pt-6 text-center text-sm text-neutral-500 relative">
+          <AdminOverlayWrapper isAdmin={isEditMode} sectionKey="companyInfo" label="Company Description">
+            <p>&copy; {new Date().getFullYear()} {companyInfo.copyright}</p>
+          </AdminOverlayWrapper>
+        </div>
+      </div>
+    </footer>
+  );
+}

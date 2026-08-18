@@ -1,0 +1,9 @@
+import { NextResponse } from 'next/server';
+
+export async function POST(request: Request) {
+  const response = NextResponse.json({ success: true }, { status: 200 });
+  
+  response.cookies.delete('admin_token');
+
+  return response;
+}

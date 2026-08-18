@@ -2,6 +2,8 @@ import connectToDatabase from "@/lib/db";
 import { PageContent, SiteSettings } from "@/lib/models";
 import ConferenceRoomClient from "./ConferenceRoomClient";
 
+export const dynamic = 'force-dynamic';
+
 const defaultRoomFormats = [
   {
     title: "Executive Meetings",

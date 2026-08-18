@@ -14,23 +14,12 @@ export async function POST(request: Request) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // Ensure the uploads directory exists
-    const uploadsDir = path.join(process.cwd(), 'public/uploads');
-    try {
-      await mkdir(uploadsDir, { recursive: true });
-    } catch (err) {
-      // Ignore if directory already exists
-    }
-
-    // Generate a unique filename to prevent overwrites
-    const filename = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
-    const filepath = path.join(uploadsDir, filename);
-    
-    await writeFile(filepath, buffer);
+    const base64String = buffer.toString('base64');
+    const dataUrl = `data:${file.type};base64,${base64String}`;
     
     return NextResponse.json({ 
       success: true, 
-      url: `/uploads/${filename}` 
+      url: dataUrl
     }, { status: 201 });
     
   } catch (error) {

@@ -63,7 +63,7 @@ export default async function BlogsPage() {
                 </span>
               </div>
               <h3 className="mb-4 text-2xl font-semibold text-white">{post.title}</h3>
-              <p className="text-base leading-8 text-neutral-400">{post.excerpt}</p>
+              <p className="text-base leading-8 text-neutral-400 line-clamp-3 break-words">{post.excerpt}</p>
               <Link href={`/blogs/${post.slug}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-amber-200 transition hover:text-amber-100">
                 Read Article
                 <ArrowRightIcon className="size-4" />

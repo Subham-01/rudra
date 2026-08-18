@@ -69,15 +69,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </header>
           
           <div 
-            className="blog-content prose-invert max-w-none pb-24 text-lg leading-relaxed text-neutral-300
+            className="blog-content prose-invert max-w-none pb-24 text-lg leading-relaxed text-neutral-300 break-words overflow-hidden
               [&>h2]:text-3xl [&>h2]:font-bold [&>h2]:text-white [&>h2]:mt-12 [&>h2]:mb-6
               [&>h3]:text-2xl [&>h3]:font-semibold [&>h3]:text-white [&>h3]:mt-10 [&>h3]:mb-4
               [&>p]:mb-6
               [&>ul]:mb-6 [&>ul]:list-disc [&>ul]:pl-6 [&>ul>li]:mb-2
               [&>ol]:mb-6 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol>li]:mb-2
-              [&>a]:text-amber-400 [&>a]:underline hover:[&>a]:text-amber-300
+              [&>a]:text-amber-400 [&>a]:underline hover:[&>a]:text-amber-300 [&>a]:break-all
               [&>blockquote]:border-l-4 [&>blockquote]:border-amber-500 [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-neutral-400 [&>blockquote]:my-8
-              [&>img]:rounded-2xl [&>img]:my-8 [&>img]:border [&>img]:border-white/10"
+              [&>img]:max-w-full [&>img]:h-auto [&>img]:rounded-2xl [&>img]:my-8 [&>img]:border [&>img]:border-white/10"
             dangerouslySetInnerHTML={{ __html: blog.content }}
           />
         </article>

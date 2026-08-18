@@ -19,8 +19,8 @@ function LayoutContent({
 }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const isAdmin = pathname.startsWith('/admin');
-  const isEditMode = searchParams.get('editMode') === 'true' && searchParams.get('editingPage') === 'footer';
+  const isAdmin = pathname?.startsWith('/admin') || false;
+  const isEditMode = searchParams?.get('editMode') === 'true' && searchParams?.get('editingPage') === 'footer';
 
   return (
     <>

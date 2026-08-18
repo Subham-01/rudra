@@ -30,7 +30,8 @@ const navItems = [
   { href: "/contact", label: "Contact" },
 ];
 
-function isActivePath(pathname: string, href: string) {
+function isActivePath(pathname: string | null, href: string) {
+  if (!pathname) return false;
   if (href === "/") {
     return pathname === href;
   }

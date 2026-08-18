@@ -194,21 +194,26 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  await connectToDatabase();
-  const rawSettings = await SiteSettings.find().lean();
   const globalSettings: Record<string, string> = {};
-  rawSettings.forEach((s: any) => globalSettings[s.key] = s.value);
-
-  // Fetch footer content
-  const rawFooter = await PageContent.find({ pageKey: 'footer' }).lean();
   const footerData: Record<string, any> = {};
-  rawFooter.forEach((c: any) => {
-    try {
-      footerData[c.sectionKey] = JSON.parse(c.content);
-    } catch {
-      // ignore
-    }
-  });
+
+  try {
+    await connectToDatabase();
+    const rawSettings = await SiteSettings.find().lean();
+    rawSettings.forEach((s: any) => globalSettings[s.key] = s.value);
+
+    // Fetch footer content
+    const rawFooter = await PageContent.find({ pageKey: 'footer' }).lean();
+    rawFooter.forEach((c: any) => {
+      try {
+        footerData[c.sectionKey] = JSON.parse(c.content);
+      } catch {
+        // ignore
+      }
+    });
+  } catch (error) {
+    console.warn("Could not fetch global settings/footer during build. Using defaults.");
+  }
 
   return (
     <html

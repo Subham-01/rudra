@@ -41,12 +41,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
           {sidebarLinks.map((link) => {
             const Icon = link.icon;
-            const isExact = pathname === link.href;
-            const isPrefix = pathname.startsWith(link.href + '/');
+            const currentPath = pathname || '';
+            const isExact = currentPath === link.href;
+            const isPrefix = currentPath.startsWith(link.href + '/');
             const hasMoreSpecificMatch = sidebarLinks.some(other => 
               other.href !== link.href && 
               other.href.length > link.href.length && 
-              (pathname === other.href || pathname.startsWith(other.href + '/'))
+              (currentPath === other.href || currentPath.startsWith(other.href + '/'))
             );
             const isActive = isExact || (link.href !== '/admin' && isPrefix && !hasMoreSpecificMatch);
             return (
@@ -80,7 +81,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <main className="flex-1 flex flex-col min-h-screen overflow-hidden">
         <header className="h-16 bg-white dark:bg-gray-800 border-b dark:border-gray-700 flex items-center px-8 shadow-sm">
           <h1 className="text-xl font-semibold text-gray-800 dark:text-white capitalize">
-            {pathname.split('/').pop() || 'Dashboard'}
+            {(pathname || '').split('/').pop() || 'Dashboard'}
           </h1>
         </header>
         <div className="flex-1 overflow-auto p-8">

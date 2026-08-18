@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Trash2, Copy, Check } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { createParser, ParsedEvent, ReconnectInterval } from 'eventsource-parser';
+import { createParser } from 'eventsource-parser';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type Message = {
@@ -125,7 +125,7 @@ export default function ChatWidget() {
       setMessages([...newMessages, { role: 'assistant', content: '' }]);
 
       const parser = createParser({
-        onEvent(event: ParsedEvent) {
+        onEvent(event: any) {
           if (event.data === '[DONE]') return;
           try {
             const data = JSON.parse(event.data);

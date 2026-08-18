@@ -6,6 +6,7 @@ import { PageContent, SiteSettings } from "@/lib/models";
 
 import AdminOverlayWrapper from "@/app/components/AdminOverlayWrapper";
 import { Metadata } from "next";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Best Banquet Hall in Motihari | Wedding Venues | Hotel Rudra Regency",
@@ -100,9 +101,9 @@ export default async function BanquetPage(props: { searchParams: Promise<{ editM
 
   const hero = getParsedContent('hero', {
     eyebrow: 'Banquet Hall',
-    heading: 'Banquet Packages Crafted for Grand Celebrations',
+    heading: 'Premium Banquet Hall in Motihari',
     description: 'Discover premium event packages with a 10,000 sq ft banquet hall, luxury room inventory, dining support, and curated inclusions designed for unforgettable weddings, receptions, and milestone celebrations.',
-    bgImage: '/images/banquet hall hero section.JPG',
+    bgImage: '/images/hotel-rudra-regency-motihari-luxury-banquet-setup.jpg',
     btnText: 'View Catering',
     btnUrl: '/dining'
   });
@@ -114,7 +115,7 @@ export default async function BanquetPage(props: { searchParams: Promise<{ editM
   const venueAtmosphere = getParsedContent('venueAtmosphere', {
     eyebrow: 'Venue Atmosphere',
     description: 'Elegant halls, polished interiors, luxury stay support, and refined hospitality for premium wedding and celebration experiences.',
-    image: '/images/venue atmosphere .JPG'
+    image: '/images/hotel-rudra-regency-motihari-elegant-venue-atmosphere.jpg'
   });
   const complimentaryHeader = getParsedContent('complimentaryHeader', {
     eyebrow: 'Complimentary',
@@ -183,6 +184,8 @@ export default async function BanquetPage(props: { searchParams: Promise<{ editM
           </div>
         </div>
       </section>
+
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Banquet', href: '/banquet' }]} />
 
       <main className="relative mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
         <section

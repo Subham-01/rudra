@@ -5,6 +5,7 @@ import connectToDatabase from "@/lib/db";
 import { PageContent, SiteSettings } from "@/lib/models";
 import { Metadata } from "next";
 import AdminOverlayWrapper from "@/app/components/AdminOverlayWrapper";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Luxury Rooms & Suites in Motihari | Hotel Rudra Regency",
@@ -22,7 +23,7 @@ const defaultRooms = [
     amenities: ["Comfortable King Size Bed", "Air Conditioning & Free WiFi", "LED TV & Room Service", "Modern Bathroom"],
     idealFor: "Solo travelers & couples",
     color: "from-amber-400 to-yellow-500",
-    image: "/images/Hotels-in-motihari.JPG",
+    image: "/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg",
     position: "center",
   },
   {
@@ -32,7 +33,7 @@ const defaultRooms = [
     amenities: ["Comfortable King Size Bed", "Air Conditioning & Free WiFi", "LED TV & Room Service", "Modern Bathroom"],
     idealFor: "Families & business travelers",
     color: "from-amber-500 to-orange-500",
-    image: "/images/Hotels-in-motihari1.JPG",
+    image: "/images/hotel-rudra-regency-motihari-royal-suite.jpg",
     position: "center",
   },
   {
@@ -42,7 +43,7 @@ const defaultRooms = [
     amenities: ["Large Luxury Room with Premium Design", "Separate Living Space", "Premium Bathroom & Amenities", "Exclusive Comfort"],
     idealFor: "VIP guests & special occasions",
     color: "from-yellow-400 to-amber-600",
-    image: "/images/Hotels-in-motihari.JPG",
+    image: "/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg",
     position: "center right",
   },
 ];
@@ -112,7 +113,7 @@ export default async function RoomsPage(props: { searchParams: Promise<{ editMod
     eyebrow: 'Stay Collection',
     heading: 'Luxury Rooms in Motihari',
     description: 'Experience comfort, elegance, and modern amenities at one of the best luxury hotels in Motihari, with premium rooms, wellness facilities, dining, and event-ready hospitality.',
-    bgImage: '/images/Hotels-in-motihari.JPG'
+    bgImage: '/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg'
   });
   const footerCta = getParsedContent('footerCta', {
     title: 'Ready to Book Your Stay?',
@@ -194,6 +195,8 @@ export default async function RoomsPage(props: { searchParams: Promise<{ editMod
           </div>
         </div>
       </section>
+
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Rooms', href: '/rooms' }]} />
 
       <section className="relative z-10 -mt-8 pb-8 sm:-mt-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

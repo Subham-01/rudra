@@ -26,7 +26,7 @@ const defaultFacilities = [
     description: 'Luxury rooms designed for premium comfort with polished interiors and modern in-room amenities.',
     href: '/rooms',
     action: 'Explore Rooms',
-    image: '/images/Hotels-in-motihari.JPG',
+    image: '/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg',
     position: 'center',
   },
   {
@@ -35,7 +35,7 @@ const defaultFacilities = [
     description: 'A 10,000 sq ft banquet hall created for weddings, receptions, celebrations, and large social events.',
     href: '/banquet',
     action: 'View Banquet Hall',
-    image: '/images/banquet hall for  homepage .JPG',
+    image: '/images/hotel-rudra-regency-motihari-wedding-banquet-venue.jpg',
     position: 'center',
   },
   {
@@ -44,7 +44,7 @@ const defaultFacilities = [
     description: 'Enjoy Open terrace dining, lounge-style seating, and a premium restaurant experience with bar service.',
     href: '/dining',
     action: 'Discover Dining',
-    image: '/images/Premium dining card .JPG',
+    image: '/images/hotel-rudra-regency-motihari-premium-dining-restaurant.jpg',
     position: 'center',
   },
   {
@@ -53,7 +53,7 @@ const defaultFacilities = [
     description: 'A high-tech meeting and conference hall designed for presentations, business and corporate events.',
     href: '/conference-room',
     action: 'View Conference Room',
-    image: '/images/Meeting hall for home page .JPG',
+    image: '/images/hotel-rudra-regency-motihari-business-conference.jpg',
     position: 'center',
   },
 ];
@@ -63,52 +63,52 @@ const defaultRooms = [
     title: 'Premium Deluxe Room',
     description: 'A comfortable luxury stay with modern essentials and a calm, refined interior.',
     href: '/rooms',
-    image: '/images/Hotels-in-motihari.JPG',
+    image: '/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg',
     position: 'center',
   },
   {
     title: 'Royal Semi-Suite',
     description: 'Extra space and polished detailing for guests who want a richer stay experience.',
     href: '/rooms',
-    image: '/images/Hotels-in-motihari1.JPG',
+    image: '/images/hotel-rudra-regency-motihari-royal-suite.jpg',
     position: 'center',
   },
   {
     title: 'Royal Suite',
     description: 'A premium suite atmosphere created for special stays and elevated comfort.',
     href: '/rooms',
-    image: '/images/Hotels-in-motihari.JPG',
+    image: '/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg',
     position: 'center right',
   },
 ];
 
 const defaultSliderImages = [
   {
-    src: '/images/homepage slider 1.JPG',
+    src: '/images/hotel-rudra-regency-motihari-luxury-suite-lounge.jpg',
     title: 'Luxury Suite Lounge',
     description: 'Premium interiors, elegant seating, and a refined stay experience designed for comfort.',
     position: 'center',
   },
   {
-    src: '/images/Home Page slider 2.JPG',
+    src: '/images/hotel-rudra-regency-motihari-open-terrace-night.jpg',
     title: 'Open Terrace Ambience',
     description: 'A striking terrace setting for evening dining, relaxed conversations, and memorable visits.',
     position: 'center 58%',
   },
   {
-    src: '/images/Homepage slider 3.JPG',
+    src: '/images/hotel-rudra-regency-motihari-conference-meeting-room.jpg',
     title: 'Business Meeting Hall',
     description: 'A polished conference setting built for presentations, meetings, and corporate sessions.',
     position: 'center',
   },
   {
-    src: '/images/Homepage slider 4.JPG',
+    src: '/images/hotel-rudra-regency-motihari-grand-banquet-hall.jpg',
     title: 'Grand Banquet Hall',
     description: 'Spacious interiors and premium event ambience for celebrations, receptions, and gatherings.',
     position: 'center',
   },
   {
-    src: '/images/homepage slider 5.JPG',
+    src: '/images/hotel-rudra-regency-motihari-terrace-restaurant-lounge.jpg',
     title: 'Restaurant Terrace Dining',
     description: 'Open terrace dining with lounge-style seating for relaxed meals and premium hospitality.',
     position: 'center 42%',
@@ -219,7 +219,7 @@ export default function HomePageClient({
   const hero = getParsedContent('hero', {
     bgImage: '/images/hotel-rudra-regency-motihari-reception4.JPG',
     eyebrow: 'Welcome to Hotel Rudra Regency',
-    heading: 'Where Royalty Meets Refined Luxury',
+    heading: 'Hotel Rudra Regency — Luxury Hotel in Motihari, Bihar',
     btn1: 'Explore Rooms',
     btn2: 'Book Directly',
   });
@@ -380,7 +380,7 @@ export default function HomePageClient({
               <div className="relative min-h-[420px] sm:min-h-[500px] lg:min-h-[560px]">
                 {sliderImages.map((slide: any, index: number) => (
                   <div key={index} className={`absolute inset-0 transition-opacity duration-700 ${index === activeSlide ? 'opacity-100' : 'opacity-0'}`}>
-                    <Image src={slide.src} alt={slide.title} fill className="object-cover" style={{ objectPosition: slide.position }} />
+                    <Image priority={index === 0} src={slide.src} alt={slide.title} fill className="object-cover" style={{ objectPosition: slide.position }} />
                   </div>
                 ))}
                 <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-3 sm:bottom-8 sm:left-8 sm:right-8">

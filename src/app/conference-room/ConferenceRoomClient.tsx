@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { createHotelInquiryLink } from "@/lib/whatsapp";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -46,7 +47,7 @@ export default function ConferenceRoomClient({
     <div className="min-h-screen overflow-hidden bg-neutral-950 text-white">
       <section className="relative min-h-[62vh] overflow-hidden">
         <Image
-          src="/images/conference Hero  section.JPG"
+          src="/images/hotel-rudra-regency-motihari-corporate-conference-hall.jpg"
           alt="Conference room hero"
           fill
           className="object-cover opacity-55"
@@ -76,7 +77,7 @@ export default function ConferenceRoomClient({
                 className="mb-5 text-4xl font-bold leading-[1.04] text-balance sm:text-5xl lg:text-6xl"
               >
                 <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
-                  Business Meetings in a Refined, Simplified Setting
+                  High-Tech Meeting & Conference Hall in Motihari
                 </span>
               </motion.h1>
               <motion.p
@@ -89,6 +90,8 @@ export default function ConferenceRoomClient({
           </motion.div>
         </div>
       </section>
+
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Conference Room', href: '/conference-room' }]} />
 
       <main className="relative mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
         <motion.section
@@ -174,7 +177,7 @@ export default function ConferenceRoomClient({
           >
             <div className="relative h-full min-h-[320px] overflow-hidden">
               <Image
-                src="/images/conference professional ambience.JPG"
+                src="/images/hotel-rudra-regency-motihari-professional-meeting-space.jpg"
                 alt="Professional ambience"
                 fill
                 className="object-cover"

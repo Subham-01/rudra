@@ -32,11 +32,11 @@ export const pageSchemas: Record<string, any> = {
           { name: 'position', label: 'Object Position', type: 'text' },
         ],
         defaultValue: [
-          { src: '/images/homepage slider 1.JPG', title: 'Luxury Suite Lounge', description: 'Premium interiors, elegant seating, and a refined stay experience designed for comfort.', position: 'center' },
-          { src: '/images/Home Page slider 2.JPG', title: 'Open Terrace Ambience', description: 'A striking terrace setting for evening dining, relaxed conversations, and memorable visits.', position: 'center 58%' },
-          { src: '/images/Homepage slider 3.JPG', title: 'Business Meeting Hall', description: 'A polished conference setting built for presentations, meetings, and corporate sessions.', position: 'center' },
-          { src: '/images/Homepage slider 4.JPG', title: 'Grand Banquet Hall', description: 'Spacious interiors and premium event ambience for celebrations, receptions, and gatherings.', position: 'center' },
-          { src: '/images/homepage slider 5.JPG', title: 'Restaurant Terrace Dining', description: 'Open terrace dining with lounge-style seating for relaxed meals and premium hospitality.', position: 'center 42%' },
+          { src: '/images/hotel-rudra-regency-motihari-luxury-suite-lounge.jpg', title: 'Luxury Suite Lounge', description: 'Premium interiors, elegant seating, and a refined stay experience designed for comfort.', position: 'center' },
+          { src: '/images/hotel-rudra-regency-motihari-open-terrace-night.jpg', title: 'Open Terrace Ambience', description: 'A striking terrace setting for evening dining, relaxed conversations, and memorable visits.', position: 'center 58%' },
+          { src: '/images/hotel-rudra-regency-motihari-conference-meeting-room.jpg', title: 'Business Meeting Hall', description: 'A polished conference setting built for presentations, meetings, and corporate sessions.', position: 'center' },
+          { src: '/images/hotel-rudra-regency-motihari-grand-banquet-hall.jpg', title: 'Grand Banquet Hall', description: 'Spacious interiors and premium event ambience for celebrations, receptions, and gatherings.', position: 'center' },
+          { src: '/images/hotel-rudra-regency-motihari-terrace-restaurant-lounge.jpg', title: 'Restaurant Terrace Dining', description: 'Open terrace dining with lounge-style seating for relaxed meals and premium hospitality.', position: 'center 42%' },
         ]
       },
       {
@@ -97,10 +97,10 @@ export const pageSchemas: Record<string, any> = {
           { name: 'position', label: 'Image Position', type: 'text' },
         ],
         defaultValue: [
-          { eyebrow: 'Luxury Stay', title: 'Luxury Rooms', description: 'Luxury rooms designed for premium comfort with polished interiors and modern in-room amenities.', href: '/rooms', action: 'Explore Rooms', image: '/images/Hotels-in-motihari.JPG', position: 'center' },
-          { eyebrow: 'Grand Events', title: 'Banquet Hall', description: 'A 10,000 sq ft banquet hall created for weddings, receptions, celebrations, and large social events.', href: '/banquet', action: 'View Banquet Hall', image: '/images/banquet hall for  homepage .JPG', position: 'center' },
-          { eyebrow: 'Premium Dining', title: 'Restaurant', description: 'Enjoy Open terrace dining, lounge-style seating, and a premium restaurant experience with bar service.', href: '/dining', action: 'Discover Dining', image: '/images/Premium dining card .JPG', position: 'center' },
-          { eyebrow: 'Business Ready', title: 'Meeting Hall', description: 'A high-tech meeting and conference hall designed for presentations, business and corporate events.', href: '/conference-room', action: 'View Conference Room', image: '/images/Meeting hall for home page .JPG', position: 'center' },
+          { eyebrow: 'Luxury Stay', title: 'Luxury Rooms', description: 'Luxury rooms designed for premium comfort with polished interiors and modern in-room amenities.', href: '/rooms', action: 'Explore Rooms', image: '/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg', position: 'center' },
+          { eyebrow: 'Grand Events', title: 'Banquet Hall', description: 'A 10,000 sq ft banquet hall created for weddings, receptions, celebrations, and large social events.', href: '/banquet', action: 'View Banquet Hall', image: '/images/hotel-rudra-regency-motihari-wedding-banquet-venue.jpg', position: 'center' },
+          { eyebrow: 'Premium Dining', title: 'Restaurant', description: 'Enjoy Open terrace dining, lounge-style seating, and a premium restaurant experience with bar service.', href: '/dining', action: 'Discover Dining', image: '/images/hotel-rudra-regency-motihari-premium-dining-restaurant.jpg', position: 'center' },
+          { eyebrow: 'Business Ready', title: 'Meeting Hall', description: 'A high-tech meeting and conference hall designed for presentations, business and corporate events.', href: '/conference-room', action: 'View Conference Room', image: '/images/hotel-rudra-regency-motihari-business-conference.jpg', position: 'center' },
         ]
       },
       {
@@ -130,9 +130,9 @@ export const pageSchemas: Record<string, any> = {
           { name: 'position', label: 'Image Position', type: 'text' },
         ],
         defaultValue: [
-          { title: 'Premium Deluxe Room', description: 'A comfortable luxury stay with modern essentials and a calm, refined interior.', href: '/rooms', image: '/images/Hotels-in-motihari.JPG', position: 'center' },
-          { title: 'Royal Semi-Suite', description: 'Extra space and polished detailing for guests who want a richer stay experience.', href: '/rooms', image: '/images/Hotels-in-motihari1.JPG', position: 'center' },
-          { title: 'Royal Suite', description: 'A premium suite atmosphere created for special stays and elevated comfort.', href: '/rooms', image: '/images/Hotels-in-motihari.JPG', position: 'center right' },
+          { title: 'Premium Deluxe Room', description: 'A comfortable luxury stay with modern essentials and a calm, refined interior.', href: '/rooms', image: '/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg', position: 'center' },
+          { title: 'Royal Semi-Suite', description: 'Extra space and polished detailing for guests who want a richer stay experience.', href: '/rooms', image: '/images/hotel-rudra-regency-motihari-royal-suite.jpg', position: 'center' },
+          { title: 'Royal Suite', description: 'A premium suite atmosphere created for special stays and elevated comfort.', href: '/rooms', image: '/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg', position: 'center right' },
         ]
       },
       {
@@ -288,7 +288,7 @@ export const pageSchemas: Record<string, any> = {
           eyebrow: 'Stay Collection',
           heading: 'Luxury Rooms in Motihari',
           description: 'Experience comfort, elegance, and modern amenities at one of the best luxury hotels in Motihari, with premium rooms, wellness facilities, dining, and event-ready hospitality.',
-          bgImage: '/images/Hotels-in-motihari.JPG'
+          bgImage: '/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg'
         }
       },
       {
@@ -328,7 +328,7 @@ export const pageSchemas: Record<string, any> = {
             description: "Designed for comfort and functionality, the Premium Deluxe Room is perfect for guests seeking a relaxing stay with modern amenities and elegant interiors.",
             idealFor: "Solo travelers & couples",
             color: "from-amber-400 to-yellow-500",
-            image: "/images/Hotels-in-motihari.JPG",
+            image: "/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg",
             position: "center",
             amenity1: "Comfortable King Size Bed",
             amenity2: "Air Conditioning & Free WiFi",
@@ -340,7 +340,7 @@ export const pageSchemas: Record<string, any> = {
             description: "Enjoy extra space and refined interiors in our Royal Semi-Suite, offering a premium experience for guests who want more comfort and style.",
             idealFor: "Families & business travelers",
             color: "from-amber-500 to-orange-500",
-            image: "/images/Hotels-in-motihari1.JPG",
+            image: "/images/hotel-rudra-regency-motihari-royal-suite.jpg",
             position: "center",
             amenity1: "Comfortable King Size Bed",
             amenity2: "Air Conditioning & Free WiFi",
@@ -352,7 +352,7 @@ export const pageSchemas: Record<string, any> = {
             description: "Experience the highest level of luxury with our Royal Suite, designed with premium features and elegant detailing for an unforgettable stay.",
             idealFor: "VIP guests & special occasions",
             color: "from-yellow-400 to-amber-600",
-            image: "/images/Hotels-in-motihari.JPG",
+            image: "/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg",
             position: "center right",
             amenity1: "Large Luxury Room with Premium Design",
             amenity2: "Separate Living Space",
@@ -536,7 +536,7 @@ export const pageSchemas: Record<string, any> = {
           eyebrow: 'Banquet Hall',
           heading: 'Banquet Packages Crafted for Grand Celebrations',
           description: 'Discover premium event packages with a 10,000 sq ft banquet hall, luxury room inventory, dining support, and curated inclusions designed for unforgettable weddings, receptions, and milestone celebrations.',
-          bgImage: '/images/banquet hall hero section.JPG',
+          bgImage: '/images/hotel-rudra-regency-motihari-luxury-banquet-setup.jpg',
           btnText: 'View Catering',
           btnUrl: '/dining'
         }
@@ -629,7 +629,7 @@ export const pageSchemas: Record<string, any> = {
         defaultValue: {
           eyebrow: 'Venue Atmosphere',
           description: 'Elegant halls, polished interiors, luxury stay support, and refined hospitality for premium wedding and celebration experiences.',
-          image: '/images/venue atmosphere .JPG'
+          image: '/images/hotel-rudra-regency-motihari-elegant-venue-atmosphere.jpg'
         }
       },
       {

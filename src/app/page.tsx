@@ -164,12 +164,37 @@ export default async function Home(props: { searchParams: Promise<{ editMode?: s
 
   const isAdmin = searchParams?.editMode === 'true' && searchParams?.editingPage !== 'footer';
 
+  const faqContent = contentData.find(c => c.sectionKey === 'faqs');
+  let dynamicFaqs = [];
+  try {
+    if (faqContent) dynamicFaqs = JSON.parse(faqContent.content);
+  } catch (e) {}
+
+  const finalFaqs = dynamicFaqs.length > 0 ? dynamicFaqs : homepageStructuredData[2].mainEntity;
+
+  const dynamicStructuredData = [
+    homepageStructuredData[0],
+    homepageStructuredData[1],
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: finalFaqs.map((faq: any) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    }
+  ];
+
   return (
     <>
       <Script
         id="homepage-structured-data"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageStructuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(dynamicStructuredData) }}
       />
       <HomePageClient contentData={contentData} isAdmin={isAdmin} />
     </>

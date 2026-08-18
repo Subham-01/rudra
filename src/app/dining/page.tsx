@@ -5,6 +5,7 @@ import { createHotelInquiryLink } from "@/lib/whatsapp";
 import connectToDatabase from "@/lib/db";
 import { PageContent, SiteSettings } from "@/lib/models";
 import { Metadata } from "next";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Open Terrace Restaurant in Motihari | Dining & Bar | Hotel Rudra Regency",
@@ -22,19 +23,19 @@ const defaultDiningExperiences = [
     title: "The Flavoresca Main Dining",
     description: "A refined indoor restaurant with warm lighting, plush seating, and a polished setting for family dining, celebrations, and elegant evening meals.",
     details: ["Luxury indoor seating", "Premium hospitality service", "Signature fine-dining ambience"],
-    image: "/images/flavoresca main dining  section.png",
+    image: "/images/hotel-rudra-regency-motihari-flavoresca-indoor-dining.png",
   },
   {
     title: "Open Terrace Evenings",
     description: "An open terrace restaurant experience designed for breezy nights, premium lounge seating, and relaxed dining under the sky.",
     details: ["Open terrace atmosphere", "Day and night dining appeal", "Luxury outdoor setting"],
-    image: "/images/open terrace evening  section.JPG",
+    image: "/images/hotel-rudra-regency-motihari-evening-terrace-ambience.jpg",
   },
   {
     title: "Private Dining Comfort",
     description: "From family meals to hotel guests seeking privacy, our dining service is designed to bring comfort, taste, and premium presentation together.",
     details: ["Curated menu selections", "Comfort-first hospitality", "Ideal for couples and families"],
-    image: "/images/private dining comfort section.JPG",
+    image: "/images/hotel-rudra-regency-motihari-private-dining-comfort.jpg",
   },
 ];
 
@@ -51,7 +52,7 @@ const defaultSignatureMoments = [
   {
     title: "Indoor Fine Dining",
     text: "The Flavoresca Restaurant by Hotel Rudra Regency brings together polished interiors, comfortable seating, lounge ambience, and a welcoming premium atmosphere in Motihari.",
-    image: "/images/indoor fine dining .JPG",
+    image: "/images/hotel-rudra-regency-motihari-indoor-fine-dining.jpg",
   },
   {
     title: "Open Terrace Luxury",
@@ -93,9 +94,9 @@ export default async function DiningPage() {
     "@type": "Restaurant",
     name: "The Flavoresca Restaurant by Hotel Rudra Regency",
     image: [
-      "https://rudraregency.com/images/restaurant%20(2).JPG",
+      "https://rudraregency.com/images/hotel-rudra-regency-motihari-restaurant-seating.jpg",
       "https://rudraregency.com/images/DSC08003.JPG",
-      "https://rudraregency.com/images/restaurant.JPG",
+      "https://rudraregency.com/images/hotel-rudra-regency-motihari-restaurant-interior.jpg",
     ],
     servesCuisine: ["Indian", "Multi-Cuisine"],
     priceRange: "₹₹",
@@ -141,7 +142,7 @@ export default async function DiningPage() {
             <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-amber-300 sm:text-sm sm:tracking-[0.32em]">Premium Restaurant Experience</p>
             <h1 className="mb-5 text-4xl font-bold leading-[1.04] text-balance sm:text-5xl lg:text-6xl xl:max-w-4xl">
               <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
-                The Flavoresca Restaurant by Hotel Rudra Regency
+                Open Terrace Restaurant in Motihari
               </span>
             </h1>
             <p className="max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8 md:text-xl">
@@ -164,6 +165,8 @@ export default async function DiningPage() {
         </div>
       </section>
 
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Dining', href: '/dining' }]} />
+
       <main className="relative mt-2 md:mt-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         <section className="animate-fade-in-up rounded-[28px] border border-white/10 bg-neutral-900/80 p-5 shadow-2xl shadow-amber-500/5 backdrop-blur-xl sm:rounded-[32px] sm:p-8 lg:p-10">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
@@ -183,7 +186,7 @@ export default async function DiningPage() {
             </div>
             <div className="relative overflow-hidden rounded-[28px] ring-1 ring-amber-200/10 shadow-xl min-h-[360px]">
               <Image
-                src="/images/restaurant.JPG"
+                src="/images/hotel-rudra-regency-motihari-restaurant-interior.jpg"
                 alt="Restaurant dining area"
                 fill
                 className="object-cover"

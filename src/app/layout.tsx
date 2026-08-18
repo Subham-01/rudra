@@ -130,7 +130,7 @@ const structuredData = [
     image: [
       "https://rudraregency.com/images/hotel-rudra-regency-motihari-reception4.JPG",
       "https://rudraregency.com/images/hotel-rudra-regency-motihari-reception6.JPG",
-      "https://rudraregency.com/images/Hotels-in-motihari.JPG",
+      "https://rudraregency.com/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg",
     ],
     telephone: "+91 8651600015",
     email: "info@rudraregency.com",
@@ -180,10 +180,16 @@ const structuredData = [
       { "@type": "LocationFeatureSpecification", name: "Bar", value: true },
       { "@type": "LocationFeatureSpecification", name: "High-Tech Meeting Hall", value: true },
       { "@type": "LocationFeatureSpecification", name: "Accessible Rooms for Differently Abled Guests", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Free Parking", value: true },
       { "@type": "LocationFeatureSpecification", name: "Free WiFi", value: true },
       { "@type": "LocationFeatureSpecification", name: "Air Conditioning", value: true },
       { "@type": "LocationFeatureSpecification", name: "24-Hour Front Desk", value: true },
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.5",
+      reviewCount: "128",
+    },
   },
 ];
 

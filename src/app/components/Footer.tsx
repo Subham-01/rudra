@@ -58,8 +58,15 @@ export default function Footer({ settings = {}, footerData = {}, isEditMode = fa
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Hotel+Rudra+Regency+Chandrahiya+Motihari+Bihar+845401'
   };
 
+  const phones = (settings.phone_number || contactInfo.phone).split('|').map(p => p.trim());
+  const phoneLinks = phones.map((phone, i) => ({
+    label: i === 0 ? "Call Front Desk" : "Call Reservations",
+    href: `tel:${phone.replace(/[^0-9+]/g, '')}`,
+    displayLabel: phone
+  }));
+
   const supportLinks = [
-    { label: "Call Us", href: `tel:${(settings.phone_number || contactInfo.phone).replace(/[^0-9+]/g, '')}` },
+    ...phoneLinks,
     { label: "Email Us", href: `mailto:${contactInfo.email}` },
     { label: "WhatsApp", href: whatsappHref },
   ];

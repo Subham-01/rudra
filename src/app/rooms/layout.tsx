@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: "https://rudraregency.com/rooms",
     images: [
       {
-        url: "/images/Hotels-in-motihari.JPG",
+        url: "/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg",
         width: 1200,
         height: 630,
         alt: "Luxury rooms at Hotel Rudra Regency in Motihari",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Luxury Rooms in Motihari | Hotel Rudra Regency",
     description: "Book luxury rooms in Motihari with premium facilities including restaurant, lounge, gym, and spa access.",
-    images: ["/images/Hotels-in-motihari.JPG"],
+    images: ["/images/hotel-rudra-regency-motihari-premium-deluxe-room.jpg"],
   },
 };
 

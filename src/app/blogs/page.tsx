@@ -14,6 +14,7 @@ export default async function BlogsPage() {
     excerpt: b.seoDescription || (b.content ? b.content.replace(/<[^>]+>/g, '').substring(0, 150) + '...' : ''),
     category: b.category || 'Updates',
     slug: b.slug,
+    imageUrl: b.imageUrl || null,
     date: b.createdAt ? new Date(b.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Recently',
   }));
 
@@ -62,6 +63,11 @@ export default async function BlogsPage() {
                   <span>{post.date}</span>
                 </span>
               </div>
+              {post.imageUrl && (
+                <div className="mb-5 h-48 w-full overflow-hidden rounded-2xl border border-white/5">
+                  <img src={post.imageUrl} alt={post.title} className="h-full w-full object-cover" />
+                </div>
+              )}
               <h3 className="mb-4 text-2xl font-semibold text-white">{post.title}</h3>
               <p className="text-base leading-8 text-neutral-400 line-clamp-3 break-words">{post.excerpt}</p>
               <Link href={`/blogs/${post.slug}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-amber-200 transition hover:text-amber-100">

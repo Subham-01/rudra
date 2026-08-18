@@ -5,7 +5,16 @@ import connectToDatabase from "@/lib/db";
 import { PageContent, SiteSettings } from "@/lib/models";
 
 import AdminOverlayWrapper from "@/app/components/AdminOverlayWrapper";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Best Banquet Hall in Motihari | Wedding Venues | Hotel Rudra Regency",
+  description: "Book the largest and most premium banquet hall in Motihari. Perfect for weddings, receptions, and social celebrations with catering, luxury rooms, and full event support.",
+  keywords: ["banquet hall in Motihari", "wedding venues in Motihari", "marriage hall Motihari", "event space Motihari", "best banquet hall in Motihari"],
+  alternates: {
+    canonical: "/banquet",
+  },
+};
 const defaultPackages = [
   {
     name: "Premium Package",
@@ -66,24 +75,28 @@ const defaultTerms = [
 
 export default async function BanquetPage(props: { searchParams: Promise<{ editMode?: string }> }) {
   const searchParams = await props.searchParams;
-  await connectToDatabase();
+  const isAdmin = searchParams?.editMode === 'true';
+
+  let rawSettings: any[] = [];
+  let rawContent: any[] = [];
   
-  // Fetch global settings
-  const rawSettings = await SiteSettings.find().lean();
+  try {
+    await connectToDatabase();
+    rawSettings = await SiteSettings.find().lean();
+    rawContent = await PageContent.find({ pageKey: 'banquet' }).lean();
+  } catch (error) {
+    console.error("Database connection failed in BanquetPage:", error);
+  }
+
   const settings: Record<string, string> = {};
   rawSettings.forEach((s: any) => settings[s.key] = s.value);
   const whatsappNumber = settings.whatsapp_number;
-
-  // Fetch page content
-  const rawContent = await PageContent.find({ pageKey: 'banquet' }).lean();
   
   const getParsedContent = (key: string, fallback: any) => {
     const item = rawContent.find((c: any) => c.sectionKey === key);
     if (!item) return fallback;
     try { return JSON.parse(item.content); } catch { return fallback; }
   };
-
-  const isAdmin = searchParams?.editMode === 'true';
 
   const hero = getParsedContent('hero', {
     eyebrow: 'Banquet Hall',

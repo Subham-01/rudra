@@ -3,8 +3,17 @@ import Link from "next/link";
 import { createHotelInquiryLink } from "@/lib/whatsapp";
 import connectToDatabase from "@/lib/db";
 import { PageContent, SiteSettings } from "@/lib/models";
+import { Metadata } from "next";
 import AdminOverlayWrapper from "@/app/components/AdminOverlayWrapper";
 
+export const metadata: Metadata = {
+  title: "Luxury Rooms & Suites in Motihari | Hotel Rudra Regency",
+  description: "Book premium luxury rooms and suites in Motihari at Hotel Rudra Regency. Enjoy modern amenities, 24/7 service, gym, spa, and free WiFi for family and business stays.",
+  keywords: ["luxury rooms in Motihari", "hotel booking Motihari", "suites in Motihari", "best hotel rooms in Motihari", "premium stay in Motihari"],
+  alternates: {
+    canonical: "/rooms",
+  },
+};
 const defaultRooms = [
   {
     id: 1,
@@ -73,17 +82,22 @@ const defaultWhyChooseUs = [
 
 export default async function RoomsPage(props: { searchParams: Promise<{ editMode?: string }> }) {
   const searchParams = await props.searchParams;
-  await connectToDatabase();
   const isAdmin = searchParams?.editMode === 'true';
   
-  // Fetch global settings
-  const rawSettings = await SiteSettings.find().lean();
+  let rawSettings: any[] = [];
+  let rawContent: any[] = [];
+  
+  try {
+    await connectToDatabase();
+    rawSettings = await SiteSettings.find().lean();
+    rawContent = await PageContent.find({ pageKey: 'rooms' }).lean();
+  } catch (error) {
+    console.error("Database connection failed in RoomsPage:", error);
+  }
+
   const settings: Record<string, string> = {};
   rawSettings.forEach((s: any) => settings[s.key] = s.value);
   const whatsappNumber = settings.whatsapp_number;
-
-  // Fetch page content
-  const rawContent = await PageContent.find({ pageKey: 'rooms' }).lean();
   
   const getParsedContent = (key: string, fallback: any) => {
     const item = rawContent.find((c: any) => c.sectionKey === key);

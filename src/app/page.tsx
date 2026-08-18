@@ -147,8 +147,13 @@ const homepageStructuredData = [
 
 export default async function Home(props: { searchParams: Promise<{ editMode?: string, editingPage?: string }> }) {
   const searchParams = await props.searchParams;
-  await connectToDatabase();
-  const rawContent = await PageContent.find({ pageKey: 'home' }).lean();
+  let rawContent: any[] = [];
+  try {
+    await connectToDatabase();
+    rawContent = await PageContent.find({ pageKey: 'home' }).lean();
+  } catch (error) {
+    console.error("Database connection failed in Home:", error);
+  }
   
   // Convert MongoDB objects to plain JS objects for passing to Client Component
   const contentData = rawContent.map((doc: any) => ({

@@ -39,9 +39,14 @@ const iconMap: Record<string, any> = {
 
 export default async function AboutPage(props: { searchParams: Promise<{ editMode?: string }> }) {
   const searchParams = await props.searchParams;
-  await connectToDatabase();
   const isAdmin = searchParams?.editMode === 'true';
-  const rawContent = await PageContent.find({ pageKey: 'about' }).lean();
+  let rawContent: any[] = [];
+  try {
+    await connectToDatabase();
+    rawContent = await PageContent.find({ pageKey: 'about' }).lean();
+  } catch (error) {
+    console.error("Database connection failed in AboutPage:", error);
+  }
   
   const getParsedContent = (key: string, fallback: any) => {
     const item = rawContent.find((c: any) => c.sectionKey === key);

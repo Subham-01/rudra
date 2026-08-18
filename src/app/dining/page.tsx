@@ -4,6 +4,16 @@ import Script from "next/script";
 import { createHotelInquiryLink } from "@/lib/whatsapp";
 import connectToDatabase from "@/lib/db";
 import { PageContent, SiteSettings } from "@/lib/models";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Open Terrace Restaurant in Motihari | Dining & Bar | Hotel Rudra Regency",
+  description: "Experience premium dining at the best restaurant in Motihari. Open terrace seating, multi-cuisine menu, private lounge, and a fully stocked bar at Hotel Rudra Regency.",
+  keywords: ["restaurant in Motihari", "open terrace restaurant Motihari", "best dining in Motihari", "bar in Motihari", "lounge in Motihari"],
+  alternates: {
+    canonical: "/dining",
+  },
+};
 
 export const dynamic = 'force-dynamic';
 
@@ -51,15 +61,19 @@ const defaultSignatureMoments = [
 ];
 
 export default async function DiningPage() {
-  await connectToDatabase();
+  let rawSettings: any[] = [];
+  let rawContent: any[] = [];
   
-  // Fetch global settings
-  const rawSettings = await SiteSettings.find().lean();
+  try {
+    await connectToDatabase();
+    rawSettings = await SiteSettings.find().lean();
+    rawContent = await PageContent.find({ pageKey: 'dining' }).lean();
+  } catch (error) {
+    console.error("Database connection failed in DiningPage:", error);
+  }
+
   const settings: Record<string, string> = {};
   rawSettings.forEach((s: any) => settings[s.key] = s.value);
-
-  // Fetch page content
-  const rawContent = await PageContent.find({ pageKey: 'dining' }).lean();
   
   const getParsedContent = (key: string, fallback: any) => {
     const item = rawContent.find((c: any) => c.sectionKey === key);

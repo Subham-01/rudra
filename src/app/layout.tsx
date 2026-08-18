@@ -47,9 +47,7 @@ export const metadata: Metadata = {
     "rooms in Motihari",
     "stay in Motihari",
   ],
-  alternates: {
-    canonical: "/",
-  },
+
   formatDetection: {
     email: false,
     address: false,

@@ -5,6 +5,8 @@ import { createHotelInquiryLink } from "@/lib/whatsapp";
 import connectToDatabase from "@/lib/db";
 import { PageContent, SiteSettings } from "@/lib/models";
 
+export const dynamic = 'force-dynamic';
+
 const defaultDiningExperiences = [
   {
     title: "The Flavoresca Main Dining",

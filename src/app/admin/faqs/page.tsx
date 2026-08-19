@@ -135,7 +135,7 @@ export default function FAQsPage() {
               category: getVal('category') || 'General',
               question: getVal('question') || '',
               answer: getVal('answer') || '',
-              keywords: (getVal('keywords') || '').toString().split(',').map((k: string) => k.trim()).filter(Boolean),
+              keywords: (getVal('keywords') || getVal('keyword') || getVal('trigger keywords') || '').toString().split(',').map((k: string) => k.trim()).filter(Boolean),
             };
           }).filter((faq: any) => faq.question && faq.answer);
 

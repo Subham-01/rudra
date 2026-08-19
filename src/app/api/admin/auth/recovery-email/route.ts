@@ -31,9 +31,15 @@ export async function GET(request: Request) {
   }
 }
 
+import bcrypt from 'bcryptjs';
+
 export async function POST(request: Request) {
   try {
-    const { email } = await request.json();
+    const { email, currentPassword } = await request.json();
+
+    if (!currentPassword) {
+      return NextResponse.json({ error: 'Current password is required to change email' }, { status: 400 });
+    }
 
     const cookieStore = await cookies();
     const token = cookieStore.get('admin_token')?.value;
@@ -52,6 +58,11 @@ export async function POST(request: Request) {
 
     if (!admin) {
       return NextResponse.json({ error: 'Admin user not found' }, { status: 404 });
+    }
+
+    const isValid = await bcrypt.compare(currentPassword, admin.passwordHash);
+    if (!isValid) {
+      return NextResponse.json({ error: 'Incorrect password' }, { status: 401 });
     }
 
     admin.email = email;

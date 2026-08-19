@@ -14,6 +14,7 @@ export default function ProfilePage() {
   const [isSaving, setIsSaving] = useState(false);
   const [isSavingEmail, setIsSavingEmail] = useState(false);
   const [recoveryEmail, setRecoveryEmail] = useState('');
+  const [emailAuthPassword, setEmailAuthPassword] = useState('');
   const [message, setMessage] = useState({ text: '', type: '' });
 
   useEffect(() => {
@@ -87,12 +88,13 @@ export default function ProfilePage() {
       const res = await fetch('/api/admin/auth/recovery-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: recoveryEmail }),
+        body: JSON.stringify({ email: recoveryEmail, currentPassword: emailAuthPassword }),
       });
       
       const data = await res.json();
       if (res.ok) {
         setMessage({ text: 'Recovery email updated successfully!', type: 'success' });
+        setEmailAuthPassword('');
       } else {
         setMessage({ text: data.error || 'Failed to update recovery email.', type: 'error' });
       }
@@ -179,7 +181,7 @@ export default function ProfilePage() {
             <form onSubmit={handleSaveEmail} className="space-y-4 mb-6">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-900 dark:text-gray-100">Recovery Email Address</label>
-                <div className="flex gap-2">
+                <div className="space-y-4">
                   <input 
                     type="email" 
                     value={recoveryEmail} 
@@ -188,13 +190,23 @@ export default function ProfilePage() {
                     required
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" 
                   />
-                  <button 
-                    type="submit" 
-                    disabled={isSavingEmail} 
-                    className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:opacity-50 transition-colors whitespace-nowrap"
-                  >
-                    {isSavingEmail ? 'Saving...' : 'Save Email'}
-                  </button>
+                  <div className="flex gap-2">
+                    <input 
+                      type="password" 
+                      value={emailAuthPassword} 
+                      onChange={(e) => setEmailAuthPassword(e.target.value)} 
+                      placeholder="Confirm Admin Password"
+                      required
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" 
+                    />
+                    <button 
+                      type="submit" 
+                      disabled={isSavingEmail} 
+                      className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:opacity-50 transition-colors whitespace-nowrap"
+                    >
+                      {isSavingEmail ? 'Saving...' : 'Save Email'}
+                    </button>
+                  </div>
                 </div>
                 <p className="text-xs">
                   We will send a password reset link to this email address if you ever forget your password.

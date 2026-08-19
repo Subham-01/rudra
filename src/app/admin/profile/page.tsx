@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Lock, User } from 'lucide-react';
+import { Lock } from 'lucide-react';
 
 export default function ProfilePage() {
   const [passwordForm, setPasswordForm] = useState({
@@ -12,28 +12,7 @@ export default function ProfilePage() {
   });
   
   const [isSaving, setIsSaving] = useState(false);
-  const [isSavingEmail, setIsSavingEmail] = useState(false);
-  const [recoveryEmail, setRecoveryEmail] = useState('');
-  const [emailAuthPassword, setEmailAuthPassword] = useState('');
   const [message, setMessage] = useState({ text: '', type: '' });
-
-  useEffect(() => {
-
-    // fetch recovery email
-    fetchRecoveryEmail();
-  }, []);
-
-  const fetchRecoveryEmail = async () => {
-    try {
-      const res = await fetch('/api/admin/auth/recovery-email');
-      if (res.ok) {
-        const data = await res.json();
-        setRecoveryEmail(data.email || '');
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
   const handleUpdate = (key: string, value: string) => {
     setPasswordForm(prev => ({ ...prev, [key]: value }));
@@ -79,37 +58,11 @@ export default function ProfilePage() {
     }
   };
 
-  const handleSaveEmail = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSavingEmail(true);
-    setMessage({ text: '', type: '' });
-    
-    try {
-      const res = await fetch('/api/admin/auth/recovery-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: recoveryEmail, currentPassword: emailAuthPassword }),
-      });
-      
-      const data = await res.json();
-      if (res.ok) {
-        setMessage({ text: 'Recovery email updated successfully!', type: 'success' });
-        setEmailAuthPassword('');
-      } else {
-        setMessage({ text: data.error || 'Failed to update recovery email.', type: 'error' });
-      }
-    } catch (error) {
-      setMessage({ text: 'An error occurred.', type: 'error' });
-    } finally {
-      setIsSavingEmail(false);
-    }
-  };
-
   return (
     <div className="space-y-6 pb-20">
       <div className="mb-6">
         <h2 className="text-2xl font-bold tracking-tight">Admin Profile</h2>
-        <p className="text-muted-foreground">Manage your account credentials and security settings.</p>
+        <p className="text-muted-foreground">Manage your account credentials.</p>
       </div>
 
       {message.text && (
@@ -169,46 +122,6 @@ export default function ProfilePage() {
                 {isSaving ? 'Updating...' : 'Update Password'}
               </button>
             </form>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2"><User className="w-5 h-5" /> Password Recovery</CardTitle>
-            <CardDescription>Configure how you recover your account.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div className="space-y-4 mb-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-900 dark:text-gray-100">Recovery Email Address</label>
-                <div className="flex h-10 w-full items-center rounded-md border border-input bg-gray-50 dark:bg-gray-800/50 px-3 py-2 text-sm text-gray-500 cursor-not-allowed">
-                  {recoveryEmail || 'Loading...'}
-                </div>
-                <p className="text-xs">
-                  We will send a 6-digit OTP to this email address if you ever forget your password.
-                  <br /><br />
-                  <span className="text-amber-600 dark:text-amber-400 font-medium">
-                    Security Notice: For maximum security, this email is hardcoded into the system backend (Vercel). 
-                    It cannot be changed from this dashboard. To update it, you must change the `ADMIN_RECOVERY_EMAIL` variable in your Vercel settings.
-                  </span>
-                </p>
-              </div>
-            </div>
-
-            <div className="border-t pt-4">
-              <p className="mb-2">
-                <strong>Emergency CLI Reset (If email is not configured):</strong>
-              </p>
-              <ol className="list-decimal pl-5 space-y-2 text-gray-700 dark:text-gray-300">
-                <li>Log into your server via SSH or open your local terminal.</li>
-                <li>Navigate to the project root directory.</li>
-                <li>Run the password reset script:
-                  <code className="block mt-2 bg-gray-100 dark:bg-gray-800 p-2 rounded text-xs font-mono">
-                    npm run reset-admin-password
-                  </code>
-                </li>
-              </ol>
-            </div>
           </CardContent>
         </Card>
       </div>

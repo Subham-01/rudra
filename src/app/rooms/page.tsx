@@ -133,7 +133,7 @@ export default async function RoomsPage(props: { searchParams: Promise<{ editMod
   return (
     <div className="min-h-screen overflow-hidden bg-neutral-950 text-white">
       <section
-        className="relative flex min-h-[72vh] items-end overflow-hidden"
+        className="relative flex min-h-[72vh] items-end overflow-hidden pt-28 sm:pt-32"
         style={{
           backgroundImage: `url('${hero.bgImage}')`,
           backgroundSize: "cover",
@@ -157,9 +157,9 @@ export default async function RoomsPage(props: { searchParams: Promise<{ editMod
                     {hero.eyebrow}
                   </p>
                   <h1
-                    className="mb-5 text-4xl font-bold leading-[1.02] text-balance sm:text-5xl lg:text-6xl"
+                    className="mb-5 text-4xl font-bold leading-[1.02] text-balance sm:text-5xl lg:text-6xl drop-shadow-lg"
                   >
-                    <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent drop-shadow-[0_2px_15px_rgba(251,191,36,0.3)]">
                       {hero.heading}
                     </span>
                   </h1>
@@ -270,8 +270,8 @@ export default async function RoomsPage(props: { searchParams: Promise<{ editMod
                       style={{ objectPosition: room.position }}
                       sizes="(min-width: 1024px) 50vw, 100vw"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-br ${room.color} opacity-30`} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${room.color} opacity-40`} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
                     <div className="absolute left-6 top-6 rounded-full border border-white/15 bg-black/30 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-amber-300 backdrop-blur-sm">
                       {room.idealFor}
                     </div>

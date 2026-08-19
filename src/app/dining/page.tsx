@@ -138,11 +138,11 @@ export default async function DiningPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/48 to-black/30" />
         <div className="absolute right-6 top-16 h-20 w-20 rounded-full bg-amber-400/10 blur-2xl sm:right-10 sm:h-24 sm:w-24"></div>
         <div className="absolute bottom-12 left-4 h-28 w-28 rounded-full bg-yellow-400/10 blur-3xl sm:bottom-16 sm:left-10 sm:h-36 sm:w-36"></div>
-        <div className="relative flex min-h-[62vh] items-center max-w-6xl mx-auto px-4 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
+        <div className="relative flex min-h-[62vh] items-center max-w-6xl mx-auto px-4 pt-28 sm:px-6 sm:pt-32 lg:px-8">
           <div className="animate-fade-in-up max-w-3xl">
             <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-amber-300 sm:text-sm sm:tracking-[0.32em]">Premium Restaurant Experience</p>
-            <h1 className="mb-5 text-4xl font-bold leading-[1.04] text-balance sm:text-5xl lg:text-6xl xl:max-w-4xl">
-              <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
+            <h1 className="mb-5 text-4xl font-bold leading-[1.04] text-balance sm:text-5xl lg:text-6xl xl:max-w-4xl drop-shadow-lg">
+              <span className="bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent drop-shadow-[0_2px_15px_rgba(251,191,36,0.3)]">
                 Open Terrace Restaurant in Motihari
               </span>
             </h1>

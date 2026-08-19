@@ -325,7 +325,7 @@ export default function HomePageClient({
         <div className="absolute inset-0 bg-gradient-to-b from-black/22 via-black/18 to-neutral-950/90" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(217,168,50,0.18),_transparent_35%)]" />
         
-        <div className="relative mx-auto flex min-h-screen max-w-7xl items-center justify-center px-4 pb-14 pt-36">
+        <div className="relative mx-auto flex min-h-screen max-w-7xl items-center justify-center px-4 pb-14 pt-40 sm:pt-44">
           <div className="flex w-full max-w-5xl flex-col items-center">
             <div className="w-full">
               <AdminOverlayWrapper isAdmin={isAdmin} sectionKey="hero" label="Hero & Booking">
@@ -333,8 +333,8 @@ export default function HomePageClient({
                   <p className="animate-fade-in-up mb-4 text-[11px] font-medium uppercase tracking-[0.32em] text-amber-300">
                     {hero.eyebrow}
                   </p>
-                  <h1 className="animate-fade-in-up mx-auto max-w-4xl text-4xl font-bold leading-[1.02] sm:text-5xl lg:text-6xl">
-                    <span className="bg-gradient-to-r from-amber-100 via-yellow-50 to-amber-200 bg-clip-text text-transparent">
+                  <h1 className="animate-fade-in-up mx-auto max-w-4xl text-4xl font-bold leading-[1.02] sm:text-5xl lg:text-6xl drop-shadow-lg">
+                    <span className="bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent drop-shadow-[0_2px_15px_rgba(251,191,36,0.3)]">
                       {hero.heading}
                     </span>
                   </h1>

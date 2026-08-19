@@ -126,7 +126,7 @@ export default function FAQsPage() {
 
           const parsedFaqs = jsonData.map((row: any) => {
             const getVal = (key: string) => {
-              const rowKey = Object.keys(row).find(k => k.toLowerCase() === key.toLowerCase());
+              const rowKey = Object.keys(row).find(k => k.trim().toLowerCase() === key.toLowerCase());
               return rowKey ? row[rowKey] : undefined;
             };
 

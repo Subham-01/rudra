@@ -1,19 +1,28 @@
 import fs from 'fs';
 import path from 'path';
 import { findBestFAQ } from './faqMatcher';
+import connectToDatabase from '@/lib/db';
+import { PageContent } from '@/lib/models';
 
 // Simple cache
 let cachedFaqs: any[] | null = null;
-let faqsLastModified = 0;
+let faqsLastFetched = 0;
 
-function loadFaqs() {
-  const faqsPath = path.join(process.cwd(), 'data', 'faqs.json');
+async function loadFaqs() {
+  const now = Date.now();
+  if (cachedFaqs && (now - faqsLastFetched) < 60000) {
+    // Cache for 60 seconds
+    return cachedFaqs;
+  }
+  
   try {
-    const stats = fs.statSync(faqsPath);
-    if (!cachedFaqs || stats.mtimeMs > faqsLastModified) {
-      const data = fs.readFileSync(faqsPath, 'utf8');
-      cachedFaqs = JSON.parse(data);
-      faqsLastModified = stats.mtimeMs;
+    await connectToDatabase();
+    const doc = await PageContent.findOne({ pageKey: 'chatbot', sectionKey: 'faqs' }).lean();
+    if (doc) {
+      cachedFaqs = JSON.parse(doc.content);
+      faqsLastFetched = now;
+    } else {
+      cachedFaqs = [];
     }
   } catch (e) {
     cachedFaqs = [];
@@ -63,9 +72,9 @@ export type SearchResult = {
   hotelData?: string; // If not found locally, pass this to AI
 };
 
-export function searchKnowledgeBase(query: string): SearchResult {
+export async function searchKnowledgeBase(query: string): Promise<SearchResult> {
   // 1. Search FAQs
-  const faqs = loadFaqs();
+  const faqs = await loadFaqs();
   const bestFaq = findBestFAQ(query, faqs);
   
   if (bestFaq) {

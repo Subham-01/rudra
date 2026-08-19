@@ -43,7 +43,8 @@ export default function FAQsPage() {
     e.preventDefault();
     if (!editingFaq) return;
     
-    const cleanedKeywords = editingFaq.keywords.map(k => typeof k === 'string' ? k.trim() : k).filter(Boolean);
+    const keywordsArr = editingFaq.keywords || [];
+    const cleanedKeywords = keywordsArr.map((k: any) => typeof k === 'string' ? k.trim() : k).filter(Boolean);
     const payload = { ...editingFaq, keywords: cleanedKeywords };
 
     const action = editingFaq.id ? 'edit' : 'add';
@@ -237,7 +238,7 @@ export default function FAQsPage() {
                     <h4 className="font-semibold text-gray-900 dark:text-white">{faq.question}</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{faq.answer}</p>
                     <div className="flex flex-wrap gap-1 mt-2">
-                      {faq.keywords.map(kw => (
+                      {(faq.keywords || []).map(kw => (
                         <span key={kw} className="text-[10px] px-1.5 py-0.5 rounded-sm bg-gray-100 dark:bg-gray-800 text-gray-500">{kw}</span>
                       ))}
                     </div>
@@ -297,7 +298,7 @@ export default function FAQsPage() {
                 <input 
                   required
                   type="text" 
-                  value={editingFaq.keywords.join(',')} 
+                  value={(editingFaq.keywords || []).join(',')} 
                   onChange={e => setEditingFaq({...editingFaq, keywords: e.target.value.split(',')})}
                   className="w-full rounded-md border bg-background px-3 py-2 text-sm"
                   placeholder="e.g. check in, arrival, time"

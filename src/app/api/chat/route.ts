@@ -66,7 +66,7 @@ export async function POST(request: Request) {
     const query = lastUserMessage?.content || '';
 
     // Hybrid Search: FAQ -> Hotel.json -> AI
-    const searchResult = searchKnowledgeBase(query);
+    const searchResult = await searchKnowledgeBase(query);
 
     if (searchResult.foundLocally && searchResult.answer) {
       // Return local answer as a mocked SSE stream

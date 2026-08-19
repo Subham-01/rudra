@@ -14,8 +14,7 @@ export async function GET(request: Request) {
     const adminCount = await AdminUser.countDocuments();
 
     if (adminCount > 0) {
-      await AdminUser.findOneAndUpdate({ username: 'admin' }, { passwordHash });
-      return NextResponse.json({ message: 'Admin password forcefully reset to admin123!' }, { status: 200 });
+      return NextResponse.json({ error: 'Setup already completed. Admin user exists.' }, { status: 403 });
     }
 
 

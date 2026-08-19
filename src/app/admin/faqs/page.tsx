@@ -35,7 +35,7 @@ export default function FAQsPage() {
   }, []);
 
   const fetchFaqs = async () => {
-    const res = await fetch('/api/admin/faqs');
+    const res = await fetch('/api/admin/faqs?_t=' + Date.now(), { cache: 'no-store' });
     if (res.ok) setFaqs(await res.json());
   };
 

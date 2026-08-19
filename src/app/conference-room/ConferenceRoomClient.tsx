@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { createHotelInquiryLink } from "@/lib/whatsapp";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
+import VideoSection from "@/app/components/VideoSection";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -90,6 +91,12 @@ export default function ConferenceRoomClient({
           </motion.div>
         </div>
       </section>
+
+      <VideoSection 
+        src="/videos/conference.mp4" 
+        title="Inside the Conference Hall" 
+        description="A business-ready setup with modern technology and a professional atmosphere." 
+      />
 
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Conference Room', href: '/conference-room' }]} />
 

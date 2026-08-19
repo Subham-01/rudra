@@ -11,7 +11,8 @@
       "check-out",
       "time",
       "arrival",
-      "departure"
+      "departure",
+      "test_keyword"
     ],
     "answer": "Our standard check-in time is 12:00 PM and check-out time is 11:00 AM."
   },

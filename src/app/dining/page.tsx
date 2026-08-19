@@ -6,6 +6,7 @@ import connectToDatabase from "@/lib/db";
 import { PageContent, SiteSettings } from "@/lib/models";
 import { Metadata } from "next";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
+import VideoSection from "@/app/components/VideoSection";
 
 export const metadata: Metadata = {
   title: "Open Terrace Restaurant in Motihari | Dining & Bar | Hotel Rudra Regency",
@@ -52,12 +53,12 @@ const defaultSignatureMoments = [
   {
     title: "Indoor Fine Dining",
     text: "The Flavoresca Restaurant by Hotel Rudra Regency brings together polished interiors, comfortable seating, lounge ambience, and a welcoming premium atmosphere in Motihari.",
-    image: "/images/hotel-rudra-regency-motihari-indoor-fine-dining.jpg",
+    image: "/videos/dining-indoor.mp4",
   },
   {
     title: "Open Terrace Luxury",
     text: "Our terrace dining spaces create a relaxed but elevated mood for evening dinners, small gatherings, and memorable open-air experiences.",
-    image: "/images/DSC07480.JPG",
+    image: "/videos/dining-terrace.mp4",
   },
 ];
 
@@ -247,13 +248,24 @@ export default async function DiningPage() {
               className="animate-fade-in-up grid overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900 shadow-2xl shadow-amber-500/5 sm:rounded-[34px] lg:grid-cols-[1.02fr_0.98fr]"
             >
               <div className={`${index % 2 === 1 ? 'lg:order-2' : ''} relative min-h-[320px] overflow-hidden`}>
-                <Image
-                  src={moment.image}
-                  alt={moment.title}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                />
+                {moment.image?.endsWith('.mp4') ? (
+                  <video
+                    src={moment.image}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loop
+                    muted
+                    autoPlay
+                    playsInline
+                  />
+                ) : (
+                  <Image
+                    src={moment.image}
+                    alt={moment.title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                  />
+                )}
               </div>
               <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} flex items-center p-5 sm:p-8 md:p-10`}>
                 <div>

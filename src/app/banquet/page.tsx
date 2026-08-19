@@ -7,6 +7,7 @@ import { PageContent, SiteSettings } from "@/lib/models";
 import AdminOverlayWrapper from "@/app/components/AdminOverlayWrapper";
 import { Metadata } from "next";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
+import VideoSection from "@/app/components/VideoSection";
 
 export const metadata: Metadata = {
   title: "Best Banquet Hall in Motihari | Wedding Venues | Hotel Rudra Regency",
@@ -184,6 +185,14 @@ export default async function BanquetPage(props: { searchParams: Promise<{ editM
           </div>
         </div>
       </section>
+
+      <AdminOverlayWrapper isAdmin={isAdmin} sectionKey="banquetVideo" label="Banquet Showcase Video">
+        <VideoSection 
+          src="/videos/banquet.mp4" 
+          title="Inside the Grand Banquet Hall" 
+          description="See how our 10,000 sq ft venue transforms into the perfect setting for your celebration." 
+        />
+      </AdminOverlayWrapper>
 
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Banquet', href: '/banquet' }]} />
 

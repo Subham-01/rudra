@@ -6,6 +6,7 @@ import { PageContent, SiteSettings } from "@/lib/models";
 import { Metadata } from "next";
 import AdminOverlayWrapper from "@/app/components/AdminOverlayWrapper";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
+import VideoSection from "@/app/components/VideoSection";
 
 export const metadata: Metadata = {
   title: "Luxury Rooms & Suites in Motihari | Hotel Rudra Regency",
@@ -195,6 +196,14 @@ export default async function RoomsPage(props: { searchParams: Promise<{ editMod
           </div>
         </div>
       </section>
+
+      <AdminOverlayWrapper isAdmin={isAdmin} sectionKey="roomsVideo" label="Rooms Showcase Video">
+        <VideoSection 
+          src="/videos/rooms.mp4" 
+          title="Inside Our Luxury Rooms" 
+          description="Take a closer look at the premium comfort and modern amenities awaiting you." 
+        />
+      </AdminOverlayWrapper>
 
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Rooms', href: '/rooms' }]} />
 

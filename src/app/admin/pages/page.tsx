@@ -1,6 +1,6 @@
 'use client';
 
-import { Home, Info, Utensils, Bed, Phone, Calendar, BookOpen, ExternalLink } from 'lucide-react';
+import { Home, Info, Utensils, Bed, Phone, Calendar, BookOpen, ExternalLink, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 
 const pages = [
@@ -12,6 +12,7 @@ const pages = [
   { key: 'conference', name: 'Conference', path: '/conference-room', icon: Calendar, description: 'Business meetings and corporate conference rooms.' },
   { key: 'blogs', name: 'Blogs', path: '/blogs', icon: BookOpen, description: 'Read latest articles, SEO content, and hotel updates.' },
   { key: 'contact', name: 'Contact', path: '/contact', icon: Phone, description: 'Contact form, map location, and direct inquiry details.' },
+  { key: 'feedback', name: 'Feedback', path: '/feedback', icon: MessageSquare, description: 'Manage guest reviews and platform logo links.' },
 ];
 
 export default function PagesDashboard() {

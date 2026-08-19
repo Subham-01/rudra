@@ -178,6 +178,12 @@ export default async function AboutPage(props: { searchParams: Promise<{ editMod
               Contact Us
             </Link>
           </div>
+          
+          <div className="mt-8 pt-8 border-t border-white/5">
+            <Link href="/feedback" className="text-xs text-neutral-500 hover:text-amber-300 transition-colors">
+              Read what our guests say or leave a review &rarr;
+            </Link>
+          </div>
         </section>
       </main>
     </div>

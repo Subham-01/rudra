@@ -743,5 +743,58 @@ export const pageSchemas: Record<string, any> = {
         ]
       }
     ]
+  },
+  feedback: {
+    name: 'Feedback',
+    sections: [
+      {
+        key: 'header',
+        label: 'Header Section',
+        type: 'object',
+        fields: [
+          { name: 'eyebrow', label: 'Small Title', type: 'text' },
+          { name: 'heading', label: 'Main Heading', type: 'text' },
+          { name: 'subtitle', label: 'Subtitle', type: 'text' },
+          { name: 'description', label: 'Description', type: 'textarea' }
+        ],
+        defaultValue: {
+          eyebrow: 'Guest Experience',
+          heading: 'Reviews & Feedback',
+          subtitle: 'How was your experience?',
+          description: 'Your feedback helps us continuously improve our services and hospitality. If you enjoyed your stay, dining, or event with us, we would be incredibly grateful if you could take a moment to leave a review on your preferred platform.'
+        }
+      },
+      {
+        key: 'platforms',
+        label: 'Review Platforms',
+        type: 'array',
+        fields: [
+          { name: 'name', label: 'Platform Name', type: 'text' },
+          { name: 'url', label: 'URL Link', type: 'text' },
+          { name: 'logo', label: 'Logo Image', type: 'image' },
+          { name: 'description', label: 'Description', type: 'textarea' }
+        ],
+        defaultValue: [
+          {
+            name: "Google",
+            url: "#",
+            logo: "/images/google-review.png",
+            description: "Share your experience with us on Google Reviews.",
+          },
+          {
+            name: "TripAdvisor",
+            url: "#",
+            logo: "/images/tripadvisor.png",
+            description: "Rate your stay and dining experience on TripAdvisor.",
+          },
+          {
+            name: "MakeMyTrip",
+            url: "#",
+            logo: "/images/makemytrip.png",
+            description: "Booked through MMT? Let others know how we did.",
+          }
+        ]
+      }
+    ]
   }
 };

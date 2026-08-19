@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BedDoubleIcon, BriefcaseBusinessIcon, PartyPopperIcon, UtensilsCrossedIcon } from 'lucide-react';
 import AdminOverlayWrapper from './AdminOverlayWrapper';
+import VideoSection from './VideoSection';
 import { useEffect, useState } from 'react';
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -372,6 +373,14 @@ export default function HomePageClient({
           </div>
         </div>
       </section>
+
+      <AdminOverlayWrapper isAdmin={isAdmin} sectionKey="hotelVideo" label="Hotel Overview Video">
+        <VideoSection 
+          src="/videos/home.mp4" 
+          title="Experience Rudra Regency" 
+          description="A glimpse into the luxury, comfort, and hospitality that awaits you in Motihari." 
+        />
+      </AdminOverlayWrapper>
 
       <section className="bg-neutral-950 py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-[1.08fr_0.92fr] lg:gap-8 lg:px-8">

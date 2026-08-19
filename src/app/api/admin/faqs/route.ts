@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+
 const faqsPath = path.join(process.cwd(), 'data', 'faqs.json');
 
 function getFaqs() {

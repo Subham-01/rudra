@@ -151,7 +151,7 @@ export default function ChatWidget() {
       
     } catch (error) {
       console.error('Chat error:', error);
-      setMessages(prev => [...prev, { role: 'assistant', content: 'I apologize, but I am unable to process your request at the moment. For immediate assistance, please connect with our reception team at [+91 8651600015](tel:+918651600015).' }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: 'I apologize, but I am unable to process your request at the moment. For immediate assistance, please connect with our reception team at [+91 8651600015](tel:+918651600015) or [+91 8581828182](tel:+918581828182).' }]);
     } finally {
       setIsLoading(false);
     }

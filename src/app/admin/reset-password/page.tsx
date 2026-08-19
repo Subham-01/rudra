@@ -4,6 +4,7 @@ import { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 function ResetPasswordForm() {
+  const [otp, setOtp] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
@@ -12,11 +13,10 @@ function ResetPasswordForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const token = searchParams.get('token');
   const username = searchParams.get('user');
 
-  if (!token || !username) {
-    return <p className="text-red-500 text-center">Invalid or missing reset token.</p>;
+  if (!username) {
+    return <p className="text-red-500 text-center">Invalid request. Username missing.</p>;
   }
 
   const handleReset = async (e: React.FormEvent) => {
@@ -31,11 +31,17 @@ function ResetPasswordForm() {
       return;
     }
 
+    if (otp.length !== 6) {
+      setError('OTP must be exactly 6 digits');
+      setLoading(false);
+      return;
+    }
+
     try {
       const res = await fetch('/api/admin/auth/reset-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token, username, newPassword }),
+        body: JSON.stringify({ otp, username, newPassword }),
       });
 
       const data = await res.json();
@@ -57,10 +63,25 @@ function ResetPasswordForm() {
 
   return (
     <>
-      <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-white">Create New Password</h2>
+      <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-white">Verify OTP & Reset</h2>
+      <p className="text-sm text-center text-gray-500 mb-4">An OTP has been sent to the secure recovery email for <strong>{username}</strong>.</p>
+      
       {error && <p className="text-red-500 text-sm text-center">{error}</p>}
       {success && <p className="text-green-600 text-sm text-center">{success}</p>}
+      
       <form onSubmit={handleReset} className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">6-Digit OTP</label>
+          <input
+            type="text"
+            required
+            maxLength={6}
+            placeholder="123456"
+            className="w-full px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white text-center text-2xl tracking-[0.2em]"
+            value={otp}
+            onChange={(e) => setOtp(e.target.value.replace(/[^0-9]/g, ''))}
+          />
+        </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">New Password</label>
           <input
@@ -86,9 +107,9 @@ function ResetPasswordForm() {
         <button
           type="submit"
           disabled={loading || !!success}
-          className="w-full px-4 py-2 font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none disabled:opacity-50"
+          className="w-full px-4 py-2 font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none disabled:opacity-50 mt-4"
         >
-          {loading ? 'Resetting...' : 'Reset Password'}
+          {loading ? 'Verifying...' : 'Verify OTP & Reset Password'}
         </button>
       </form>
     </>

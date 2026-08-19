@@ -178,45 +178,22 @@ export default function ProfilePage() {
             <CardDescription>Configure how you recover your account.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <form onSubmit={handleSaveEmail} className="space-y-4 mb-6">
+            <div className="space-y-4 mb-6">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-900 dark:text-gray-100">Recovery Email Address</label>
-                <div className="space-y-4">
-                  <input 
-                    type="email" 
-                    value={recoveryEmail} 
-                    onChange={(e) => setRecoveryEmail(e.target.value)} 
-                    placeholder="admin@example.com"
-                    required
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" 
-                  />
-                  <div className="flex gap-2">
-                    <input 
-                      type="password" 
-                      value={emailAuthPassword} 
-                      onChange={(e) => setEmailAuthPassword(e.target.value)} 
-                      placeholder="Confirm Admin Password"
-                      required
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" 
-                    />
-                    <button 
-                      type="submit" 
-                      disabled={isSavingEmail} 
-                      className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:opacity-50 transition-colors whitespace-nowrap"
-                    >
-                      {isSavingEmail ? 'Saving...' : 'Save Email'}
-                    </button>
-                  </div>
+                <div className="flex h-10 w-full items-center rounded-md border border-input bg-gray-50 dark:bg-gray-800/50 px-3 py-2 text-sm text-gray-500 cursor-not-allowed">
+                  {recoveryEmail || 'Loading...'}
                 </div>
                 <p className="text-xs">
-                  We will send a password reset link to this email address if you ever forget your password.
-                  <br />
+                  We will send a 6-digit OTP to this email address if you ever forget your password.
+                  <br /><br />
                   <span className="text-amber-600 dark:text-amber-400 font-medium">
-                    Note: SMTP settings must be configured in .env.local (SMTP_HOST, SMTP_USER, SMTP_PASS) for emails to send.
+                    Security Notice: For maximum security, this email is hardcoded into the system backend (Vercel). 
+                    It cannot be changed from this dashboard. To update it, you must change the `ADMIN_RECOVERY_EMAIL` variable in your Vercel settings.
                   </span>
                 </p>
               </div>
-            </form>
+            </div>
 
             <div className="border-t pt-4">
               <p className="mb-2">

@@ -55,6 +55,9 @@ export default function AdminLogin() {
       const data = await res.json();
       if (res.ok) {
         setResetMessage(data.message);
+        setTimeout(() => {
+          router.push(`/admin/reset-password?user=${username}`);
+        }, 1500);
       } else {
         setError(data.error || 'Failed to send reset link');
       }

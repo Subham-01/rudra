@@ -1,14 +1,13 @@
 import { NextResponse } from 'next/server';
-import crypto from 'crypto';
 import bcrypt from 'bcryptjs';
 import connectToDatabase from '@/lib/db';
 import { AdminUser } from '@/lib/models';
 
 export async function POST(request: Request) {
   try {
-    const { token, username, newPassword } = await request.json();
+    const { otp, username, newPassword } = await request.json();
 
-    if (!token || !username || !newPassword) {
+    if (!otp || !username || !newPassword) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
@@ -24,19 +23,20 @@ export async function POST(request: Request) {
     });
 
     if (!admin || !admin.resetToken) {
-      return NextResponse.json({ error: 'Invalid or expired reset token' }, { status: 400 });
+      return NextResponse.json({ error: 'Invalid or expired OTP' }, { status: 400 });
     }
 
-    // Verify token hash
-    const providedTokenHash = crypto.createHash('sha256').update(token).digest('hex');
-    if (providedTokenHash !== admin.resetToken) {
-      return NextResponse.json({ error: 'Invalid or expired reset token' }, { status: 400 });
+    // Verify OTP using bcrypt
+    const isValid = await bcrypt.compare(otp, admin.resetToken);
+    
+    if (!isValid) {
+      return NextResponse.json({ error: 'Invalid or expired OTP' }, { status: 400 });
     }
 
-    // Token is valid! Update password
+    // OTP is valid! Update password
     const passwordHash = await bcrypt.hash(newPassword, 10);
     admin.passwordHash = passwordHash;
-    admin.resetToken = undefined; // Clear token
+    admin.resetToken = undefined; // Clear OTP
     admin.resetTokenExpiry = undefined;
     await admin.save();
 

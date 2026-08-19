@@ -125,14 +125,14 @@ export default async function FeedbackPage(props: { searchParams: Promise<{ edit
                 <div className="relative h-20 w-48 mb-6 overflow-hidden flex items-center justify-center">
                   <Image
                     src={platform.logo || "/images/placeholder.png"}
-                    alt={`${platform.name} logo`}
+                    alt={`${platform.name || 'Platform'} logo`}
                     fill
-                    className="object-contain filter grayscale opacity-70 transition group-hover:grayscale-0 group-hover:opacity-100"
+                    className="object-contain transition-transform duration-300 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 200px"
                   />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-amber-300 transition-colors">
-                  Review us on {platform.name}
+                  Review us on {platform.name || ''}
                 </h3>
                 <p className="text-sm text-neutral-400">
                   {platform.description}
